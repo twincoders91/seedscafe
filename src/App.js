@@ -1,6 +1,25 @@
-import React from "react";
-import "./style.css";
+import React, { useState } from "react";
+import ModalNavBar from "./components/ModalNavBar";
+import NavBar from "./NavBar";
+import Home from "./home/Home";
 
-export default function App() {
-  return <div></div>;
+function App() {
+  const [openModal, setOpenModal] = useState(false);
+
+  return (
+    <div>
+      <div className="main--app--container">
+        {!openModal ? (
+          <>
+            <NavBar setOpenModal={setOpenModal} />
+            <Home />
+          </>
+        ) : (
+          <ModalNavBar setOpenModal={setOpenModal} />
+        )}
+      </div>
+    </div>
+  );
 }
+
+export default App;
