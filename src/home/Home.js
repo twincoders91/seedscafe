@@ -1,12 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import NavBar from "../NavBar";
 import menulogo from "../assets/cards/menuimage.svg";
 import venuelogo from "../assets/cards/venueimage.svg";
 import artworklogo from "../assets/cards/supportartwork.svg";
 import microbusinesslogo from "../assets/cards/supportmicrobusiness.svg";
-import carouselimage1 from "../assets/homepagecarousellimage1.png";
-import bulletclicked from "../assets/bulletclicked.png";
-import bulletunclicked from "../assets/bulletunclicked.png";
 import homepageseedscafeimage from "../assets/home/homepageseedscafeimage.svg";
 import Slider from "./sliderComponent/Slider";
 
@@ -62,7 +60,7 @@ const Home = ({ setOpenModal }) => {
               </div>
             </div>
             <div className="home--card--row">
-              <div className="individual--card--border">
+              <Link to="/art" className="individual--card--border">
                 <div className="text--logo--box">
                   <div className="individual--logo--circle">
                     <img
@@ -75,7 +73,7 @@ const Home = ({ setOpenModal }) => {
                     <p className="individual--text">Support Artwork</p>
                   </div>
                 </div>
-              </div>
+              </Link>
               <div className="individual--card--border">
                 <div className="text--logo--box">
                   <div className="individual--logo--circle">

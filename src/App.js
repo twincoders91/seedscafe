@@ -3,6 +3,8 @@ import ModalNavBar from "./components/ModalNavBar";
 import Home from "./home/Home";
 import Footer from "./Footer";
 import Art from "./art/Art";
+import { Route, Routes } from "react-router-dom";
+import ArtGallery from "./art/ArtGallery";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -10,15 +12,14 @@ function App() {
   return (
     <div>
       <div className="main--app--container">
-        {!openModal ? (
-          <div className="main--app--inner-container">
-            {/* <Home setOpenModal={setOpenModal} /> */}
-            <Art />
-            <Footer />
-          </div>
-        ) : (
-          <ModalNavBar setOpenModal={setOpenModal} />
-        )}
+        <div className="main--app--inner-container">
+          <ArtGallery />
+          {/* <Routes>
+            <Route path="/" element={<Home setOpenModal={setOpenModal} />} />
+            <Route path="/art" element={<Art />} />{" "}
+          </Routes> */}
+          <Footer />
+        </div>
       </div>
     </div>
   );
