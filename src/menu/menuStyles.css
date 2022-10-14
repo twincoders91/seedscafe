@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+.menu--main--container {
+  height: 100vh;
+}
+
+.menu--top--container {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  height: 12%;
+  padding: 0px 25px 0px 25px;
+  /* border: 1px solid black; */
+}
+
+.menu--title,
+.table--title {
+  font-size: 20px;
+  line-height: 23.44px;
+  text-align: center;
+  color: #474b4e;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+/* .menu--back--arrow {
+  left: 5%;
+}
+
+.menu--order {
+  left: 90%;
+} */
+
+.filter--container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.filter--button {
+  padding: 2px 10px;
+  font-size: 14px;
+  text-align: center;
+  color: #474b4e;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  line-height: 120%;
+  border-radius: 5px;
+}
+
+.filter--button:hover,
+.filter--button:focus {
+  background-color: #ece7dc;
+}
+
+.menu--items--container {
+  margin: 0 24px;
+  width: 366px;
+}
+
+.card--container {
+  display: flex;
+  align-items: center;
+  height: 81px;
+  padding: 16px 0px 16px 0px;
+  border: 0.5px #6b6b6b;
+  border-style: solid none none none;
+}
+.card--image {
+  width: 80px;
+  height: 80px;
+}
+
+.card--body {
+  margin: 20px;
+}
+
+.card--name {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.card--arrow {
+  position: absolute;
+  right: 27%;
+}
+
+.card--price {
+  font-size: 14px;
+  font-weight: 200;
+}
