@@ -17,7 +17,7 @@ const Menu = () => {
   };
   return (
     <div className="menu--main--container">
-      <div className="menu--top--container">
+      <div className="table--top--container">
         <div className="menu--back--arrow">
           <img src={backarrow} alt="order"></img>
         </div>

@@ -20,7 +20,7 @@ const fullMenu = [
   {
     name: "Bolognese Pasta",
     price: 14.9,
-    img: "https://images.unsplash.com/photo-1516100882582-96c3a05fe590?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Ym9sb2duZXNlJTIwcGFzdGF8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60",
+    img: "https://images.unsplash.com/photo-1598866594230-a7c12756260f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1008&q=80",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     category: "Main",
@@ -38,7 +38,7 @@ const fullMenu = [
   {
     name: "Sweet Chilli Wings",
     price: 9.5,
-    img: "https://images.unsplash.com/photo-1650939986300-ce9609921fa7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3dlZXQlMjBjaGlsaSUyMHdpbmdzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60",
+    img: "https://images.unsplash.com/photo-1527477396000-e27163b481c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1153&q=80",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     category: "Sides",
@@ -56,7 +56,7 @@ const fullMenu = [
   {
     name: "Classic English Breakfast",
     price: 6.9,
-    img: "https://images.unsplash.com/photo-1599021226948-9cc99e314ceb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZW5nbGlzaCUyMGJyZWFrZmFzdCUyMHRlYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60",
+    img: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     category: "Beverages",

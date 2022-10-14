@@ -7,6 +7,16 @@
 
 .menu--top--container {
   display: flex;
+  justify-content: flex-start;
+  gap: 105px;
+  align-items: center;
+  height: 12%;
+  padding: 0px 25px 0px 25px;
+  /* border: 1px solid black; */
+}
+
+.table--top--container {
+  display: flex;
   position: relative;
   justify-content: space-between;
   align-items: center;
@@ -18,21 +28,70 @@
 .menu--title,
 .table--title {
   font-size: 20px;
-  line-height: 23.44px;
   text-align: center;
   color: #474b4e;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  line-height: 120%;
 }
 
-/* .menu--back--arrow {
+.menu--back--arrow {
+  position: relative;
+  top: 7%;
   left: 5%;
 }
 
-.menu--order {
+/* .menu--order {
   left: 90%;
 } */
+
+.menu--middle--container {
+  justify-content: center;
+  grid-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  margin-bottom: 20%;
+}
+
+/* ===========================================menuCategoryCard==================================== */
+
+.menuCard--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 186px;
+  width: 175px;
+  margin: 10% 0 15% 7%;
+  /* margin-left: 7%;
+  margin-bottom: 15%; */
+  border-radius: 9px;
+  border: 1px solid;
+  border-color: #474b4e;
+  box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.menuCard--top {
+  height: 75%;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  resize: inherit;
+}
+
+.menuCard--bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 25%;
+  font-size: 16px;
+  text-align: center;
+  color: #474b4e;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  line-height: 18.75px;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
 
 .filter--container {
   display: flex;

@@ -14,11 +14,11 @@ function App() {
         {!openModal ? (
           <div className="main--app--inner-container">
             <NavBar setOpenModal={setOpenModal} />
-            <Menu />
           </div>
         ) : (
           <ModalNavBar setOpenModal={setOpenModal} />
         )}
+        <MenuCategory />
       </div>
     </div>
   );
