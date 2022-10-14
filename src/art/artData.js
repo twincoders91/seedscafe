@@ -1,6 +1,13 @@
+import animalsCategory from "../assets/art/category/animals.svg";
+import foodCategory from "../assets/art/category/food.svg";
+import peopleCategory from "../assets/art/category/people.svg";
+import natureCategory from "../assets/art/category/nature.svg";
+import structureCategory from "../assets/art/category/structure.svg";
+import stilllifeCategory from "../assets/art/category/stilllife.svg";
+
 const ArtData = [
   {
-    img: "https://www.linkpicture.com/q/images_41.jfif",
+    img: animalsCategory,
     category: "Animals",
     artistName: "Andrea Ling",
     artName: "Under The Sea",
@@ -11,7 +18,7 @@ const ArtData = [
     physicalMaterial: "Acrylic Paint and Ink on Mixed Media Paper",
   },
   {
-    img: "https://www.linkpicture.com/q/images_41.jfif",
+    img: animalsCategory,
     category: "Animals",
     artistName: "AL",
     artName: "Sea",
@@ -22,7 +29,7 @@ const ArtData = [
     physicalMaterial: "Acrylic Paint and Ink on Mixed Media Paper",
   },
   {
-    img: "https://www.linkpicture.com/q/images_41.jfif",
+    img: foodCategory,
     category: "Foods",
     artistName: "AL",
     artName: "Orange",
@@ -32,7 +39,7 @@ const ArtData = [
     physicalMaterial: "Acrylic Paint and Ink on Mixed Media Paper",
   },
   {
-    img: "https://www.linkpicture.com/q/images_41.jfif",
+    img: foodCategory,
     category: "Foods",
     artistName: "Andrea Ling",
     artName: "Apple",
@@ -42,19 +49,19 @@ const ArtData = [
     physicalMaterial: "Acrylic Paint and Ink on Mixed Media Paper",
   },
   {
-    img: "https://www.linkpicture.com/q/images_41.jfif",
+    img: natureCategory,
     category: "Nature",
   },
   {
-    img: "https://www.linkpicture.com/q/images_41.jfif",
+    img: peopleCategory,
     category: "People",
   },
   {
-    img: "https://www.linkpicture.com/q/images_41.jfif",
+    img: structureCategory,
     category: "Structures",
   },
   {
-    img: "https://www.linkpicture.com/q/images_41.jfif",
+    img: stilllifeCategory,
     category: "Still Life",
   },
   {

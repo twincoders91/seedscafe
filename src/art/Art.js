@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import backArrow from "../assets/art/category/backarrow.svg";
 import ArtCard from "./ArtCard";
-// import artCategoryData from "./artCategoryData";
 import ArtData from "./artData";
 import "./artStyles.css";
 
-const Art = () => {
-  console.log(ArtData);
+const Art = (props) => {
+  //======================removing category duplicates from the artData set======================
+  const { setArtGalleryHeader, setArtGalleryPopulate } = props;
 
+  console.log(ArtData);
   const artCategoryData = ArtData.reduce((finalArray, current) => {
     let obj = finalArray.find((item) => item.category === current.category);
     //returns the item if it matches = true
@@ -20,7 +21,20 @@ const Art = () => {
     }
   }, []);
 
-  console.log(artCategoryData);
+  //==============================================================================================
+  //======================function to handle individual Art Card clicks===========================
+
+  const handleArtCardClick = (artData) => {
+    setArtGalleryHeader(artData);
+
+    const categoryFilter = ArtData.filter((artGallery) => {
+      return artGallery.category === artData.category;
+    });
+
+    setArtGalleryPopulate(categoryFilter);
+  };
+
+  //===============================================================================================
 
   return (
     <div className="art--main--container">
@@ -32,7 +46,19 @@ const Art = () => {
       </div>
       <div className="art--middle--container">
         {artCategoryData.map((data) => {
-          return <ArtCard category={data.category} image={data.img} />;
+          return (
+            <ArtCard
+              artName={data.artName}
+              description={data.description}
+              price={data.price}
+              size={data.physicalSize}
+              category={data.category}
+              image={data.img}
+              material={data.physicalSize}
+              artistName={data.artistName}
+              handleArtCardClick={handleArtCardClick}
+            />
+          );
         })}
       </div>
     </div>

@@ -29,6 +29,11 @@
   left: 5%;
 }
 
+.art--shoppingcart {
+  position: absolute;
+  right: 5%;
+}
+
 .art--middle--container {
   justify-content: center;
   /* margin-top: 10%; */
@@ -74,4 +79,62 @@
   line-height: 18.75px;
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
+}
+
+/* ===========================================artGallery==================================== */
+.art--gallery--middle--container {
+  display: grid;
+  justify-content: space-around;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, 50%);
+}
+
+.individual--art--gallery--card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20%;
+}
+
+.individual--art--gallery--card--image--box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 167px;
+  width: 175px;
+  overflow: hidden;
+}
+
+.individual--art--gallery--card--image {
+  height: 100%;
+}
+
+.individual--art--gallery--card--textbox {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.individual--art--gallery--card--title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  line-height: 16.41px;
+  font-size: 14px;
+}
+
+.individual--art--gallery--card--artistName {
+  margin-top: 3%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 16.41px;
+  font-size: 14px;
+}
+
+.individual--art--gallery--card--price {
+  margin-top: 7%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 16.41px;
+  font-size: 14px;
 }
