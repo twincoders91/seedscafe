@@ -1,8 +1,8 @@
 import React from "react";
-import facebooklogo from "./assets/footerfacebooklogo.png";
-import ellipse from "./assets/ellipse.png";
-import instagramlogo from "./assets/footerinstagram.png";
-import rainbowcentre from "./assets/footerrainbowcentre.png";
+import facebooklogo from "./assets/footer/footerfacebooklogo.png";
+import ellipse from "./assets/footer/ellipse.png";
+import instagramlogo from "./assets/footer/footerinstagram.png";
+import rainbowcentre from "./assets/footer/footerrainbowcentre.png";
 
 const Footer = () => {
   return (

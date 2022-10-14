@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ModalNavBar from "./components/ModalNavBar";
 import Home from "./home/Home";
 import Footer from "./Footer";
+import Art from "./art/Art";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -10,10 +11,11 @@ function App() {
     <div>
       <div className="main--app--container">
         {!openModal ? (
-          <>
-            <Home setOpenModal={setOpenModal} />
+          <div className="main--app--inner-container">
+            {/* <Home setOpenModal={setOpenModal} /> */}
+            <Art />
             <Footer />
-          </>
+          </div>
         ) : (
           <ModalNavBar setOpenModal={setOpenModal} />
         )}
