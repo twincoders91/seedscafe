@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import backArrow from "../assets/art/category/backarrow.svg";
 import shoppingCart from "../assets/art/category/shoppingcart.svg";
 
@@ -9,7 +10,9 @@ const ArtGallery = (props) => {
       <div className="art--top--container">
         <div className="art--title">{artGalleryHeader.category}</div>
         <div className="art--back--arrow">
-          <img src={backArrow} alt="images"></img>
+          <Link to="/art">
+            <img src={backArrow} alt="images"></img>
+          </Link>
         </div>
         <div className="art--shoppingcart">
           <img src={shoppingCart} alt="images"></img>
@@ -23,6 +26,7 @@ const ArtGallery = (props) => {
                 <img
                   src={art.img}
                   className="individual--art--gallery--card--image"
+                  alt="images"
                 ></img>
               </div>
               <div className="individual--art--gallery--card--textbox">

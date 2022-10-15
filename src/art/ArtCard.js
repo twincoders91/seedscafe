@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-import ArtData from "./artData";
 import "./artStyles.css";
 
 const ArtCard = (props) => {
@@ -34,8 +32,10 @@ const ArtCard = (props) => {
         });
       }}
     >
-      <img src={image} className="artCard--top"></img>
-      <div className="artCard--bottom">{category}</div>
+      <img src={image} className="artCard--top" alt="images"></img>
+      <div className="artCard--bottom">
+        <p className="artCard--bottom--text">{category}</p>
+      </div>
     </Link>
   );
 };
