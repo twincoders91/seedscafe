@@ -1,77 +1,112 @@
 import React from "react";
-import { UilUtensils } from "@iconscout/react-unicons";
-import { UilApps } from "@iconscout/react-unicons";
-import { UilPalette } from "@iconscout/react-unicons";
-import { UilShoppingCartAlt } from "@iconscout/react-unicons";
-import { UilRainbow } from "@iconscout/react-unicons";
-import { UilUnamused } from "@iconscout/react-unicons";
+import { Link } from "react-router-dom";
+import NavBar from "../NavBar";
+import menulogo from "../assets/cards/menuimage.svg";
+import venuelogo from "../assets/cards/venueimage.svg";
+import artworklogo from "../assets/cards/supportartwork.svg";
+import microbusinesslogo from "../assets/cards/supportmicrobusiness.svg";
+import homepageseedscafeimage from "../assets/home/homepageseedscafeimage.svg";
+import Slider from "./sliderComponent/Slider";
 
-const Home = () => {
+const Home = ({ setOpenModal }) => {
   return (
-    <div className="main--home--container">
-      <div className="home--grid--box">
-        <div className="individual--grid--box">
-          <div className="individual--box--border">
-            <div className="text--logo--box">
-              <div className="individual--logo--circle">
-                <UilUtensils className="individual--logo" />
+    <>
+      <div className="home--page--container">
+        <NavBar setOpenModal={setOpenModal} />
+
+        <div className="home--page--main--image--container">
+          <img
+            src={homepageseedscafeimage}
+            className="home--page--main--image"
+            alt="images"
+          />
+          <div className="home--page--main--image--text--container">
+            <p className="home--page--main--image--text">
+              Welcome to Seeds Cafe
+            </p>
+          </div>
+        </div>
+        <div className="main--home--container">
+          <p className="our--services">Our Services</p>
+          <div className="home--card--row--box">
+            <div className="home--card--row">
+              <div className="individual--card--border">
+                <div className="text--logo--box">
+                  <div className="individual--logo--circle">
+                    <img
+                      src={menulogo}
+                      className="individual--logo"
+                      alt="images"
+                    />
+                  </div>
+                  <div className="individual--text--box">
+                    <p className="individual--text">Menu</p>
+                  </div>
+                </div>
               </div>
-              <p className="individual--text">Menu</p>
+              <div className="individual--card--border">
+                <div className="text--logo--box">
+                  <div className="individual--logo--circle">
+                    <img
+                      src={venuelogo}
+                      className="individual--logo"
+                      alt="images"
+                    />
+                  </div>
+                  <div className="individual--text--box">
+                    <p className="individual--text">Venue Booking</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="home--card--row">
+              <Link to="/art" className="individual--card--border">
+                <div className="text--logo--box">
+                  <div className="individual--logo--circle">
+                    <img
+                      src={artworklogo}
+                      className="individual--logo"
+                      alt="images"
+                    />
+                  </div>
+                  <div className="individual--text--box">
+                    <p className="individual--text">Support Artwork</p>
+                  </div>
+                </div>
+              </Link>
+              <div className="individual--card--border">
+                <div className="text--logo--box">
+                  <div className="individual--logo--circle">
+                    <img
+                      src={microbusinesslogo}
+                      className="individual--logo"
+                      alt="images"
+                    />
+                  </div>
+                  <div className="individual--text--box">
+                    <p className="individual--text">Support Micro Business</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="individual--grid--box">
-          <div className="individual--box--border">
-            <div className="text--logo--box">
-              <div className="individual--logo--circle">
-                <UilApps className="individual--logo" />
-              </div>
-              <p className="individual--text">Venue Booking</p>
-            </div>
-          </div>
+
+        <div className="about--us--container">
+          <p className="about--us--header">About us</p>
+          <p className="about--us--description">
+            Seeds Cafe is all about great coffee and good food and experiences.
+            We provide F&B training opportunities for young persons with
+            disabilities to grow, as well as social space for an inclusive
+            community. Our space is thoughtfully curated to allow authentic and
+            meaningful interactions for better appreciation of one another as
+            unique individuals.
+          </p>
+          <p className="about--us--header">You may be interested in:</p>
         </div>
-        <div className="individual--grid--box">
-          <div className="individual--box--border">
-            <div className="text--logo--box">
-              <div className="individual--logo--circle">
-                <UilPalette className="individual--logo" />
-              </div>
-              <p className="individual--text">Support Artwork</p>
-            </div>
-          </div>
-        </div>
-        <div className="individual--grid--box">
-          <div className="individual--box--border">
-            <div className="text--logo--box">
-              <div className="individual--logo--circle">
-                <UilShoppingCartAlt className="individual--logo" />
-              </div>
-              <p className="individual--text">Support Micro Business</p>
-            </div>
-          </div>
-        </div>
-        <div className="individual--grid--box">
-          <div className="individual--box--border">
-            <div className="text--logo--box">
-              <div className="individual--logo--circle">
-                <UilRainbow className="individual--logo" />
-              </div>
-              <p className="individual--text">Rainbow Centre</p>
-            </div>
-          </div>
-        </div>
-        <div className="individual--grid--box">
-          <div className="individual--box--border">
-            <div className="text--logo--box">
-              <div className="individual--logo--circle">
-                <UilUnamused className="individual--logo" />
-              </div>
-              <p className="individual--text">Donation</p>
-            </div>
-          </div>
-        </div>
+        <Slider />
       </div>
-    </div>
+    </>
   );
 };
 
