@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import backarrow from "../assets/menu/images/backarrow.svg";
-import order from "../assets/menu/images/order.svg";
+// import backarrow from "../assets/menu/images/backarrow.svg";
+// import order from "../assets/menu/images/order.svg";
 import FullMenu from "./fullMenu";
 import Card from "./Card";
+import TableHeader from "./menu-component/shared-componenet/TableHeader";
 import FilterButtons from "./FilterButtons";
 import "./menuStyles.css";
 
@@ -25,15 +26,7 @@ const Menu = () => {
   //==================================================================================
   return (
     <div className="menu--main--container">
-      <div className="table--top--container">
-        <div className="menu--back--arrow">
-          <img src={backarrow} alt="order"></img>
-        </div>
-        <div className="table--title">Table No. 8</div>
-        <div className="menu--ordericon">
-          <img src={order} alt="order"></img>
-        </div>
-      </div>
+      <TableHeader />
       <div className="filter--container">
         <FilterButtons
           filterDish={filterDish}

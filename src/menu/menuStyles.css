@@ -1,8 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+html{
+  font-size: 16px;
+}
 
-.menu--main--container {
-  height: 100vh;
+.menu--main--container,
+.specific--main--container {
+  height: 100vh;  
+  padding: 0 5.8%; /* translates to 24px of 414px*/
+  background-color: #F5F5F5
+
 }
 
 .menu--top--container {
@@ -11,7 +18,7 @@
   gap: 105px;
   align-items: center;
   height: 12%;
-  padding: 0px 25px 0px 25px;
+  /* padding: 0px 25px 0px 25px; */
   /* border: 1px solid black; */
 }
 
@@ -20,8 +27,8 @@
   position: relative;
   justify-content: space-between;
   align-items: center;
-  height: 12%;
-  padding: 0px 25px 0px 25px;
+  height: 15.4%; /* 138px of 896px
+  /* padding: 0px 25px 0px 25px; */
   /* border: 1px solid black; */
 }
 
@@ -96,7 +103,9 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px;
+  height: 25px;
+  padding-bottom: 20px;
+  /* padding: 10px; */
 }
 
 .filter--button {
@@ -116,8 +125,8 @@
 }
 
 .menu--items--container {
-  margin: 0 24px;
-  width: 366px;
+  /* margin: 0 24px; */
+  width: 100%;
 }
 
 .card--container {
@@ -150,4 +159,125 @@
 .card--price {
   font-size: 14px;
   font-weight: 200;
+}
+
+
+
+/* ===========================================Specific Item Page==================================== */
+
+.specific--list--container {
+  display: flex;
+  flex-direction: column;
+  height: 560px;
+  padding-top: 9px;
+  
+  font-family: "Roboto", sans-serif;
+  color:#474b4e
+}
+
+.specific--image--container {
+  height: 19.75vh;
+  width: 19.75vh;
+  overflow: hidden;
+  position: relative
+}
+.specific--image--container img{
+  height: 100%;
+  position:absolute; /* this 4 lines of css is to center image in div container*/
+  left: 50%;
+  top: 50%;
+  -webkit-transform:  translateY(-50%) translateX(-50%);
+}
+
+.specific--text--container{
+  height: 127px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 0.5px solid #6b6b6b;
+}
+
+.specific--text--container h3{
+  font-size: 1.25rem; /* rem is 16px, can be changed in html */
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.465rem;
+  height: 1.465rem;
+  padding-bottom: 6px;
+}
+
+.specific--text--container p{
+  width: 80%;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 400;
+  line-height: 1.025rem;
+}
+
+.specific--number--container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  height: 75px;
+
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  border-bottom: 0.5px solid #6b6b6b;
+
+}
+
+.specific--quantity--toggle button{
+  height: 30px;
+  width: 30px;
+  border-radius:50%;
+  background-color: #ece7dc;
+  font-size: 20px;
+}
+
+.specific--quantity--toggle{
+  width: 29.47%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.specific--price {
+  margin: 0 10px;
+}
+
+.specific--button--container {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0;
+}
+
+.specific--specialRequest,
+.specific--addToOrderList {
+  width: 100%;
+  height: 4.9vh;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 4.9vh;
+}
+
+.specific--specialRequest{
+  margin-bottom: 23px;
+  position: relative
+}
+.specific--specialRequest img{
+  margin-bottom: 23px;
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  -webkit-transform:  translateY(-50%);
+}
+
+.specific--addToOrderList{
+  border-color: #4C6029;
+  background-color: #4C6029;
+  color: #fffbf0;
 }
