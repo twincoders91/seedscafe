@@ -167,8 +167,7 @@ html{
 .specific--list--container {
   display: flex;
   flex-direction: column;
-  height: 800px;
-  padding-top: 9px;
+  padding-top: 1vh;
   
   font-family: "Roboto", sans-serif;
   color:#474b4e;
@@ -190,12 +189,12 @@ html{
 }
 
 .specific--text--container{
-  min-height: 74px;
+  min-height: 8.26vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-bottom: 0.5px solid #6b6b6b;
-  padding: 30px 0 20px 0;
+  padding: 3.35vh 0 2.23vh 0;
 }
 
 .specific--name--price {
@@ -209,7 +208,7 @@ html{
   font-weight: 500;
   line-height: 1.465rem;
   height: 1.465rem;
-  padding-bottom: 15px;
+  padding-bottom: 1.5vh;
 }
 
 .specific--text--container p{
@@ -222,9 +221,9 @@ html{
 .specific--special--request {
   display: flex;
   flex-direction: column;
-  height: 130px;
+  height: 14.5vh;
   width: 100%;
-  padding: 18px 0 21px 0;
+  padding: 2.25vh 0;
   border-bottom: 0.5px solid #6b6b6b;
 }
 
@@ -235,10 +234,11 @@ html{
   font-weight: 700;
 }
 .specific--special--request textarea{
-  height: 107px;
+  height: 11.16vh;
   width: 93.2%;
   padding: 3.4%;
   font-family: "Roboto";
+  font-size: 0.875rem;
   background-color: #FFFFFF;
   border: 0.5px solid #6b6b6b;
   resize: none;
@@ -246,12 +246,13 @@ html{
 
 
 .specific--number--container {
+  height: 8.37vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 75px;
+  
 
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 500;
   line-height: 30px;
   border-bottom: 0.5px solid #6b6b6b;
@@ -263,11 +264,11 @@ html{
   width: 30px;
   border-radius:50%;
   background-color: #ece7dc;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .specific--quantity--toggle{
-  width: 156px;
+  width: 37.7vw;
   display: flex;
   justify-content: space-between;
 }
@@ -275,7 +276,7 @@ html{
 .specific--button--container {
   display: flex;
   flex-direction: column;
-  padding: 40px 0;
+  padding: 4.45vh 0;
 }
 
 .specific--addToOrderList {
@@ -285,7 +286,7 @@ html{
   border: 1px solid black;
   border-radius: 10px;
 
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
   line-height: 4.9vh;
 }
