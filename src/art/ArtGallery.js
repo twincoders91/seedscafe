@@ -15,8 +15,6 @@ const ArtGallery = (props) => {
 
   //===============================================================================================
 
-  console.log(artGalleryHeader);
-  console.log(artGalleryPopulate);
   return (
     <div className="art--main--container">
       <div className="art--top--container">

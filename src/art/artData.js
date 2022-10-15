@@ -16,6 +16,9 @@ const ArtData = [
     price: "$210",
     physicalSize: "29.7 x 42 cm",
     physicalMaterial: "Acrylic Paint and Ink on Mixed Media Paper",
+    artistDescription:
+      "Andrea discovered her love for art when she was 4 years old. She has worked very hard to fine tune her brushing skills and she loves adding vibrant colours to her art pieces. She’s particularly fond of the colour red and purple colour. It makes her happy!",
+    gender: "F",
   },
   {
     img: animalsCategory,
@@ -27,6 +30,9 @@ const ArtData = [
     price: "$212",
     physicalSize: "29.7 x 42 cm",
     physicalMaterial: "Acrylic Paint and Ink on Mixed Media Paper",
+    artistDescription:
+      "Andrea discovered her love for art when she was 4 years old. She has worked very hard to fine tune her brushing skills and she loves adding vibrant colours to her art pieces. She’s particularly fond of the colour red and purple colour. It makes her happy!",
+    gender: "M",
   },
   {
     img: foodCategory,
@@ -37,6 +43,9 @@ const ArtData = [
     price: "$25",
     physicalSize: "19 x 12 cm",
     physicalMaterial: "Acrylic Paint and Ink on Mixed Media Paper",
+    artistDescription:
+      "Andrea discovered her love for art when she was 4 years old. She has worked very hard to fine tune her brushing skills and she loves adding vibrant colours to her art pieces. She’s particularly fond of the colour red and purple colour. It makes her happy!",
+    gender: "F",
   },
   {
     img: foodCategory,
@@ -47,6 +56,9 @@ const ArtData = [
     price: "$25",
     physicalSize: "19 x 12 cm",
     physicalMaterial: "Acrylic Paint and Ink on Mixed Media Paper",
+    artistDescription:
+      "Andrea discovered her love for art when she was 4 years old. She has worked very hard to fine tune her brushing skills and she loves adding vibrant colours to her art pieces. She’s particularly fond of the colour red and purple colour. It makes her happy!",
+    gender: "F",
   },
   {
     img: natureCategory,

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import backArrow from "../assets/art/category/backarrow.svg";
 import shoppingCart from "../assets/art/category/shoppingcart.svg";
 import deliveryIcon from "../assets/art/specificartwork/deliveryicon.svg";
+import femalePfp from "../assets/art/specificartwork/femalepfp.svg";
+import pfpCircle from "../assets/art/specificartwork/pfpcircle.svg";
 
 const SpecificArtworkPage = ({ artGalleryHeader, specificArtworkDetails }) => {
   console.log(specificArtworkDetails.artName);
@@ -56,8 +58,35 @@ const SpecificArtworkPage = ({ artGalleryHeader, specificArtworkDetails }) => {
             <button className="art--add--to--cart--button">
               <p className="art--add--to--cart--text">Add to Cart</p>
             </button>
+            <hr className="art--gallery--horizontal--line"></hr>
           </div>
         </div>
+      </div>
+      <div className="specific--art--gallery--bottom--container">
+        <div className="specific--art--gallery--artist--description--container">
+          <div className="specific--art--gallery--artist--description--container--top">
+            <div className="artistpfp--name--box">
+              <img src={pfpCircle} className="artistpfp--circle" />
+
+              {specificArtworkDetails.gender === "F" ? (
+                <img src={femalePfp} className="artistpfp" />
+              ) : (
+                <></>
+              )}
+              <div className="artist--description--box">
+                <div className="artist--description--box--title">Artist</div>
+                <div className="artist--description--box--name">
+                  {specificArtworkDetails.artistName}
+                </div>
+              </div>
+            </div>
+            <div className="artistpfp--biography--box">
+              {specificArtworkDetails.artistDescription}
+            </div>
+          </div>
+          <div className="specific--art--gallery--artist--description--container--bottom"></div>
+        </div>
+        <hr className="art--gallery--horizontal--line--2"></hr>
       </div>
     </div>
   );

@@ -245,3 +245,69 @@
   font-size: 20px;
   color: #fffbf0;
 }
+
+.art--gallery--horizontal--line {
+  width: 366px;
+  background-color: #6b6b6b;
+  height: 0.5px;
+  margin-bottom: 20px;
+}
+
+.artistpfp--name--box {
+  display: flex;
+  position: relative;
+  height: 75px;
+}
+
+.artistpfp--name--box {
+  margin-bottom: 18px;
+}
+
+.artistpfp {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+}
+
+.artistpfp--circle {
+}
+
+.artist--description--box {
+  display: flex;
+  flex-direction: column;
+  margin-left: 18px;
+  justify-content: center;
+}
+
+.artist--description--box--title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 16.41px;
+  font-size: 14px;
+  color: #474b4e;
+  margin-bottom: 6px;
+}
+
+.artist--description--box--name {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  line-height: 16.41px;
+  font-size: 14px;
+  color: #474b4e;
+}
+
+.artistpfp--biography--box {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 18px;
+  font-size: 14px;
+  color: #474b4e;
+  margin-bottom: 18px;
+}
+
+.art--gallery--horizontal--line--2 {
+  width: 366px;
+  background-color: #6b6b6b;
+  height: 0.5px;
+  margin-bottom: 30px;
+}
