@@ -8,7 +8,7 @@ html{
 .specific--main--container {
   height: 100vh;  
   padding: 0 5.8%; /* translates to 24px of 414px*/
-  background-color: #F5F5F5
+  background-color: #FFFFFF
 
 }
 
@@ -164,15 +164,15 @@ html{
 
 
 /* ===========================================Specific Item Page==================================== */
-
 .specific--list--container {
   display: flex;
   flex-direction: column;
-  height: 560px;
+  height: 800px;
   padding-top: 9px;
   
   font-family: "Roboto", sans-serif;
-  color:#474b4e
+  color:#474b4e;
+  box-sizing: border-box;
 }
 
 .specific--image--container {
@@ -183,44 +183,75 @@ html{
 }
 .specific--image--container img{
   height: 100%;
-  position:absolute; /* this 4 lines of css is to center image in div container*/
+  position:absolute;
   left: 50%;
   top: 50%;
   -webkit-transform:  translateY(-50%) translateX(-50%);
 }
 
 .specific--text--container{
-  height: 127px;
+  min-height: 74px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-bottom: 0.5px solid #6b6b6b;
+  padding: 30px 0 20px 0;
 }
 
-.specific--text--container h3{
+.specific--name--price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.specific--name--price h3{
   font-size: 1.25rem; /* rem is 16px, can be changed in html */
   font-style: normal;
   font-weight: 500;
   line-height: 1.465rem;
   height: 1.465rem;
-  padding-bottom: 6px;
+  padding-bottom: 15px;
 }
 
 .specific--text--container p{
-  width: 80%;
+  width: 85%;
   font-size: 0.875rem; /* 14px */
   font-weight: 400;
-  line-height: 1.025rem;
+  line-height: 1.375rem;
 }
+
+.specific--special--request {
+  display: flex;
+  flex-direction: column;
+  height: 130px;
+  width: 100%;
+  padding: 18px 0 21px 0;
+  border-bottom: 0.5px solid #6b6b6b;
+}
+
+.specific--special--request label{
+  display: block;
+  margin-bottom: 14px;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+.specific--special--request textarea{
+  height: 107px;
+  width: 93.2%;
+  padding: 3.4%;
+  font-family: "Roboto";
+  background-color: #FFFFFF;
+  border: 0.5px solid #6b6b6b;
+  resize: none;
+}
+
 
 .specific--number--container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  flex-direction: row;
   height: 75px;
 
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
   line-height: 30px;
   border-bottom: 0.5px solid #6b6b6b;
@@ -236,22 +267,17 @@ html{
 }
 
 .specific--quantity--toggle{
-  width: 29.47%;
+  width: 156px;
   display: flex;
   justify-content: space-between;
-}
-
-.specific--price {
-  margin: 0 10px;
 }
 
 .specific--button--container {
   display: flex;
   flex-direction: column;
-  padding: 30px 0;
+  padding: 40px 0;
 }
 
-.specific--specialRequest,
 .specific--addToOrderList {
   width: 100%;
   height: 4.9vh;
@@ -262,18 +288,6 @@ html{
   font-size: 20px;
   font-weight: 500;
   line-height: 4.9vh;
-}
-
-.specific--specialRequest{
-  margin-bottom: 23px;
-  position: relative
-}
-.specific--specialRequest img{
-  margin-bottom: 23px;
-  position: absolute;
-  right: 24px;
-  top: 50%;
-  -webkit-transform:  translateY(-50%);
 }
 
 .specific--addToOrderList{
