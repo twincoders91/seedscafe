@@ -6,8 +6,23 @@ import deliveryIcon from "../assets/art/specificartwork/deliveryicon.svg";
 import femalePfp from "../assets/art/specificartwork/femalepfp.svg";
 import pfpCircle from "../assets/art/specificartwork/pfpcircle.svg";
 
-const SpecificArtworkPage = ({ artGalleryHeader, specificArtworkDetails }) => {
+const SpecificArtworkPage = ({
+  artGalleryHeader,
+  specificArtworkDetails,
+  ArtData,
+}) => {
+  const x = ArtData.filter(
+    (d, i) => d.artName !== specificArtworkDetails.artName
+  );
+  console.log(ArtData.length);
+  console.log(x);
+
+  const y = x.filter(
+    (d, i) => d.artistName === specificArtworkDetails.artistName
+  );
   console.log(specificArtworkDetails.artName);
+  console.log(specificArtworkDetails.artistName);
+  console.log(y);
   return (
     <div className="art--main--container">
       <div className="art--top--container">
@@ -87,6 +102,14 @@ const SpecificArtworkPage = ({ artGalleryHeader, specificArtworkDetails }) => {
           <div className="specific--art--gallery--artist--description--container--bottom"></div>
         </div>
         <hr className="art--gallery--horizontal--line--2"></hr>
+        <div className="other--artworks--container">
+          <p className="other--artworks--container--title">
+            Other Artworks by {specificArtworkDetails.artistName}
+          </p>
+          {y.map((otherArtWorks) => {
+            return <div>{otherArtWorks.artName}</div>;
+          })}
+        </div>
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import Art from "./art/Art";
 import { Route, Routes } from "react-router-dom";
 import ArtGallery from "./art/ArtGallery";
 import SpecificArtworkPage from "./art/SpecificArtworkPage";
+import ArtData from "./art/artData";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -46,6 +47,7 @@ function App() {
                 <SpecificArtworkPage
                   artGalleryHeader={artGalleryHeader}
                   specificArtworkDetails={specificArtworkDetails}
+                  ArtData={ArtData}
                 />
               }
             />

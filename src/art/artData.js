@@ -24,7 +24,7 @@ const ArtData = [
     img: animalsCategory,
     category: "Animals",
     artistName: "AL",
-    artName: "Sea",
+    artName: "Sea1",
     description:
       "AL has always been interested in the aquatic life. She has always been curious about the flexibility of the creatures. ",
     price: "$212",
@@ -38,7 +38,7 @@ const ArtData = [
     img: foodCategory,
     category: "Foods",
     artistName: "AL",
-    artName: "Orange",
+    artName: "Orange2",
     description: "AL has always been interested in the Orange. ",
     price: "$25",
     physicalSize: "19 x 12 cm",
@@ -87,6 +87,20 @@ const ArtData = [
   {
     img: "https://www.linkpicture.com/q/images_41.jfif",
     category: "fishes",
+  },
+  {
+    img: animalsCategory,
+    category: "Structures",
+    artistName: "Andrea Ling",
+    artName: "Leaning Tower Of Pisa",
+    description:
+      "Andrea has always been interested in the aquatic life. She has always been curious about the flexibility of the creatures. ",
+    price: "$210",
+    physicalSize: "29.7 x 42 cm",
+    physicalMaterial: "Acrylic Paint and Ink on Mixed Media Paper",
+    artistDescription:
+      "Andrea discovered her love for art when she was 4 years old. She has worked very hard to fine tune her brushing skills and she loves adding vibrant colours to her art pieces. She’s particularly fond of the colour red and purple colour. It makes her happy!",
+    gender: "F",
   },
 ];
 export default ArtData;

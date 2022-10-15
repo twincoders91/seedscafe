@@ -269,9 +269,6 @@
   left: 10px;
 }
 
-.artistpfp--circle {
-}
-
 .artist--description--box {
   display: flex;
   flex-direction: column;
@@ -309,5 +306,14 @@
   width: 366px;
   background-color: #6b6b6b;
   height: 0.5px;
+  margin-bottom: 30px;
+}
+
+.other--artworks--container--title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  line-height: 16.41px;
+  font-size: 14px;
+  color: #474b4e;
   margin-bottom: 30px;
 }
