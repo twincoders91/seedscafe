@@ -4,7 +4,19 @@ import backArrow from "../assets/art/category/backarrow.svg";
 import shoppingCart from "../assets/art/category/shoppingcart.svg";
 
 const ArtGallery = (props) => {
-  const { artGalleryHeader, artGalleryPopulate } = props;
+  const { artGalleryHeader, artGalleryPopulate, setSpecificArtworkDetails } =
+    props;
+
+  //======================function to handle Art Card Category clicks=============================
+
+  const handleIndividualArtCard = (artData) => {
+    setSpecificArtworkDetails(artData);
+  };
+
+  //===============================================================================================
+
+  console.log(artGalleryHeader);
+  console.log(artGalleryPopulate);
   return (
     <div className="art--main--container">
       <div className="art--top--container">
@@ -21,7 +33,11 @@ const ArtGallery = (props) => {
       <div className="art--gallery--middle--container">
         {artGalleryPopulate.map((art) => {
           return (
-            <div className="individual--art--gallery--card">
+            <Link
+              to="/artdetails"
+              className="individual--art--gallery--card"
+              onClick={() => handleIndividualArtCard(art)}
+            >
               <div className="individual--art--gallery--card--image--box">
                 <img
                   src={art.img}
@@ -37,10 +53,10 @@ const ArtGallery = (props) => {
                   {art.artistName}
                 </div>
                 <div className="individual--art--gallery--card--price">
-                  {art.price}
+                  ${parseInt(art.price.substring(1)).toFixed(2)}
                 </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>

@@ -8,13 +8,21 @@ import "./menuStyles.css";
 
 const Menu = () => {
   const [dishes, setDishes] = useState(FullMenu);
+
+  //===============creates a new array with the different Menu Categories============
+
   const menuItems = [...new Set(FullMenu.map((dish) => dish.category))];
+
+  //==========filtering dishes based on Category Clicked, to show on cards===========
+
   const filterDish = (curentCategory) => {
     const newDish = FullMenu.filter((newDish) => {
       return newDish.category === curentCategory;
     });
     setDishes(newDish);
   };
+
+  //==================================================================================
   return (
     <div className="menu--main--container">
       <div className="table--top--container">

@@ -5,13 +5,16 @@ import Footer from "./Footer";
 import Art from "./art/Art";
 import { Route, Routes } from "react-router-dom";
 import ArtGallery from "./art/ArtGallery";
+import SpecificArtworkPage from "./art/SpecificArtworkPage";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
   const [artGalleryHeader, setArtGalleryHeader] = useState("");
   const [artGalleryPopulate, setArtGalleryPopulate] = useState([]);
+  const [specificArtworkDetails, setSpecificArtworkDetails] = useState([]);
 
-  console.log(artGalleryHeader);
+  console.log(specificArtworkDetails);
+
   return (
     <div>
       <div className="main--app--container">
@@ -33,6 +36,16 @@ function App() {
                 <ArtGallery
                   artGalleryHeader={artGalleryHeader}
                   artGalleryPopulate={artGalleryPopulate}
+                  setSpecificArtworkDetails={setSpecificArtworkDetails}
+                />
+              }
+            />
+            <Route
+              path="/artdetails"
+              element={
+                <SpecificArtworkPage
+                  artGalleryHeader={artGalleryHeader}
+                  specificArtworkDetails={specificArtworkDetails}
                 />
               }
             />

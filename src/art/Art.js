@@ -9,7 +9,6 @@ const Art = (props) => {
   //======================removing category duplicates from the artData set======================
   const { setArtGalleryHeader, setArtGalleryPopulate } = props;
 
-  console.log(ArtData);
   const artCategoryData = ArtData.reduce((finalArray, current) => {
     let obj = finalArray.find((item) => item.category === current.category);
     //returns the item if it matches = true
@@ -22,7 +21,7 @@ const Art = (props) => {
   }, []);
 
   //==============================================================================================
-  //======================function to handle individual Art Card clicks===========================
+  //======================function to handle Art Card Category clicks=============================
 
   const handleArtCardClick = (artData) => {
     setArtGalleryHeader(artData);
