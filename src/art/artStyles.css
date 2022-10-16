@@ -20,7 +20,7 @@
   color: #474b4e;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
-  line-height: 120%;
+  /* line-height: 120%; */
 }
 
 .art--back--arrow {
@@ -166,6 +166,7 @@
 
 .art--gallery--description--container {
   margin-top: 10%;
+  width: 100%;
 }
 
 .art--gallery--description--artistname {

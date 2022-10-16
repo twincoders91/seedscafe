@@ -11,8 +11,16 @@ const SpecificArtworkPage = ({
   specificArtworkDetails,
   ArtData,
   setSpecificArtworkDetails,
+  setCartArtDetails,
+  cartArtDetails,
+  setShoppingCartNumber,
 }) => {
   //======================================functions========================================
+  //after clicking the "otherArtWork" box, we will set the SpecificArtworkDetails to that "otherArtWork"
+  const handleOtherArtworkClick = (otherArtWork) => {
+    setSpecificArtworkDetails(otherArtWork);
+  };
+
   // x = removing current artwork from the array. leaving the remaining in the array
   const x = ArtData.filter(
     (d, i) => d.artName !== specificArtworkDetails.artName
@@ -23,10 +31,12 @@ const SpecificArtworkPage = ({
     (d, i) => d.artistName === specificArtworkDetails.artistName
   );
 
-  //after clicking the "otherArtWork" box, we will set the SpecificArtworkDetails to that "otherArtWork"
-  const handleOtherArtworkClick = (otherArtWork) => {
-    setSpecificArtworkDetails(otherArtWork);
+  const handleAddToCart = (artdata) => {
+    const itemsInCart = [...cartArtDetails, artdata];
+    setCartArtDetails(itemsInCart);
+    setShoppingCartNumber(itemsInCart.length);
   };
+
   //========================================================================================
 
   return (
@@ -77,7 +87,12 @@ const SpecificArtworkPage = ({
             <p className="delivery--details">Free local delivery or pick up</p>
           </div>
           <div className="art--gallery--addtocart--container--bottomsection">
-            <button className="art--add--to--cart--button">
+            <button
+              className="art--add--to--cart--button"
+              onClick={() => {
+                handleAddToCart(specificArtworkDetails);
+              }}
+            >
               <p className="art--add--to--cart--text">Add to Cart</p>
             </button>
             <hr className="art--gallery--horizontal--line"></hr>
@@ -119,6 +134,7 @@ const SpecificArtworkPage = ({
                   onClick={() => {
                     handleOtherArtworkClick(otherArtWorks);
                   }}
+                  key={Math.random() * 10000}
                 >
                   <div className="other--artworks--image--box">
                     <img
