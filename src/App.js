@@ -7,6 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import ArtGallery from "./art/ArtGallery";
 import SpecificArtworkPage from "./art/SpecificArtworkPage";
 import ArtData from "./art/artData";
+import NavBar from "./NavBar";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -20,6 +21,7 @@ function App() {
     <div>
       <div className="main--app--container">
         <div className="main--app--inner-container">
+          <NavBar setOpenModal={setOpenModal} />
           <Routes>
             <Route path="/" element={<Home setOpenModal={setOpenModal} />} />
             <Route

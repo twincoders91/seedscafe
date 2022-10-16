@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import NavBar from "../NavBar";
 import menulogo from "../assets/cards/menuimage.svg";
 import venuelogo from "../assets/cards/venueimage.svg";
 import artworklogo from "../assets/cards/supportartwork.svg";
@@ -12,8 +11,6 @@ const Home = ({ setOpenModal }) => {
   return (
     <>
       <div className="home--page--container">
-        <NavBar setOpenModal={setOpenModal} />
-
         <div className="home--page--main--image--container">
           <img
             src={homepageseedscafeimage}
