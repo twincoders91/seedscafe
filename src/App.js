@@ -48,6 +48,7 @@ function App() {
                   artGalleryHeader={artGalleryHeader}
                   specificArtworkDetails={specificArtworkDetails}
                   ArtData={ArtData}
+                  setSpecificArtworkDetails={setSpecificArtworkDetails}
                 />
               }
             />
