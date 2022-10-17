@@ -30,7 +30,7 @@ const Home = ({ setOpenModal }) => {
           <p className="our--services">Our Services</p>
           <div className="home--card--row--box">
             <div className="home--card--row">
-              <div className="individual--card--border">
+              <Link to="/menucategory" className="individual--card--border">
                 <div className="text--logo--box">
                   <div className="individual--logo--circle">
                     <img
@@ -43,7 +43,7 @@ const Home = ({ setOpenModal }) => {
                     <p className="individual--text">Menu</p>
                   </div>
                 </div>
-              </div>
+              </Link>
               <div className="individual--card--border">
                 <div className="text--logo--box">
                   <div className="individual--logo--circle">

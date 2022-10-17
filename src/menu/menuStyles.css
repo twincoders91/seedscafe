@@ -1,15 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-html{
+html {
   font-size: 16px;
 }
 
+/* ===========================================Menu Page==================================== */
+
 .menu--main--container,
 .specific--main--container {
-  height: 100vh;  
-  padding: 0 5.8%; /* translates to 24px of 414px*/
-  background-color: #F5F5F5
-
+  /* height: 100vh; */
+  min-height: 100vh;
+  /* padding: 0 5.8%; translates to 24px of 414px */
+  background-color: white;
 }
 
 .menu--top--container {
@@ -27,7 +29,7 @@ html{
   position: relative;
   justify-content: space-between;
   align-items: center;
-  height: 15.4%; /* 138px of 896px
+  height: 138px; /* 138px of 896px
   /* padding: 0px 25px 0px 25px; */
   /* border: 1px solid black; */
 }
@@ -67,7 +69,7 @@ html{
   text-align: center;
   height: 186px;
   width: 175px;
-  margin: 10% 0 15% 7%;
+  margin: 10% 15px 15% 7%;
   /* margin-left: 7%;
   margin-bottom: 15%; */
   border-radius: 9px;
@@ -147,21 +149,21 @@ html{
 }
 
 .card--name {
-  font-size: 20px;
-  font-weight: 300;
+  font-family: "Roboto", san-serif;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .card--arrow {
   position: absolute;
-  right: 27%;
+  right: 24%;
 }
 
 .card--price {
+  font-family: "Roboto", san-serif;
   font-size: 14px;
-  font-weight: 200;
+  font-weight: 300;
 }
-
-
 
 /* ===========================================Specific Item Page==================================== */
 
@@ -170,26 +172,26 @@ html{
   flex-direction: column;
   height: 560px;
   padding-top: 9px;
-  
+
   font-family: "Roboto", sans-serif;
-  color:#474b4e
+  color: #474b4e;
 }
 
 .specific--image--container {
   height: 19.75vh;
   width: 19.75vh;
   overflow: hidden;
-  position: relative
+  position: relative;
 }
-.specific--image--container img{
+.specific--image--container img {
   height: 100%;
-  position:absolute; /* this 4 lines of css is to center image in div container*/
+  position: absolute; /* this 4 lines of css is to center image in div container*/
   left: 50%;
   top: 50%;
-  -webkit-transform:  translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
 }
 
-.specific--text--container{
+.specific--text--container {
   height: 127px;
   display: flex;
   flex-direction: column;
@@ -197,7 +199,7 @@ html{
   border-bottom: 0.5px solid #6b6b6b;
 }
 
-.specific--text--container h3{
+.specific--text--container h3 {
   font-size: 1.25rem; /* rem is 16px, can be changed in html */
   font-style: normal;
   font-weight: 500;
@@ -206,7 +208,7 @@ html{
   padding-bottom: 6px;
 }
 
-.specific--text--container p{
+.specific--text--container p {
   width: 80%;
   font-size: 0.875rem; /* 14px */
   font-weight: 400;
@@ -224,18 +226,17 @@ html{
   font-weight: 500;
   line-height: 30px;
   border-bottom: 0.5px solid #6b6b6b;
-
 }
 
-.specific--quantity--toggle button{
+.specific--quantity--toggle button {
   height: 30px;
   width: 30px;
-  border-radius:50%;
+  border-radius: 50%;
   background-color: #ece7dc;
   font-size: 20px;
 }
 
-.specific--quantity--toggle{
+.specific--quantity--toggle {
   width: 29.47%;
   display: flex;
   justify-content: space-between;
@@ -264,20 +265,111 @@ html{
   line-height: 4.9vh;
 }
 
-.specific--specialRequest{
+.specific--specialRequest {
   margin-bottom: 23px;
-  position: relative
+  position: relative;
 }
-.specific--specialRequest img{
+.specific--specialRequest img {
   margin-bottom: 23px;
   position: absolute;
   right: 24px;
   top: 50%;
-  -webkit-transform:  translateY(-50%);
+  -webkit-transform: translateY(-50%);
 }
 
-.specific--addToOrderList{
-  border-color: #4C6029;
-  background-color: #4C6029;
+.specific--addToOrderList {
+  border-color: #4c6029;
+  background-color: #4c6029;
   color: #fffbf0;
+}
+
+/* ===========================================Order Submission Page==================================== */
+
+.order--main--container {
+  padding-top: 48px;
+  background-color: white;
+  height: 100%;
+}
+.order--backarrow {
+  position: absolute;
+  padding-top: 103px;
+}
+
+.order--middle--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.qrcode--container {
+  height: 170px;
+  width: 170px;
+  background-color: #ece7dc;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid black;
+}
+
+.qrcode {
+  position: relative;
+  left: 27%;
+  top: 27%;
+}
+
+.order--submission--container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.order--submission--title {
+  font-size: 24px;
+  text-align: center;
+  color: #474b4e;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.table--number--subtitle {
+  font-size: 20px;
+  text-align: center;
+  color: #4c6029;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.thanks--subtitle {
+  font-size: 14px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 40px;
+}
+
+.back--button {
+  padding: 2px 10px;
+  width: 366px;
+  height: 48px;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 120%;
+  border-radius: 5px;
+  background-color: #4c6029;
+}
+
+.order--slider--container {
+  border-top: 1px #6b6b6b solid;
+  padding-top: 30px;
+}
+
+.slider--title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
 }
