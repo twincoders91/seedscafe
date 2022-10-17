@@ -10,11 +10,10 @@ import SpecificArtworkPage from "./art/SpecificArtworkPage";
 import OrderSubmission from "./menu/OrderSubmission";
 import MenuCategory from "./menu/MenuCategory";
 import Menu from "./menu/Menu";
-=======
 import ArtData from "./art/artData";
 import NavBar from "./NavBar";
 import CartPage from "./cart/CartPage";
-
+import DineInModal from "./menu/DineInModal";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -89,6 +88,7 @@ function App() {
             <Route path="/menucategory" element={<MenuCategory />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/ordersubmission" element={<OrderSubmission />} />
+            <Route path="/modal" element={<DineInModal />} />
           </Routes>
         </div>
         <Footer />
