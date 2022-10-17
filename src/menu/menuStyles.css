@@ -8,10 +8,14 @@ html {
 
 .menu--main--container,
 .specific--main--container {
+
   /* height: 100vh; */
   min-height: 100vh;
   /* padding: 0 5.8%; translates to 24px of 414px */
   background-color: white;
+  height: 100vh;  
+  padding: 0 5.8%; /* translates to 24px of 414px*/
+  background-color: #FFFFFF;
 }
 
 .menu--top--container {
@@ -166,15 +170,22 @@ html {
 }
 
 /* ===========================================Specific Item Page==================================== */
-
 .specific--list--container {
   display: flex;
   flex-direction: column;
+
   height: 560px;
   padding-top: 9px;
 
   font-family: "Roboto", sans-serif;
   color: #474b4e;
+=======
+  padding-top: 1vh;
+  
+  font-family: "Roboto", sans-serif;
+  color:#474b4e;
+  box-sizing: border-box;
+
 }
 
 .specific--image--container {
@@ -185,44 +196,89 @@ html {
 }
 .specific--image--container img {
   height: 100%;
+
   position: absolute; /* this 4 lines of css is to center image in div container*/
+
+
   left: 50%;
   top: 50%;
   -webkit-transform: translateY(-50%) translateX(-50%);
 }
 
-.specific--text--container {
-  height: 127px;
+
+
+.specific--text--container{
+  min-height: 8.26vh;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-bottom: 0.5px solid #6b6b6b;
+  padding: 3.35vh 0 2.23vh 0;
 }
 
+.specific--name--price {
+  display: flex;
+  justify-content: space-between;
+}
+
+
 .specific--text--container h3 {
+=======
+.specific--name--price h3{
+
   font-size: 1.25rem; /* rem is 16px, can be changed in html */
   font-style: normal;
   font-weight: 500;
   line-height: 1.465rem;
   height: 1.465rem;
-  padding-bottom: 6px;
+  padding-bottom: 1.5vh;
 }
 
-.specific--text--container p {
-  width: 80%;
+
+
+.specific--text--container p{
+  width: 85%;
   font-size: 0.875rem; /* 14px */
   font-weight: 400;
-  line-height: 1.025rem;
+  line-height: 1.375rem;
 }
 
-.specific--number--container {
+.specific--special--request {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  height: 75px;
+  flex-direction: column;
+  height: 14.5vh;
+  width: 100%;
+  padding: 2.25vh 0;
+  border-bottom: 0.5px solid #6b6b6b;
+}
 
-  font-size: 20px;
+.specific--special--request label{
+  display: block;
+  margin-bottom: 14px;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+.specific--special--request textarea{
+  height: 11.16vh;
+  width: 93.2%;
+  padding: 3.4%;
+  font-family: "Roboto";
+  font-size: 0.875rem;
+  background-color: #FFFFFF;
+  border: 0.5px solid #6b6b6b;
+  resize: none;
+}
+
+
+.specific--number--container {
+  height: 8.37vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+  font-size: 1.5rem;
   font-weight: 500;
   line-height: 30px;
   border-bottom: 0.5px solid #6b6b6b;
@@ -233,26 +289,22 @@ html {
   width: 30px;
   border-radius: 50%;
   background-color: #ece7dc;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
-.specific--quantity--toggle {
-  width: 29.47%;
+
+.specific--quantity--toggle{
+  width: 37.7vw;
   display: flex;
   justify-content: space-between;
-}
-
-.specific--price {
-  margin: 0 10px;
 }
 
 .specific--button--container {
   display: flex;
   flex-direction: column;
-  padding: 30px 0;
+  padding: 4.45vh 0;
 }
 
-.specific--specialRequest,
 .specific--addToOrderList {
   width: 100%;
   height: 4.9vh;
@@ -260,10 +312,11 @@ html {
   border: 1px solid black;
   border-radius: 10px;
 
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
   line-height: 4.9vh;
 }
+
 
 .specific--specialRequest {
   margin-bottom: 23px;
@@ -280,6 +333,11 @@ html {
 .specific--addToOrderList {
   border-color: #4c6029;
   background-color: #4c6029;
+
+.specific--addToOrderList{
+  border-color: #4C6029;
+  background-color: #4C6029;
+
   color: #fffbf0;
 }
 

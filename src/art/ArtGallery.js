@@ -15,8 +15,6 @@ const ArtGallery = (props) => {
 
   //===============================================================================================
 
-  console.log(artGalleryHeader);
-  console.log(artGalleryPopulate);
   return (
     <div className="art--main--container">
       <div className="art--top--container">
@@ -37,6 +35,7 @@ const ArtGallery = (props) => {
               to="/artdetails"
               className="individual--art--gallery--card"
               onClick={() => handleIndividualArtCard(art)}
+              key={Math.random() * 10000}
             >
               <div className="individual--art--gallery--card--image--box">
                 <img
@@ -53,7 +52,7 @@ const ArtGallery = (props) => {
                   {art.artistName}
                 </div>
                 <div className="individual--art--gallery--card--price">
-                  ${parseInt(art.price.substring(1)).toFixed(2)}
+                  ${art.price.toFixed(2)}
                 </div>
               </div>
             </Link>

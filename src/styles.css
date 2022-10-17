@@ -20,8 +20,8 @@
 }
 
 .main--app--inner-container {
-  margin-left: 7%;
-  margin-right: 7%;
+  margin-left: 24px;
+  margin-right: 24px;
 }
 
 /* =========================================================================================*/
@@ -58,8 +58,6 @@
     position: absolute;
     top: 40%;
     left: 0%;
-    transform: scale(1.4);
-    color: #474b4e;
   }
 
   .nav--hamburger:hover {
@@ -67,17 +65,34 @@
     filter: invert(1);
   }
 
-  .nav--user--icon {
+  .nav--shopping--cart--icon {
     position: absolute;
     top: 40%;
     right: 0%;
-    transform: scale(1.1);
-    color: #474b4e;
   }
 
-  .nav--user--icon:hover {
+  .nav--shopping--cart--icon:hover {
     cursor: pointer;
     filter: invert(1);
+  }
+
+  .nav--shopping--cart--circle {
+    position: absolute;
+    top: 25%;
+    right: -2%;
+    transform: scale(0.9);
+  }
+
+  .nav--shopping--cart--number {
+    position: absolute;
+    top: 28%;
+    right: -0.4%;
+    transform: scale(0.9);
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.41px;
+    color: #ffffff;
   }
 
   /* ================================Home===================================*/

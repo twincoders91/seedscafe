@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./artStyles.css";
 
 const ArtCard = (props) => {
+  //props are the objects containing details of EACH ART CARD(category)
   const {
     artName,
     artistName,

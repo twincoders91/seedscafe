@@ -56,6 +56,7 @@ const Art = (props) => {
               material={data.physicalSize}
               artistName={data.artistName}
               handleArtCardClick={handleArtCardClick}
+              key={Math.random() * 10000}
             />
           );
         })}
