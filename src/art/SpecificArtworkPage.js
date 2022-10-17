@@ -36,7 +36,7 @@ const SpecificArtworkPage = ({
     setCartArtDetails(itemsInCart);
     setShoppingCartNumber(itemsInCart.length);
   };
-
+  console.log(cartArtDetails);
   //========================================================================================
 
   return (

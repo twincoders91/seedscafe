@@ -10,15 +10,16 @@ const NavBar = ({
   shoppingCartNumber,
   cartArtDetails,
   setTotalAmount,
+  setCheckOut,
 }) => {
   const handleGoToCart = () => {
     const sumArtTotal = cartArtDetails
       .map((item) => item.price)
       .reduce((prev, curr) => prev + curr, 0);
     setTotalAmount(sumArtTotal.toFixed(2));
+    setCheckOut(false);
   };
 
-  console.log(shoppingCartNumber);
   return (
     <div className="Navbar">
       <div className="nav--background">

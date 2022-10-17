@@ -9,6 +9,7 @@ import SpecificArtworkPage from "./art/SpecificArtworkPage";
 import ArtData from "./art/artData";
 import NavBar from "./NavBar";
 import CartPage from "./cart/CartPage";
+import ShippingPage from "./cart/ShippingPage";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -18,10 +19,9 @@ function App() {
   const [cartArtDetails, setCartArtDetails] = useState([]);
   const [shoppingCartNumber, setShoppingCartNumber] = useState("none");
   const [totalAmount, setTotalAmount] = useState("");
+  const [checkOut, setCheckOut] = useState(false);
 
-  console.log(totalAmount);
   console.log(cartArtDetails);
-
   return (
     <div>
       <div className="main--app--container">
@@ -31,8 +31,8 @@ function App() {
             shoppingCartNumber={shoppingCartNumber}
             cartArtDetails={cartArtDetails}
             setTotalAmount={setTotalAmount}
+            setCheckOut={setCheckOut}
           />
-
           <Routes>
             <Route path="/" element={<Home setOpenModal={setOpenModal} />} />
             <Route
@@ -77,6 +77,8 @@ function App() {
                   setShoppingCartNumber={setShoppingCartNumber}
                   totalAmount={totalAmount}
                   setTotalAmount={setTotalAmount}
+                  setCheckOut={setCheckOut}
+                  checkOut={checkOut}
                 />
               }
             />
