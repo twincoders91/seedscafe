@@ -10,7 +10,8 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  height: 15vh;
+  margin-top: 36px;
+  margin-bottom: 35px;
 }
 
 .art--title {
@@ -236,6 +237,7 @@
   border-radius: 10px;
   background-color: #4c6029;
   margin-bottom: 32px;
+  cursor: pointer;
 }
 
 .art--add--to--cart--text {
@@ -326,7 +328,12 @@
   justify-content: space-around;
 }
 
+.other--artworks--individual--container {
+  cursor: pointer;
+}
+
 .other--artworks--image--box {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;

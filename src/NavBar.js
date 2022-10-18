@@ -17,7 +17,7 @@ const NavBar = ({
       .map((item) => item.price)
       .reduce((prev, curr) => prev + curr, 0);
     setTotalAmount(sumArtTotal.toFixed(2));
-    setCheckOut(false);
+    setCheckOut(true);
   };
 
   return (

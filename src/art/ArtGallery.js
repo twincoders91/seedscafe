@@ -20,13 +20,13 @@ const ArtGallery = (props) => {
       <div className="art--top--container">
         <div className="art--title">{artGalleryHeader.category}</div>
         <div className="art--back--arrow">
-          <Link to="/art">
+          {/* <Link to="/art">
             <img src={backArrow} alt="images"></img>
-          </Link>
+          </Link> */}
         </div>
-        <div className="art--shoppingcart">
+        {/* <div className="art--shoppingcart">
           <img src={shoppingCart} alt="images"></img>
-        </div>
+        </div> */}
       </div>
       <div className="art--gallery--middle--container">
         {artGalleryPopulate.map((art) => {

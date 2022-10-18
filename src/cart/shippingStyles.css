@@ -111,3 +111,16 @@
   font-family: "Roboto", sans-serif;
   font-weight: 600;
 }
+
+.checkout--button {
+  width: 366px;
+  height: 48px;
+  background-color: #4c6029;
+  color: #fffbf0;
+  border-radius: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 62px;
+  line-height: 23.44px;
+}

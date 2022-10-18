@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import topRowArrows from "../assets/cart/toprow/toprowarrows.svg";
 import "./shippingStyles.css";
 
-const ShippingPage = ({ cartArtDetails, donation }) => {
+const ShippingPage = ({
+  cartArtDetails,
+  donation,
+  setMakePayment,
+  totalCartValue,
+}) => {
   const [nameInput, setNameInput] = useState("");
   const [addressInput, setAddressInput] = useState("");
   const [apartmentInput, setApartmentInput] = useState("");
@@ -12,6 +17,10 @@ const ShippingPage = ({ cartArtDetails, donation }) => {
 
   console.log(cartArtDetails);
   console.log(donation);
+
+  const handleContinueToPayment = () => {
+    setMakePayment(true);
+  };
 
   return (
     <div className="shipping--main--container">
@@ -37,7 +46,7 @@ const ShippingPage = ({ cartArtDetails, donation }) => {
       <div>
         <form className="shippingForm">
           <label className="shipping--form--labels">
-            {nameInput == "" ? (
+            {nameInput === "" ? (
               <></>
             ) : (
               <p className="shipping--form--labels--filled--header">Name</p>
@@ -47,7 +56,7 @@ const ShippingPage = ({ cartArtDetails, donation }) => {
               name="name"
               placeholder="Name"
               className={
-                nameInput == ""
+                nameInput === ""
                   ? "shipping--form--text"
                   : "shipping--form--text--filled"
               }
@@ -57,7 +66,7 @@ const ShippingPage = ({ cartArtDetails, donation }) => {
             />
           </label>
           <label className="shipping--form--labels">
-            {addressInput == "" ? (
+            {addressInput === "" ? (
               <></>
             ) : (
               <p className="shipping--form--labels--filled--header">Address</p>
@@ -67,7 +76,7 @@ const ShippingPage = ({ cartArtDetails, donation }) => {
               name="name"
               placeholder="Address"
               className={
-                addressInput == ""
+                addressInput === ""
                   ? "shipping--form--text"
                   : "shipping--form--text--filled"
               }
@@ -77,7 +86,7 @@ const ShippingPage = ({ cartArtDetails, donation }) => {
             />
           </label>
           <label className="shipping--form--labels">
-            {apartmentInput == "" ? (
+            {apartmentInput === "" ? (
               <></>
             ) : (
               <p className="shipping--form--labels--filled--header">
@@ -89,7 +98,7 @@ const ShippingPage = ({ cartArtDetails, donation }) => {
               name="name"
               placeholder="Apartment, Suite, Etc (Optional)"
               className={
-                apartmentInput == ""
+                apartmentInput === ""
                   ? "shipping--form--text"
                   : "shipping--form--text--filled"
               }
@@ -99,7 +108,7 @@ const ShippingPage = ({ cartArtDetails, donation }) => {
             />
           </label>
           <label className="shipping--form--labels">
-            {postalCodeInput == "" ? (
+            {postalCodeInput === "" ? (
               <></>
             ) : (
               <p className="shipping--form--labels--filled--header">
@@ -111,7 +120,7 @@ const ShippingPage = ({ cartArtDetails, donation }) => {
               name="name"
               placeholder="Postal Code"
               className={
-                postalCodeInput == ""
+                postalCodeInput === ""
                   ? "shipping--form--text"
                   : "shipping--form--text--filled"
               }
@@ -121,7 +130,7 @@ const ShippingPage = ({ cartArtDetails, donation }) => {
             />
           </label>
           <label className="shipping--form--labels">
-            {phoneInput == "" ? (
+            {phoneInput === "" ? (
               <></>
             ) : (
               <p className="shipping--form--labels--filled--header">Phone</p>
@@ -131,7 +140,7 @@ const ShippingPage = ({ cartArtDetails, donation }) => {
               name="name"
               placeholder="Phone"
               className={
-                phoneInput == ""
+                phoneInput === ""
                   ? "shipping--form--text"
                   : "shipping--form--text--filled"
               }
@@ -141,7 +150,7 @@ const ShippingPage = ({ cartArtDetails, donation }) => {
             />
           </label>
           <label className="shipping--form--labels">
-            {emailInput == "" ? (
+            {emailInput === "" ? (
               <></>
             ) : (
               <p className="shipping--form--labels--filled--header">Email</p>
@@ -151,7 +160,7 @@ const ShippingPage = ({ cartArtDetails, donation }) => {
               name="name"
               placeholder="Email"
               className={
-                emailInput == ""
+                emailInput === ""
                   ? "shipping--form--text"
                   : "shipping--form--text--filled"
               }
@@ -169,7 +178,7 @@ const ShippingPage = ({ cartArtDetails, donation }) => {
           {cartArtDetails ? (
             cartArtDetails.map((cartItems) => {
               return (
-                <div className="order--summary--row">
+                <div className="order--summary--row" key={Math.random() * 1000}>
                   <p className="order--summary--description">
                     {cartItems.artName} X1
                   </p>
@@ -195,20 +204,12 @@ const ShippingPage = ({ cartArtDetails, donation }) => {
         <div className="shipping--total--cost--row">
           <p className="shipping--total--cost">Total</p>
           <p className="shipping--total--cost">
-            $
-            {cartArtDetails ? (
-              (
-                Number(
-                  cartArtDetails
-                    .map((item) => item.price)
-                    .reduce((prev, curr) => prev + curr, 0)
-                ) + Number(donation)
-              ).toFixed(2)
-            ) : (
-              <></>
-            )}
+            ${cartArtDetails ? totalCartValue : <></>}
           </p>
         </div>
+        <button className="checkout--button" onClick={handleContinueToPayment}>
+          Continue to Payment
+        </button>
       </div>
     </div>
   );

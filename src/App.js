@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ModalNavBar from "./components/ModalNavBar";
 import Home from "./home/Home";
 import Footer from "./Footer";
 import Art from "./art/Art";
@@ -9,7 +8,7 @@ import SpecificArtworkPage from "./art/SpecificArtworkPage";
 import ArtData from "./art/artData";
 import NavBar from "./NavBar";
 import CartPage from "./cart/CartPage";
-import ShippingPage from "./cart/ShippingPage";
+import Modal from "./components/Modal";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -20,11 +19,12 @@ function App() {
   const [shoppingCartNumber, setShoppingCartNumber] = useState("none");
   const [totalAmount, setTotalAmount] = useState("");
   const [checkOut, setCheckOut] = useState(false);
+  const [makePayment, setMakePayment] = useState(false);
 
-  console.log(cartArtDetails);
   return (
     <div>
       <div className="main--app--container">
+        {openModal ? <Modal setOpenModal={setOpenModal} /> : <></>}
         <div className="main--app--inner-container">
           <NavBar
             setOpenModal={setOpenModal}
@@ -79,6 +79,8 @@ function App() {
                   setTotalAmount={setTotalAmount}
                   setCheckOut={setCheckOut}
                   checkOut={checkOut}
+                  setMakePayment={setMakePayment}
+                  makePayment={makePayment}
                 />
               }
             />

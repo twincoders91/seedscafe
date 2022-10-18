@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./cartStyles.css";
 import topRowArrows from "../assets/cart/toprow/toprowarrows.svg";
 import ShippingPage from "./ShippingPage";
+import PaymentPage from "./PaymentPage";
 
 const CartPage = ({
   cartArtDetails,
@@ -11,6 +12,8 @@ const CartPage = ({
   setTotalAmount,
   checkOut,
   setCheckOut,
+  setMakePayment,
+  makePayment,
 }) => {
   //=====================================States==========================================
   const [donation, setDonation] = useState(0);
@@ -71,30 +74,30 @@ const CartPage = ({
     }
 
     if (
+      !donationButton1Clicked &&
+      !donationButton2Clicked &&
+      !donationButton3Clicked &&
+      !donationButton4Clicked
+    ) {
+      setDonation(0);
+      console.log("all false");
+    }
+    if (
       !donationButton1Clicked ||
       !donationButton2Clicked ||
       !donationButton3Clicked ||
       !donationButton4Clicked
     ) {
       setDonation(donationValue);
-    } else if (
-      !(
-        donationButton1Clicked &&
-        donationButton2Clicked &&
-        donationButton3Clicked &&
-        donationButton4Clicked
-      )
-    ) {
-      setDonation(0);
-      console.log("all false");
     }
   };
-  // console.log(!donationButton1Clicked);
-  // console.log(donationButton2Clicked);
-  // console.log(donationButton3Clicked);
-  // console.log(donationButton4Clicked);
-  // console.log(donation);
-  console.log(inputValue);
+  console.log(donationButton1Clicked);
+  console.log(donationButton2Clicked);
+  console.log(donationButton3Clicked);
+  console.log(donationButton4Clicked);
+  console.log(donation);
+  // console.log(inputValue);
+  // console.log(checkOut);
 
   const handleSubmitButton = () => {
     setDonation(inputValue);
@@ -102,16 +105,34 @@ const CartPage = ({
 
   //=========================Proceeding to checkout===========================
   const handleCheckOutClick = () => {
-    setCheckOut(true);
+    setCheckOut(false);
     setCartArtDetails(cartArtDetails);
     setDonation(donation);
   };
+  //=====================Allowing Press Enter Key for Custom Donation===================================
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleSubmitButton();
+    }
+  };
+
+  //=====================Rounding up total cart value to nearest $50==================================
+
+  const handleRoundUp = () => {
+    setTotalCartValue(Math.ceil(totalCartValue / 50) * 50);
+    setDonationButton1Clicked(false);
+    setDonationButton2Clicked(false);
+    setDonationButton3Clicked(false);
+    setDonationButton4Clicked(false);
+  };
+
   //==================================================================================
 
   return (
     <>
       <div className="cart--main--container">
-        {!checkOut ? (
+        {checkOut ? (
           <>
             <div className="cart--page--top--row--banner">
               <div className="cart--shipping--payment--buttons--box">
@@ -256,18 +277,20 @@ const CartPage = ({
                     </div>
                     <input
                       type="number"
+                      min="0"
                       placeholder="Other amount"
                       className="donation--input--field"
                       onChange={(e) => {
-                        setInputValue(e.target.value);
+                        setInputValue(Math.abs(e.target.value));
                       }}
+                      onKeyPress={handleKeyPress}
                     ></input>
                   </div>
                   <button
                     className="submit--donation--button"
-                    onClick={handleSubmitButton}
+                    onClick={handleRoundUp}
                   >
-                    Enter preferred value
+                    {`Round up to $${Math.ceil(totalCartValue / 50) * 50}.00`}
                   </button>
                 </div>
               </div>
@@ -288,8 +311,15 @@ const CartPage = ({
               </button>
             </div>
           </>
+        ) : !makePayment ? (
+          <ShippingPage
+            cartArtDetails={cartArtDetails}
+            donation={donation}
+            setMakePayment={setMakePayment}
+            totalCartValue={totalCartValue}
+          />
         ) : (
-          <ShippingPage cartArtDetails={cartArtDetails} donation={donation} />
+          <PaymentPage cartArtDetails={cartArtDetails} donation={donation} />
         )}
       </div>
     </>
