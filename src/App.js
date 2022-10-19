@@ -14,6 +14,7 @@ import ArtData from "./art/artData";
 import NavBar from "./NavBar";
 import CartPage from "./cart/CartPage";
 import DineInModal from "./menu/DineInModal";
+import SpecificItem from "./menu/SpecificItem";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -31,6 +32,7 @@ function App() {
     <div>
       <div className="main--app--container">
         <div className="main--app--inner-container">
+          {/* hide the navbar when menu is opened*/}
           <NavBar
             setOpenModal={setOpenModal}
             shoppingCartNumber={shoppingCartNumber}
@@ -87,6 +89,7 @@ function App() {
             />
             <Route path="/menucategory" element={<MenuCategory />} />
             <Route path="/menu" element={<Menu />} />
+            <Route path="/specificitem" element={<SpecificItem />} />
             <Route path="/ordersubmission" element={<OrderSubmission />} />
             <Route path="/modal" element={<DineInModal />} />
           </Routes>

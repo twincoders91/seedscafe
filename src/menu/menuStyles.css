@@ -13,7 +13,7 @@ html {
   /* padding: 0 5.8%; translates to 24px of 414px */
   background-color: white;
   height: 100vh;
-  padding: 0 5.8%; /* translates to 24px of 414px*/
+  /* padding: 0 5.8%; translates to 24px of 414px */
   background-color: #ffffff;
 }
 
@@ -159,7 +159,7 @@ html {
 
 .card--arrow {
   position: absolute;
-  right: 24%;
+  right: 20%;
 }
 
 .card--price {
