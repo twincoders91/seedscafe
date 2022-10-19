@@ -1,7 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import backArrow from "../assets/art/category/backarrow.svg";
-import shoppingCart from "../assets/art/category/shoppingcart.svg";
 import deliveryIcon from "../assets/art/specificartwork/deliveryicon.svg";
 import femalePfp from "../assets/art/specificartwork/femalepfp.svg";
 import pfpCircle from "../assets/art/specificartwork/pfpcircle.svg";
@@ -36,7 +33,7 @@ const SpecificArtworkPage = ({
     setCartArtDetails(itemsInCart);
     setShoppingCartNumber(itemsInCart.length);
   };
-
+  console.log(cartArtDetails);
   //========================================================================================
 
   return (
@@ -44,12 +41,12 @@ const SpecificArtworkPage = ({
       <div className="art--top--container">
         <div className="art--title">{artGalleryHeader.category}</div>
         <div className="art--back--arrow">
-          <Link to="/artgallery">
+          {/* <Link to="/artgallery">
             <img src={backArrow} alt="images"></img>
-          </Link>
+          </Link> */}
         </div>
         <div className="art--shoppingcart">
-          <img src={shoppingCart} alt="images"></img>
+          {/* <img src={shoppingCart} alt="images"></img> */}
         </div>
       </div>
       <div className="specific--art--gallery--middle--container">
@@ -135,6 +132,7 @@ const SpecificArtworkPage = ({
                     handleOtherArtworkClick(otherArtWorks);
                   }}
                   key={Math.random() * 10000}
+                  className="other--artworks--individual--container"
                 >
                   <div className="other--artworks--image--box">
                     <img

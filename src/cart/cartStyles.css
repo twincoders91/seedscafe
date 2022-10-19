@@ -20,7 +20,7 @@
   font-weight: 400;
 }
 
-.cart--shipping--payment--buttons-clicked {
+.cart--shipping--payment--buttons--clicked {
   font-size: 16px;
   line-height: 18.75px;
   color: #474b4e;
@@ -196,6 +196,21 @@
   font-size: 12px;
   line-height: 14.06%;
   color: #474b4e;
+  cursor: pointer;
+}
+
+.donation--buttons--4--clicked {
+  background-color: rgb(104, 104, 104);
+  width: 80px;
+  height: 34px;
+  border: 1px solid #6b6b6b;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.06%;
+  color: #ffffff;
+  cursor: pointer;
 }
 
 .donation--buttons--botton--row--box {
@@ -232,9 +247,10 @@
   line-height: 14.06%;
   color: #8c8b8b;
   margin-left: 11px;
+  outline-width: 0;
 }
 
-.donation--roundup--button {
+.submit--donation--button {
   width: 176px;
   height: 34px;
   border: 1px solid #6b6b6b;
@@ -245,6 +261,7 @@
   line-height: 14.06%;
   color: #474b4e;
   background-color: white;
+  cursor: pointer;
 }
 
 .cart--page--horizontal--line2 {
@@ -269,6 +286,7 @@
 }
 
 .checkout--button {
+  cursor: pointer;
   width: 366px;
   height: 48px;
   background-color: #4c6029;
@@ -278,4 +296,5 @@
   font-weight: 600;
   font-size: 20px;
   margin-bottom: 46px;
+  line-height: 23.44px;
 }

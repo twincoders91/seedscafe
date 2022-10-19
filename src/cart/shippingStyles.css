@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* ========================================shipping page=========================================== */
+.shippingForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 56px;
+  height: 411px;
+}
+
+.shipping--form--labels {
+  width: 366px;
+  height: 51px;
+  margin-bottom: 21px;
+  border: 1px solid #acacac;
+}
+
+.shipping--form--text {
+  margin-top: 15px;
+  margin-left: 15px;
+  font-size: 14px;
+  line-height: 16.41px;
+  color: #474b4e;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  width: 90%;
+  outline-width: 0;
+}
+
+.shipping--form--labels--filled--header {
+  margin-top: 8px;
+  margin-left: 15px;
+  font-size: 10px;
+  line-height: 11.72px;
+  color: #6c6d6d;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.shipping--form--text--filled {
+  margin-left: 15px;
+  font-size: 14px;
+  line-height: 16.41px;
+  color: #474b4e;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  width: 90%;
+  outline-width: 0;
+}
+
+.shipping--page--horizontal--line1 {
+  width: 366px;
+  background-color: #6b6b6b;
+  height: 0.5px;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.order--summary--header {
+  margin-bottom: 18px;
+  font-size: 14px;
+  line-height: 16.41px;
+  color: #474b4e;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+.order--summary--description--box {
+  font-size: 14px;
+  line-height: 16.41px;
+  color: #474b4e;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.order--summary--row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.order--summary--description {
+  font-size: 14px;
+  line-height: 16.41px;
+  color: #474b4e;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.shipping--page--horizontal--line2 {
+  width: 366px;
+  background-color: #6b6b6b;
+  height: 0.5px;
+  margin-bottom: 13px;
+}
+
+.shipping--total--cost--row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 61px;
+}
+
+.shipping--total--cost {
+  font-size: 20px;
+  line-height: 23.44px;
+  color: #474b4e;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
+
+.checkout--button {
+  width: 366px;
+  height: 48px;
+  background-color: #4c6029;
+  color: #fffbf0;
+  border-radius: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 62px;
+  line-height: 23.44px;
+}

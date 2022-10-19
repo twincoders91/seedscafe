@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ModalNavBar from "./components/ModalNavBar";
 import Home from "./home/Home";
 import Footer from "./Footer";
 import Art from "./art/Art";
@@ -15,6 +14,8 @@ import NavBar from "./NavBar";
 import CartPage from "./cart/CartPage";
 import DineInModal from "./menu/DineInModal";
 import SpecificItem from "./menu/SpecificItem";
+import Modal from "./components/Modal";
+
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -24,13 +25,13 @@ function App() {
   const [cartArtDetails, setCartArtDetails] = useState([]);
   const [shoppingCartNumber, setShoppingCartNumber] = useState("none");
   const [totalAmount, setTotalAmount] = useState("");
-
-  console.log(totalAmount);
-  console.log(cartArtDetails);
+  const [checkOut, setCheckOut] = useState(false);
+  const [makePayment, setMakePayment] = useState(false);
 
   return (
     <div>
       <div className="main--app--container">
+        {openModal ? <Modal setOpenModal={setOpenModal} /> : <></>}
         <div className="main--app--inner-container">
           {/* hide the navbar when menu is opened*/}
           <NavBar
@@ -38,8 +39,8 @@ function App() {
             shoppingCartNumber={shoppingCartNumber}
             cartArtDetails={cartArtDetails}
             setTotalAmount={setTotalAmount}
+            setCheckOut={setCheckOut}
           />
-
           <Routes>
             <Route path="/" element={<Home setOpenModal={setOpenModal} />} />
             <Route
@@ -84,6 +85,10 @@ function App() {
                   setShoppingCartNumber={setShoppingCartNumber}
                   totalAmount={totalAmount}
                   setTotalAmount={setTotalAmount}
+                  setCheckOut={setCheckOut}
+                  checkOut={checkOut}
+                  setMakePayment={setMakePayment}
+                  makePayment={makePayment}
                 />
               }
             />
