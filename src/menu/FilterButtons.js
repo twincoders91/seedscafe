@@ -2,7 +2,7 @@ import React from "react";
 import FullMenu from "./fullMenu";
 import "./menuStyles.css";
 
-const FilterButtons = ({ filterDish, setDishes, menuItems }) => {
+const FilterButtons = ({ filterDish, menuItems }) => {
   return (
     <>
       {menuItems.map((dish, id) => {
