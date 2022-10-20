@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+html {
+  font-size: 16px;
+}
+
+/* ===========================================Confirmation Page==================================== */
+.order--main--container {
+  padding-top: 48px;
+  background-color: white;
+  height: 100%;
+}
+.order--backarrow {
+  position: absolute;
+  padding-top: 103px;
+}
+.order--middle--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.qrcode--container {
+  height: 170px;
+  width: 170px;
+  background-color: #ece7dc;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid black;
+}
+.qrcode {
+  position: relative;
+  left: 27%;
+  top: 27%;
+}
+.order--submission--container {
+  margin-top: 27px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.order--submission--title {
+  font-size: 24px;
+  text-align: center;
+  color: #474b4e;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 29.26px;
+}
+.table--number--subtitle {
+  font-size: 20px;
+  text-align: center;
+  color: #4c6029;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  margin-bottom: 15px;
+  line-height: 23.44px;
+}
+.thanks--subtitle {
+  font-size: 14px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 40px;
+  line-height: 16px;
+  font-weight: 400;
+}
+.back--button {
+  padding: 2px 10px;
+  width: 366px;
+  height: 48px;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 120%;
+  border-radius: 5px;
+  background-color: #4c6029;
+}
+.order--slider--container {
+  border-top: 1px #6b6b6b solid;
+  padding-top: 30px;
+}
+.slider--title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}

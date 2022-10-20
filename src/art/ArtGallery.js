@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import backArrow from "../assets/art/category/backarrow.svg";
-import shoppingCart from "../assets/art/category/shoppingcart.svg";
 
 const ArtGallery = (props) => {
   const { artGalleryHeader, artGalleryPopulate, setSpecificArtworkDetails } =

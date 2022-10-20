@@ -3,6 +3,7 @@ import "./cartStyles.css";
 import topRowArrows from "../assets/cart/toprow/toprowarrows.svg";
 import ShippingPage from "./ShippingPage";
 import PaymentPage from "./PaymentPage";
+import ConfirmationPage from "./ConfirmationPage";
 
 const CartPage = ({
   cartArtDetails,
@@ -46,48 +47,33 @@ const CartPage = ({
     setTotalAmount(sumArtTotal.toFixed(2));
   };
 
-  console.log(cartArtDetails);
   //=========================Function to add in donation value===========================
-  const handleDonation = (donationNumber) => {
-    const donationValue = donationNumber.slice(1);
+  const handleDonation = async (donationNumber) => {
+    let donationValue = donationNumber.slice(1);
 
     if (donationValue == 5.0) {
-      setDonationButton1Clicked((current) => !current);
+      setDonationButton1Clicked(true);
       setDonationButton2Clicked(false);
       setDonationButton3Clicked(false);
       setDonationButton4Clicked(false);
+      setDonation(donationValue);
     } else if (donationValue == 10.0) {
-      setDonationButton2Clicked((current) => !current);
+      setDonationButton2Clicked(true);
       setDonationButton1Clicked(false);
       setDonationButton3Clicked(false);
       setDonationButton4Clicked(false);
+      setDonation(donationValue);
     } else if (donationValue == 30.0) {
-      setDonationButton3Clicked((current) => !current);
+      setDonationButton3Clicked(true);
       setDonationButton1Clicked(false);
       setDonationButton2Clicked(false);
       setDonationButton4Clicked(false);
+      setDonation(donationValue);
     } else if (donationValue == 50.0) {
-      setDonationButton4Clicked((current) => !current);
+      setDonationButton4Clicked(true);
       setDonationButton1Clicked(false);
       setDonationButton2Clicked(false);
       setDonationButton3Clicked(false);
-    }
-
-    if (
-      !donationButton1Clicked &&
-      !donationButton2Clicked &&
-      !donationButton3Clicked &&
-      !donationButton4Clicked
-    ) {
-      setDonation(0);
-      console.log("all false");
-    }
-    if (
-      !donationButton1Clicked ||
-      !donationButton2Clicked ||
-      !donationButton3Clicked ||
-      !donationButton4Clicked
-    ) {
       setDonation(donationValue);
     }
   };
@@ -132,6 +118,7 @@ const CartPage = ({
   return (
     <>
       <div className="cart--main--container">
+        {/* <ConfirmationPage /> */}
         {checkOut ? (
           <>
             <div className="cart--page--top--row--banner">
