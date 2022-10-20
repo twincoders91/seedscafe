@@ -3,13 +3,17 @@
 
 import React from "react";
 import Menu from "./menu/Menu";
+import MenuCategory from "./menu/MenuCategory";
+import OrderList from "./menu/OrderList";
 import SpecificItem from "./menu/SpecificItem";
 
 const TempApp = () => {
   return (
     <div>
+      <MenuCategory />
       {/* <Menu /> */}
-      <SpecificItem />
+      {/* <SpecificItem /> */}
+      {/* <OrderList /> */}
     </div>
   );
 };

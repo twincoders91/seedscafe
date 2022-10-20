@@ -300,7 +300,11 @@ html {
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 4.9vh;
+  border-color: #4C6029;
+  background-color: #4C6029;
+  color: #fffbf0;
 }
+
 
 .specific--specialRequest {
   margin-bottom: 23px;
