@@ -7,6 +7,7 @@ const ShippingPage = ({
   donation,
   setMakePayment,
   totalCartValue,
+  setCheckOut,
 }) => {
   const [nameInput, setNameInput] = useState("");
   const [addressInput, setAddressInput] = useState("");
@@ -15,8 +16,7 @@ const ShippingPage = ({
   const [phoneInput, setPhoneInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
 
-  console.log(cartArtDetails);
-  console.log(donation);
+  console.log({ nameInput });
 
   const handleContinueToPayment = () => {
     setMakePayment(true);
@@ -26,7 +26,14 @@ const ShippingPage = ({
     <div className="shipping--main--container">
       <div className="cart--page--top--row--banner">
         <div className="cart--shipping--payment--buttons--box">
-          <button className="cart--shipping--payment--buttons">Cart</button>
+          <button
+            className="cart--shipping--payment--buttons"
+            onClick={() => {
+              setCheckOut(true);
+            }}
+          >
+            Cart
+          </button>
           <img
             src={topRowArrows}
             className="cart--shipping--payment--arrow"
@@ -204,10 +211,21 @@ const ShippingPage = ({
         <div className="shipping--total--cost--row">
           <p className="shipping--total--cost">Total</p>
           <p className="shipping--total--cost">
-            ${cartArtDetails ? totalCartValue : <></>}
+            ${cartArtDetails ? totalCartValue.toFixed(2) : <></>}
           </p>
         </div>
-        <button className="checkout--button" onClick={handleContinueToPayment}>
+        <button
+          className="checkout--button"
+          onClick={handleContinueToPayment}
+          disabled={
+            !nameInput ||
+            !addressInput ||
+            !apartmentInput ||
+            !postalCodeInput ||
+            !phoneInput ||
+            !emailInput
+          }
+        >
           Continue to Payment
         </button>
       </div>

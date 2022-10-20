@@ -10,9 +10,9 @@ html {
   background-color: white;
   height: 100%;
 }
-.order--backarrow {
+.order--back--arrow {
   position: absolute;
-  padding-top: 103px;
+  cursor: pointer;
 }
 .order--middle--container {
   display: flex;
@@ -20,13 +20,12 @@ html {
   justify-content: center;
   align-items: center;
 }
-.qrcode--container {
+.qrcode--confirmation--container {
   height: 170px;
   width: 170px;
   background-color: #ece7dc;
   border-radius: 50%;
   display: inline-block;
-  border: 1px solid black;
 }
 .qrcode {
   position: relative;
@@ -78,6 +77,8 @@ html {
   line-height: 120%;
   border-radius: 5px;
   background-color: #4c6029;
+  margin-bottom: 60px;
+  cursor: pointer;
 }
 .order--slider--container {
   border-top: 1px #6b6b6b solid;

@@ -5,16 +5,33 @@ import Slider from "../home/sliderComponent/Slider";
 import { Link } from "react-router-dom";
 import "./confirmationStyles.css";
 
-const ConfirmationPage = () => {
+const ConfirmationPage = ({
+  setMakePayment,
+  setCheckOut,
+  setConfirmationPage,
+}) => {
+  // const handleConfirmationBack = () => {
+  //   setCheckOut(false);
+  //   setMakePayment(true);
+  //   setConfirmationPage(false);
+  // };
+
   return (
     <div className="order--main--container">
       <div className="order--top--container">
         <div className="order--back--arrow">
-          <img src={backarrow} alt="back"></img>
+          <Link to="/">
+            {" "}
+            <img
+              src={backarrow}
+              alt="back"
+              // onClick={handleConfirmationBack}
+            ></img>
+          </Link>
         </div>
       </div>
       <div className="order--middle--container">
-        <div className="qrcode--container">
+        <div className="qrcode--confirmation--container">
           <img className="qrcode" src={starLogo} alt="qrcode"></img>
         </div>
         <div className="order--submission--container">

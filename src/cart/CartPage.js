@@ -15,6 +15,8 @@ const CartPage = ({
   setCheckOut,
   setMakePayment,
   makePayment,
+  confirmationPage,
+  setConfirmationPage,
 }) => {
   //=====================================States==========================================
   const [donation, setDonation] = useState(0);
@@ -77,13 +79,6 @@ const CartPage = ({
       setDonation(donationValue);
     }
   };
-  console.log(donationButton1Clicked);
-  console.log(donationButton2Clicked);
-  console.log(donationButton3Clicked);
-  console.log(donationButton4Clicked);
-  console.log(donation);
-  // console.log(inputValue);
-  // console.log(checkOut);
 
   const handleSubmitButton = () => {
     setDonation(inputValue);
@@ -118,7 +113,6 @@ const CartPage = ({
   return (
     <>
       <div className="cart--main--container">
-        {/* <ConfirmationPage /> */}
         {checkOut ? (
           <>
             <div className="cart--page--top--row--banner">
@@ -131,7 +125,14 @@ const CartPage = ({
                   className="cart--shipping--payment--arrow"
                   alt="images"
                 />
-                <button className="cart--shipping--payment--buttons">
+                <button
+                  className="cart--shipping--payment--buttons"
+                  disabled={cartArtDetails.length == 0}
+                  onClick={() => {
+                    handleCheckOutClick();
+                    setMakePayment(false);
+                  }}
+                >
                   Shipping
                 </button>
                 <img
@@ -287,12 +288,16 @@ const CartPage = ({
               <div className="total--amount--box">
                 <p className="total--amount--price">Total</p>
                 <p className="total--amount--price">
-                  {totalCartValue ? `$${totalCartValue}` : `$0`}
+                  {totalCartValue ? `$${totalCartValue.toFixed(2)}` : `$0`}
                 </p>
               </div>
               <button
                 className="checkout--button"
-                onClick={handleCheckOutClick}
+                onClick={() => {
+                  handleCheckOutClick();
+                  setMakePayment(false);
+                }}
+                disabled={cartArtDetails.length == 0}
               >
                 Checkout
               </button>
@@ -304,9 +309,22 @@ const CartPage = ({
             donation={donation}
             setMakePayment={setMakePayment}
             totalCartValue={totalCartValue}
+            setCheckOut={setCheckOut}
+          />
+        ) : !confirmationPage ? (
+          <PaymentPage
+            cartArtDetails={cartArtDetails}
+            donation={donation}
+            setMakePayment={setMakePayment}
+            setCheckOut={setCheckOut}
+            setConfirmationPage={setConfirmationPage}
           />
         ) : (
-          <PaymentPage cartArtDetails={cartArtDetails} donation={donation} />
+          <ConfirmationPage
+            setMakePayment={setMakePayment}
+            setCheckOut={setCheckOut}
+            setConfirmationPage={setConfirmationPage}
+          />
         )}
       </div>
     </>

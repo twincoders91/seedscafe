@@ -61,6 +61,7 @@
 }
 
 .cart--page--container--art--box {
+  justify-content: space-between;
   display: flex;
   margin-top: 14px;
   height: 80px;

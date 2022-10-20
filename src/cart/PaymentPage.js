@@ -1,24 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import topRowArrows from "../assets/cart/toprow/toprowarrows.svg";
 import masterCard from "../assets/cart/payment/mastercard.svg";
 import visaCard from "../assets/cart/payment/visacard.svg";
 import shopee from "../assets/cart/payment/shopee.svg";
 import grabPay from "../assets/cart/payment/grabpay.svg";
-
 import "./paymentStyles.css";
 
-const PaymentPage = ({ cartArtDetails, donation }) => {
+const PaymentPage = ({
+  cartArtDetails,
+  donation,
+  setMakePayment,
+  setCheckOut,
+  setConfirmationPage,
+}) => {
+  const [check, setCheck] = useState(false);
+  const [tncCheck, setTncCheck] = useState(false);
+
+  console.log({ check });
+  console.log({ tncCheck });
+
+  const handleMakePayment = () => {
+    setConfirmationPage(true);
+    setCheck(false);
+    setTncCheck(false);
+  };
+
   return (
     <div className="payment--main--container">
       <div className="cart--page--top--row--banner">
         <div className="cart--shipping--payment--buttons--box">
-          <button className="cart--shipping--payment--buttons">Cart</button>
+          <button
+            className="cart--shipping--payment--buttons"
+            onClick={() => {
+              setCheckOut(true);
+            }}
+          >
+            Cart
+          </button>
           <img
             src={topRowArrows}
             className="cart--shipping--payment--arrow"
             alt="images"
           />
-          <button className="cart--shipping--payment--buttons">Shipping</button>
+          <button
+            className="cart--shipping--payment--buttons"
+            onClick={() => {
+              setMakePayment(false);
+              console.log("clicked");
+            }}
+          >
+            Shipping
+          </button>
           <img
             src={topRowArrows}
             className="cart--shipping--payment--arrow"
@@ -72,7 +104,7 @@ const PaymentPage = ({ cartArtDetails, donation }) => {
           {donation ? (
             <div className="payment--donation--container">
               <p className="payment--donation--amount">Donation</p>
-              <p className="payment--donation--amount">{donation}</p>
+              <p className="payment--donation--amount">${donation}</p>
             </div>
           ) : (
             <></>
@@ -86,6 +118,9 @@ const PaymentPage = ({ cartArtDetails, donation }) => {
                 type="radio"
                 name="card--type"
                 className="payment--radio--buttons"
+                onClick={() => {
+                  setCheck(true);
+                }}
               ></input>
               <p>Credit Card</p>
             </div>
@@ -105,6 +140,9 @@ const PaymentPage = ({ cartArtDetails, donation }) => {
                 type="radio"
                 className="payment--radio--buttons"
                 name="card--type"
+                onClick={() => {
+                  setCheck(true);
+                }}
               ></input>
               <p>GrabPay</p>
             </div>
@@ -122,6 +160,9 @@ const PaymentPage = ({ cartArtDetails, donation }) => {
                 type="radio"
                 className="payment--radio--buttons"
                 name="card--type"
+                onClick={() => {
+                  setCheck(true);
+                }}
               ></input>
               <p>ShopeePay</p>
             </div>
@@ -142,10 +183,22 @@ const PaymentPage = ({ cartArtDetails, donation }) => {
           </p>
         </div>
         <div className="payment--terms--and--conditions--agree--box">
-          <input type="radio" className="payment--radio--buttons"></input>
-          <p>I have read and agree to the website terms & conditions*,</p>
+          <input
+            type="radio"
+            className="payment--radio--buttons"
+            onClick={() => {
+              setTncCheck(true);
+            }}
+          ></input>
+          <p>I have read and agree to the website terms & conditions*</p>
         </div>
-        <button className="checkout--button">Make Payment</button>
+        <button
+          className="checkout--button"
+          onClick={handleMakePayment}
+          disabled={!check || !tncCheck}
+        >
+          Make Payment
+        </button>
       </div>
     </div>
   );

@@ -16,7 +16,6 @@ import DineInModal from "./menu/DineInModal";
 import SpecificItem from "./menu/SpecificItem";
 import Modal from "./components/Modal";
 
-
 function App() {
   const [openModal, setOpenModal] = useState(false);
   const [artGalleryHeader, setArtGalleryHeader] = useState("");
@@ -27,6 +26,11 @@ function App() {
   const [totalAmount, setTotalAmount] = useState("");
   const [checkOut, setCheckOut] = useState(false);
   const [makePayment, setMakePayment] = useState(false);
+  const [confirmationPage, setConfirmationPage] = useState(false);
+
+  console.log({ checkOut });
+  console.log({ makePayment });
+  console.log({ confirmationPage });
 
   return (
     <div>
@@ -89,6 +93,8 @@ function App() {
                   checkOut={checkOut}
                   setMakePayment={setMakePayment}
                   makePayment={makePayment}
+                  confirmationPage={confirmationPage}
+                  setConfirmationPage={setConfirmationPage}
                 />
               }
             />
