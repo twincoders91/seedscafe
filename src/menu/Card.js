@@ -2,13 +2,21 @@ import React from "react";
 import "./menuStyles.css";
 import forwardarrow from "../assets/menu/images/forwardarrow.svg";
 
-const Card = ({ dishes }) => {
+const Card = (props) => {
+  const { dishes, handleMenuPageChange, handleDishSelectedChange } = props;
   return (
     <div className="cards--container">
       <div className="row">
         {dishes.map((dish) => {
           return (
-            <div className="card--container" key={dish.id}>
+            <div
+              className="card--container"
+              key={dish.id}
+              onClick={() => {
+                handleDishSelectedChange(dish);
+                handleMenuPageChange("SpecificItem");
+              }}
+            >
               <div className="card--image">
                 <img className="card--image" src={dish.img} alt={dish.name} />
               </div>

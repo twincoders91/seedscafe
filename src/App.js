@@ -27,6 +27,7 @@ function App() {
   const [checkOut, setCheckOut] = useState(false);
   const [makePayment, setMakePayment] = useState(false);
   const [confirmationPage, setConfirmationPage] = useState(false);
+  const [isMenuPage, setIsMenuPage] = useState(false);
 
   console.log({ checkOut });
   console.log({ makePayment });
@@ -44,6 +45,7 @@ function App() {
             cartArtDetails={cartArtDetails}
             setTotalAmount={setTotalAmount}
             setCheckOut={setCheckOut}
+            isMenuPage={isMenuPage}
           />
           <Routes>
             <Route path="/" element={<Home setOpenModal={setOpenModal} />} />
@@ -98,7 +100,10 @@ function App() {
                 />
               }
             />
-            <Route path="/menucategory" element={<MenuCategory />} />
+            <Route
+              path="/menucategory"
+              element={<MenuCategory setIsMenuPage={setIsMenuPage} />}
+            />
             <Route path="/menu" element={<Menu />} />
             <Route path="/specificitem" element={<SpecificItem />} />
             <Route path="/ordersubmission" element={<OrderSubmission />} />
