@@ -13,6 +13,7 @@
 }
 
 .main--app--container {
+  position: relative;
   width: 414px;
   height: 100%;
   background-color: #ffffff;
@@ -20,8 +21,8 @@
 }
 
 .main--app--inner-container {
-  margin-left: 7%;
-  margin-right: 7%;
+  margin-left: 24px;
+  margin-right: 24px;
 }
 
 /* =========================================================================================*/
@@ -58,8 +59,6 @@
     position: absolute;
     top: 40%;
     left: 0%;
-    transform: scale(1.4);
-    color: #474b4e;
   }
 
   .nav--hamburger:hover {
@@ -67,17 +66,34 @@
     filter: invert(1);
   }
 
-  .nav--user--icon {
+  .nav--shopping--cart--icon {
     position: absolute;
     top: 40%;
     right: 0%;
-    transform: scale(1.1);
-    color: #474b4e;
   }
 
-  .nav--user--icon:hover {
+  .nav--shopping--cart--icon:hover {
     cursor: pointer;
     filter: invert(1);
+  }
+
+  .nav--shopping--cart--circle {
+    position: absolute;
+    top: 25%;
+    right: -2%;
+    transform: scale(0.9);
+  }
+
+  .nav--shopping--cart--number {
+    position: absolute;
+    top: 28%;
+    right: -0.4%;
+    transform: scale(0.9);
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.41px;
+    color: #ffffff;
   }
 
   /* ================================Home===================================*/
@@ -246,7 +262,7 @@
   .slider--container {
     display: flex;
     height: 85%;
-    width: 85%;
+    width: 100%;
     margin: auto;
     position: relative;
   }
@@ -335,26 +351,36 @@
 
   /* ================================Modal NavBar===================================*/
 
+  .overlay {
+    z-index: +1;
+    top: 0%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+
   .modalNavBar--overview {
+    z-index: +1;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: rgb(235, 225, 204);
+    width: 355px;
+    height: 900px;
+    background-color: #ece7dc;
   }
 
   .top--section {
-    width: 90%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-right: 8%;
-    height: 12%;
+    width: 100%;
   }
 
   .close--button {
-    transform: scale(1.5);
+    margin-right: 29px;
+    margin-top: 51px;
   }
 
   .close--button:hover {
@@ -363,16 +389,22 @@
   }
 
   .middle--section {
-    width: 90%;
-    margin-top: 10%;
-    height: 45%;
+    margin-top: 116px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-size: 1.5rem;
-    letter-spacing: 0.2vw;
   }
 
+  .modal--text {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #474b4e;
+    line-height: 29.26px;
+    margin-bottom: 32px;
+    text-decoration: none;
+    cursor: pointer;
+  }
   .horizontal--line {
     background: rgba(0, 0, 0, 0.3);
     margin-top: 5%;
@@ -381,23 +413,37 @@
   }
 
   .bottom--section {
-    width: 90%;
-    height: 43%;
-    display: flex;
-    align-items: flex-end;
     justify-content: center;
-    margin-bottom: 5%;
+    display: flex;
+    margin-top: 232px;
+    align-items: center;
+    width: 100%;
   }
 
   .icon--text {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    font-size: 0.5rem;
-    width: 20%;
+    font-size: 8.78px;
+    line-height: 10.29px;
+    color: #4c6029;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    width: 62px;
+    margin-right: 12.5px;
+    margin-left: 12.5px;
   }
 
+  .modal--icons {
+    position: absolute;
+    top: 18%;
+  }
+
+  .modal--bottom--text {
+    margin-top: 6px;
+  }
   /* =================================Footer===================================*/
 
   .footer--container {

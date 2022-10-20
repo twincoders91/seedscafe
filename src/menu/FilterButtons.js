@@ -2,6 +2,7 @@ import React from "react";
 import FullMenu from "./fullMenu";
 import "./menuStyles.css";
 
+
 const FilterButtons = ({
   filterDish,
   setDishes,
@@ -9,6 +10,7 @@ const FilterButtons = ({
   handleCatSelectedChange,
   catSelected,
 }) => {
+
   return (
     <>
       {menuItems.map((dish, id) => {

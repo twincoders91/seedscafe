@@ -29,10 +29,12 @@ const Menu = (props) => {
   //==================================================================================
   return (
     <div className="menu--main--container">
+
       <TableHeader
         menuPage={props.menuPage}
         handleMenuPageChange={props.handleMenuPageChange}
       />
+
       <div className="filter--container">
         <FilterButtons
           filterDish={filterDish}

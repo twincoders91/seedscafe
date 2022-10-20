@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* ========================================cart page=========================================== */
+
+.cart--page--top--row--banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 33px;
+  background-color: #f3f3f3;
+  height: 43px;
+}
+
+.cart--shipping--payment--buttons {
+  font-size: 16px;
+  line-height: 18.75px;
+  color: #474b4e;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.cart--shipping--payment--buttons--clicked {
+  font-size: 16px;
+  line-height: 18.75px;
+  color: #474b4e;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+.cart--shipping--payment--arrow {
+  margin-left: 31px;
+  margin-right: 31px;
+}
+
+.cart--page--container--top--section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 39px;
+}
+
+.cart--page--container--edit--box {
+  display: flex;
+  justify-content: right;
+}
+
+.delete--button {
+  background-color: #ece7dc;
+  width: 59px;
+  height: 25px;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.41px;
+  color: #474b4e;
+}
+
+.delete--button:hover {
+  cursor: pointer;
+}
+
+.cart--page--container--art--box {
+  justify-content: space-between;
+  display: flex;
+  margin-top: 14px;
+  height: 80px;
+}
+
+.cart--page--art--image--box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 80px;
+  overflow: hidden;
+}
+.cart--page--art--image {
+  height: 100%;
+}
+
+.cart--page--art--description--box {
+  display: flex;
+  margin-left: 16px;
+}
+
+.cart--page--art--description--box--left {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart--page--art--title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16.41px;
+  color: #474b4e;
+  margin-bottom: 2px;
+}
+.cart--page--art--artistname {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.41px;
+  color: #474b4e;
+  margin-bottom: 10px;
+}
+.cart--page--art--delivery--note {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.06px;
+  color: #474b4e;
+}
+
+.cart--page--art--description--box--right {
+  width: 155px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.cart--page--art--price {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.41px;
+  color: #474b4e;
+}
+
+.empty--cart--text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 16.41px;
+  color: #474b4e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 81px;
+}
+
+.cart--page--horizontal--line {
+  width: 366px;
+  background-color: #6b6b6b;
+  height: 0.5px;
+  margin-top: 32px;
+  margin-bottom: 28px;
+}
+
+.cart--page--container--middle--top--section {
+  display: flex;
+  flex-direction: column;
+}
+
+.donation--title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23.44px;
+  color: #474b4e;
+  margin-bottom: 12px;
+}
+
+.donation--description {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 128%;
+  color: #474b4e;
+  margin-bottom: 18px;
+}
+
+.cart--page--container--middle--bottom--section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.donation--buttons--top--row--box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 19px;
+}
+
+.donation--buttons--4 {
+  background-color: white;
+  width: 80px;
+  height: 34px;
+  border: 1px solid #6b6b6b;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.06%;
+  color: #474b4e;
+  cursor: pointer;
+}
+
+.donation--buttons--4--clicked {
+  background-color: rgb(104, 104, 104);
+  width: 80px;
+  height: 34px;
+  border: 1px solid #6b6b6b;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.06%;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.donation--buttons--botton--row--box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.donation--buttons--2--otheramount--box {
+  display: flex;
+  width: 175px;
+  border: 1px solid #6b6b6b;
+  border-radius: 5px;
+}
+
+.donation--otheramount--dollarsign--box {
+  height: 34px;
+  width: 33px;
+  border-right: 1px solid #6b6b6b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.06%;
+  color: #474b4e;
+}
+
+.donation--input--field {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.06%;
+  color: #8c8b8b;
+  margin-left: 11px;
+  outline-width: 0;
+}
+
+.submit--donation--button {
+  width: 176px;
+  height: 34px;
+  border: 1px solid #6b6b6b;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.06%;
+  color: #474b4e;
+  background-color: white;
+  cursor: pointer;
+}
+
+.cart--page--horizontal--line2 {
+  width: 366px;
+  background-color: #6b6b6b;
+  height: 0.5px;
+  margin-top: 38px;
+  margin-bottom: 30px;
+}
+
+.total--amount--box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.total--amount--price {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #474b4e;
+}
+
+.checkout--button {
+  cursor: pointer;
+  width: 366px;
+  height: 48px;
+  background-color: #4c6029;
+  color: #fffbf0;
+  border-radius: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 46px;
+  line-height: 23.44px;
+}

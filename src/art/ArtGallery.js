@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import backArrow from "../assets/art/category/backarrow.svg";
-import shoppingCart from "../assets/art/category/shoppingcart.svg";
 
 const ArtGallery = (props) => {
   const { artGalleryHeader, artGalleryPopulate, setSpecificArtworkDetails } =
@@ -20,13 +18,13 @@ const ArtGallery = (props) => {
       <div className="art--top--container">
         <div className="art--title">{artGalleryHeader.category}</div>
         <div className="art--back--arrow">
-          <Link to="/art">
+          {/* <Link to="/art">
             <img src={backArrow} alt="images"></img>
-          </Link>
+          </Link> */}
         </div>
-        <div className="art--shoppingcart">
+        {/* <div className="art--shoppingcart">
           <img src={shoppingCart} alt="images"></img>
-        </div>
+        </div> */}
       </div>
       <div className="art--gallery--middle--container">
         {artGalleryPopulate.map((art) => {
@@ -35,6 +33,7 @@ const ArtGallery = (props) => {
               to="/artdetails"
               className="individual--art--gallery--card"
               onClick={() => handleIndividualArtCard(art)}
+              key={Math.random() * 10000}
             >
               <div className="individual--art--gallery--card--image--box">
                 <img
@@ -51,7 +50,7 @@ const ArtGallery = (props) => {
                   {art.artistName}
                 </div>
                 <div className="individual--art--gallery--card--price">
-                  ${parseInt(art.price.substring(1)).toFixed(2)}
+                  ${art.price.toFixed(2)}
                 </div>
               </div>
             </Link>

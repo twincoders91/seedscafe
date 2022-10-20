@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import backArrow from "../assets/art/category/backarrow.svg";
 import ArtCard from "./ArtCard";
 import ArtData from "./artData";
 import "./artStyles.css";
@@ -39,9 +37,9 @@ const Art = (props) => {
     <div className="art--main--container">
       <div className="art--top--container">
         <div className="art--title">Artwork Category</div>
-        <Link to="/" className="art--back--arrow">
+        {/* <Link to="/" className="art--back--arrow">
           <img src={backArrow} alt="images"></img>
-        </Link>
+        </Link> */}
       </div>
       <div className="art--middle--container">
         {artCategoryData.map((data) => {
@@ -56,6 +54,7 @@ const Art = (props) => {
               material={data.physicalSize}
               artistName={data.artistName}
               handleArtCardClick={handleArtCardClick}
+              key={Math.random() * 10000}
             />
           );
         })}
