@@ -262,7 +262,7 @@
   .slider--container {
     display: flex;
     height: 85%;
-    width: 85%;
+    width: 100%;
     margin: auto;
     position: relative;
   }

@@ -27,6 +27,7 @@ const Menu = () => {
   return (
     <div className="menu--main--container">
       <TableHeader />
+
       <div className="filter--container">
         <FilterButtons
           filterDish={filterDish}

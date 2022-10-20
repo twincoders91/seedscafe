@@ -5,10 +5,17 @@ import Art from "./art/Art";
 import { Route, Routes } from "react-router-dom";
 import ArtGallery from "./art/ArtGallery";
 import SpecificArtworkPage from "./art/SpecificArtworkPage";
+
+import OrderSubmission from "./menu/OrderSubmission";
+import MenuCategory from "./menu/MenuCategory";
+import Menu from "./menu/Menu";
 import ArtData from "./art/artData";
 import NavBar from "./NavBar";
 import CartPage from "./cart/CartPage";
+import DineInModal from "./menu/DineInModal";
+import SpecificItem from "./menu/SpecificItem";
 import Modal from "./components/Modal";
+
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -26,6 +33,7 @@ function App() {
       <div className="main--app--container">
         {openModal ? <Modal setOpenModal={setOpenModal} /> : <></>}
         <div className="main--app--inner-container">
+          {/* hide the navbar when menu is opened*/}
           <NavBar
             setOpenModal={setOpenModal}
             shoppingCartNumber={shoppingCartNumber}
@@ -84,6 +92,11 @@ function App() {
                 />
               }
             />
+            <Route path="/menucategory" element={<MenuCategory />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/specificitem" element={<SpecificItem />} />
+            <Route path="/ordersubmission" element={<OrderSubmission />} />
+            <Route path="/modal" element={<DineInModal />} />
           </Routes>
         </div>
         <Footer />
