@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TableHeader from "./menu-component/shared-componenet/TableHeader";
 import "./menuStyles.css";
 
-const SpecificItem = () => {
+const SpecificItem = (props) => {
   const clickedItem = {
     name: "Avocado Toast",
     price: 13.9,
@@ -14,19 +14,31 @@ const SpecificItem = () => {
   };
   const [quantity, setQuantity] = useState(1);
 
+  const handlePlusQuantityChange = () => {
+    setQuantity(quantity + 1);
+  };
+  const handleMinusQuantityChange = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+
   return (
     <div className="specific--main--container">
-      <TableHeader />
+      <TableHeader
+        menuPage={props.menuPage}
+        handleMenuPageChange={props.handleMenuPageChange}
+      />
       <div className="specific--list--container">
         <div className="specific--image--container">
-          <img src={clickedItem.img} alt={clickedItem.name}></img>
+          <img src={props.dishSelected.img} alt={props.dishSelected.name}></img>
         </div>
         <div className="specific--text--container">
           <div className="specific--name--price">
-            <h3>{clickedItem.name}</h3>
-            <h3>${clickedItem.price * quantity}</h3>
+            <h3>{props.dishSelected.name}</h3>
+            <h3>${props.dishSelected.price * quantity}</h3>
           </div>
-          <p>{clickedItem.description}</p>
+          <p>{props.dishSelected.description}</p>
         </div>
         <div className="specific--special--request">
           <label>Special Request</label>
@@ -34,9 +46,9 @@ const SpecificItem = () => {
         </div>
         <div className="specific--number--container">
           <div className="specific--quantity--toggle">
-            <button>-</button>
+            <button onClick={handleMinusQuantityChange}>-</button>
             <label>{quantity}</label>
-            <button>+</button>
+            <button onClick={handlePlusQuantityChange}>+</button>
           </div>
         </div>
         <div className="specific--button--container">

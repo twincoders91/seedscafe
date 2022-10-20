@@ -7,13 +7,16 @@ import TableHeader from "./menu-component/shared-componenet/TableHeader";
 import FilterButtons from "./FilterButtons";
 import "./menuStyles.css";
 
-const Menu = () => {
-  const [dishes, setDishes] = useState(FullMenu);
+const Menu = (props) => {
+  const [dishes, setDishes] = useState(
+    FullMenu.filter((newDish) => {
+      return newDish.category === props.catSelected;
+    })
+  );
 
   //===============creates a new array with the different Menu Categories============
 
   const menuItems = [...new Set(FullMenu.map((dish) => dish.category))];
-
   //==========filtering dishes based on Category Clicked, to show on cards===========
 
   const filterDish = (curentCategory) => {
@@ -26,16 +29,25 @@ const Menu = () => {
   //==================================================================================
   return (
     <div className="menu--main--container">
-      <TableHeader />
+      <TableHeader
+        menuPage={props.menuPage}
+        handleMenuPageChange={props.handleMenuPageChange}
+      />
       <div className="filter--container">
         <FilterButtons
           filterDish={filterDish}
           setDishes={setDishes}
           menuItems={menuItems}
+          handleCatSelectedChange={props.handleCatSelectedChange}
+          catSelected={props.catSelected}
         />
       </div>
       <div className="menu--items--container">
-        <Card dishes={dishes} />
+        <Card
+          dishes={dishes}
+          handleMenuPageChange={props.handleMenuPageChange}
+          handleDishSelectedChange={props.handleDishSelectedChange}
+        />
       </div>
     </div>
   );
