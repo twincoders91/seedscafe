@@ -2,7 +2,8 @@ import React from "react";
 import OrderCard from "./menu-component/orderList-component/OrderCard";
 import TableHeader from "./menu-component/shared-componenet/TableHeader";
 
-const OrderList = () => {
+const OrderList = (props) => {
+  props.setIsMenuPage(true);
   const orderList = [
     {
       name: "Avocado Toast",
