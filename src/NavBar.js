@@ -11,6 +11,7 @@ const NavBar = ({
   cartArtDetails,
   setTotalAmount,
   setCheckOut,
+  isMenuPage,
 }) => {
   const handleGoToCart = () => {
     const sumArtTotal = cartArtDetails
@@ -21,7 +22,10 @@ const NavBar = ({
   };
 
   return (
-    <div className="Navbar">
+    <div
+      className="Navbar"
+      style={isMenuPage ? { display: "none" } : { display: "" }}
+    >
       <div className="nav--background">
         <img src={headerseedslogo} className="nav--logo" alt="images"></img>
         <UilBars
