@@ -23,10 +23,12 @@ const SpecificArtworkPage = ({
     (d, i) => d.artName !== specificArtworkDetails.artName
   );
 
-  // y = using x's array to filter out current artwork's artists' "other" works
-  const y = x.filter(
+  // z = using x's array to filter out current artwork's artists' "other" works
+  const z = x.filter(
     (d, i) => d.artistName === specificArtworkDetails.artistName
   );
+
+  const y = z.slice(0, 2);
 
   const handleAddToCart = (artdata) => {
     const itemsInCart = [...cartArtDetails, artdata];

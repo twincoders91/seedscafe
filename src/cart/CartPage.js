@@ -48,7 +48,7 @@ const CartPage = ({
 
     setTotalAmount(sumArtTotal.toFixed(2));
   };
-
+  console.log({ totalAmount });
   //=========================Function to add in donation value===========================
   const handleDonation = async (donationNumber) => {
     let donationValue = donationNumber.slice(1);
@@ -95,6 +95,10 @@ const CartPage = ({
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       handleSubmitButton();
+      setDonationButton1Clicked(false);
+      setDonationButton2Clicked(false);
+      setDonationButton3Clicked(false);
+      setDonationButton4Clicked(false);
     }
   };
 
@@ -288,7 +292,9 @@ const CartPage = ({
               <div className="total--amount--box">
                 <p className="total--amount--price">Total</p>
                 <p className="total--amount--price">
-                  {totalCartValue ? `$${totalCartValue.toFixed(2)}` : `$0`}
+                  {totalCartValue && totalAmount
+                    ? `$${totalCartValue.toFixed(2)}`
+                    : `$0`}
                 </p>
               </div>
               <button
@@ -324,6 +330,8 @@ const CartPage = ({
             setMakePayment={setMakePayment}
             setCheckOut={setCheckOut}
             setConfirmationPage={setConfirmationPage}
+            setCartArtDetails={setCartArtDetails}
+            setShoppingCartNumber={setShoppingCartNumber}
           />
         )}
       </div>

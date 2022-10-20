@@ -16,8 +16,6 @@ const ShippingPage = ({
   const [phoneInput, setPhoneInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
 
-  console.log({ nameInput });
-
   const handleContinueToPayment = () => {
     setMakePayment(true);
   };
