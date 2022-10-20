@@ -37,7 +37,7 @@ const OrderList = () => {
   return (
     <div className="specific--main--container">
       <TableHeader />
-      <div className="order--main--container">
+      <div className="order--list--main--container">
         <div className="order--text--format">
           <label>Your Order List</label>
           <button>Edit</button>
