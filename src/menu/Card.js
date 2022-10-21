@@ -18,7 +18,7 @@ const Card = (props) => {
               }}
             >
               <div className="card--image">
-                <img className="card--image" src={dish.img} alt={dish.name} />
+                <img src={dish.img} alt={dish.name} />
               </div>
               <div className="card--body">
                 <div className="card--name">{dish.name}</div>

@@ -20,16 +20,17 @@ const MenuCategory = (props) => {
   return (
     <>
       <div className="menu--top--container">
-        <Link to="/">
-          <div
-            className="menu--back--arrow"
-            onClick={() => {
-              props.setIsMenuPage(false);
-            }}
-          >
+        <div
+          className="menu--back--arrow"
+          onClick={() => {
+            props.setIsMenuPage(false);
+          }}
+        >
+          <Link to="/">
             <img src={backarrow} alt="back"></img>
-          </div>
-        </Link>
+          </Link>
+        </div>
+
         <div className="menu--title">Menu Category</div>
       </div>
       <div className="menu--middle--container">

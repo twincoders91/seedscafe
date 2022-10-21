@@ -11,7 +11,10 @@ const MenuCategoryCard = (props) => {
 
   return (
     <div className="menuCard--container" onClick={handleMenuCardClick}>
-      <img src={image} className="menuCard--top"></img>
+      <div className="menuCard--top">
+        <img src={image}></img>
+      </div>
+
       <div className="menuCard--bottom">{category}</div>
     </div>
   );
