@@ -4,11 +4,17 @@ import MenuCategory from "./MenuCategory";
 import Menu from "./Menu";
 import SpecificItem from "./SpecificItem";
 
-const MenuStateContainer = (props) => {
-  props.setIsMenuPage(true);
-  const [catSelected, setCatSelected] = useState("All Day Breakfast");
-  const [dishSelected, setDishSelected] = useState("");
-  const [menuPage, setMenuPage] = useState("MenuCategory");
+const MenuStateContainer = ({
+  setIsMenuPage,
+  menuPage,
+  setMenuPage,
+  catSelected,
+  setCatSelected,
+  dishSelected,
+  setDishSelected,
+  setFoodOrder,
+}) => {
+  setIsMenuPage(true);
 
   const handleDishSelectedChange = (input) => {
     setDishSelected(input);
@@ -18,6 +24,27 @@ const MenuStateContainer = (props) => {
   };
   const handleCatSelectedChange = (input) => {
     setCatSelected(input);
+  };
+
+  //--- Handle foodOrder---
+  const handleAddFoodOrder = (newOrder) => {
+    setFoodOrder((prevOrders) => [...prevOrders, newOrder]);
+  };
+
+  const handleDeleteFoodOrder = (index) => {
+    setFoodOrder((prevOrders) => {
+      const arr = [...prevOrders];
+      const filtered = arr.filter((d, i) => i !== index); //all except the selected index item
+      return filtered;
+    });
+  };
+
+  const handleUpdateFoodOrder = (index, updatedItem) => {
+    setFoodOrder((prevOrders) => {
+      const arr = [...prevOrders];
+      arr[index] = updatedItem;
+      return arr;
+    });
   };
 
   let page;
@@ -45,6 +72,7 @@ const MenuStateContainer = (props) => {
         handleMenuPageChange={handleMenuPageChange}
         menuPage={menuPage}
         dishSelected={dishSelected}
+        handleAddFoodOrder={handleAddFoodOrder}
       />
     );
   }

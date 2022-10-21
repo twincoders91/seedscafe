@@ -9,18 +9,16 @@ const OrderCard = (props) => {
       <div className="orderCard--text">
         <div className="orderCard--title">
           <label className="orderCard--name">{props.data.name}</label>
-          <label>{props.data.price}</label>
+          <label>${props.data.price * props.data.quantity}</label>
         </div>
         <div className="orderCard--qty">
-          <p>Qty: 1</p>
+          <p>Qty: {props.data.quantity}</p>
         </div>
         <div className="orderCard--request">
-          <p>
-            Special Request: this is the special request this is the special
-            request this is the special request this is the special request
-          </p>
+          <p>Special Request: {props.data.specialRequest}</p>
         </div>
       </div>
+
       <div className="orderCard--price"></div>
     </div>
   );

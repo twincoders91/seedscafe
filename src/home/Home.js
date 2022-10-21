@@ -27,7 +27,7 @@ const Home = ({ setOpenModal }) => {
           <p className="our--services">Our Services</p>
           <div className="home--card--row--box">
             <div className="home--card--row">
-              <Link to="/menucategory" className="individual--card--border">
+              <Link to="/foodmenu" className="individual--card--border">
                 <div className="text--logo--box">
                   <div className="individual--logo--circle">
                     <img

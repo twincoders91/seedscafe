@@ -1,18 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import TableHeader from "./menu-component/shared-componenet/TableHeader";
 import "./menuStyles.css";
 
 const SpecificItem = (props) => {
-  const clickedItem = {
-    name: "Avocado Toast",
-    price: 13.9,
-    img: "https://cdn.pixabay.com/photo/2017/08/23/18/02/food-2673724_960_720.jpg",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-    category: "All Day Breakfast",
-    tags: ["Chef's Recommendation", "Healthier Choice"],
-  };
   const [quantity, setQuantity] = useState(1);
+  const [specialRequest, setSpecialRequest] = useState("");
 
   const handlePlusQuantityChange = () => {
     setQuantity(quantity + 1);
@@ -21,6 +14,26 @@ const SpecificItem = (props) => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
     }
+  };
+
+  const handleOrderClick = () => {
+    const newOrder = {
+      name: props.dishSelected.name,
+      price: parseInt(props.dishSelected.price),
+      img: props.dishSelected.img,
+      quantity: parseInt(quantity),
+      specialRequest: specialRequest,
+    };
+    console.log(newOrder);
+    props.handleAddFoodOrder(newOrder);
+    props.handleMenuPageChange("Menu");
+
+    setQuantity("1");
+    setSpecialRequest("");
+  };
+
+  const handleSpecialRequestChange = (event) => {
+    setSpecialRequest(event.target.value);
   };
 
   return (
@@ -42,7 +55,12 @@ const SpecificItem = (props) => {
         </div>
         <div className="specific--special--request">
           <label>Special Request</label>
-          <textarea placeholder="Type request here"></textarea>
+          <textarea
+            placeholder="Type request here"
+            type="text"
+            onChange={handleSpecialRequestChange}
+            value={specialRequest}
+          ></textarea>
         </div>
         <div className="specific--number--container">
           <div className="specific--quantity--toggle">
@@ -52,9 +70,14 @@ const SpecificItem = (props) => {
           </div>
         </div>
         <div className="specific--button--container">
-          <div className="specific--addToOrderList">
-            <label>Add to Order List</label>
-          </div>
+          <Link to="/foodorder">
+            <div
+              className="specific--addToOrderList"
+              onClick={handleOrderClick}
+            >
+              <label>Add to Order List</label>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
