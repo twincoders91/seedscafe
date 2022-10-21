@@ -1,6 +1,7 @@
 import React from "react";
 import deliveryIcon from "../assets/art/specificartwork/deliveryicon.svg";
 import femalePfp from "../assets/art/specificartwork/femalepfp.svg";
+import malePfp from "../assets/art/specificartwork/malepfp.png";
 import pfpCircle from "../assets/art/specificartwork/pfpcircle.svg";
 
 const SpecificArtworkPage = ({
@@ -106,7 +107,7 @@ const SpecificArtworkPage = ({
               {specificArtworkDetails.gender === "F" ? (
                 <img src={femalePfp} className="artistpfp" alt="images" />
               ) : (
-                <></>
+                <img src={malePfp} className="artistpfpMale" alt="images"></img>
               )}
               <div className="artist--description--box">
                 <div className="artist--description--box--title">Artist</div>
