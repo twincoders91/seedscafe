@@ -8,21 +8,20 @@ html {
 
 .menu--main--container,
 .specific--main--container {
-  /* height: 100vh; */
-  min-height: 100vh;
+ 
   /* padding: 0 5.8%; translates to 24px of 414px */
   background-color: white;
-  height: 100vh;
   /* padding: 0 5.8%; translates to 24px of 414px */
   background-color: #ffffff;
 }
 
 .menu--top--container {
   display: flex;
-  justify-content: flex-start;
-  gap: 105px;
+  justify-content: center;
   align-items: center;
-  height: 12%;
+  height: 138px;
+  position: relative;
+
   /* padding: 0px 25px 0px 25px; */
   /* border: 1px solid black; */
 }
@@ -44,23 +43,33 @@ html {
   color: #474b4e;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
+  margin: auto;
 }
 
 .menu--back--arrow {
-  position: relative;
-  left: 5%;
+  margin: auto;
+  position: absolute;
+  left: 24px;
 }
 
 /* .menu--order {
   left: 90%;
 } */
 
+/* remove small spaces between gap
+.padding-0{ 
+  padding-right:0;
+  padding-left:0;
+} */
+
 .menu--middle--container {
+  width: fit-content;
   justify-content: center;
-  grid-gap: 10px;
+  
   display: grid;
-  grid-template-columns: repeat(2, 50%);
-  margin-bottom: 20%;
+  grid-gap: 3.864vw;
+  grid-template-columns: 42.27vw 42.27vw;
+  margin-bottom: 100px;
 }
 
 /* ===========================================menuCategoryCard==================================== */
@@ -70,38 +79,46 @@ html {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  height: 186px;
-  width: 175px;
-  margin: 10% 15px 15% 7%;
-  /* margin-left: 7%;
-  margin-bottom: 15%; */
+  height: 44.927vw;
+  width: 42.27vw;
   border-radius: 9px;
   border: 1px solid;
-  border-color: #474b4e;
-  box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.1);
+  border-color: #acacac;
+  box-shadow: 0px 4px 0px 0px rgba(131, 131, 131, 0.1);
+  overflow: hidden;
 }
 
 .menuCard--top {
-  height: 75%;
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
-  resize: inherit;
+  height: 73.66%;
+  position: relative;
+  overflow: hidden;
 }
+
+.menuCard--top img{
+  height: 110%;
+  position: absolute; /* this 4 lines of css is to center image in div container*/
+
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+}
+
 
 .menuCard--bottom {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: white;
-  height: 25%;
+  height: 26.34%;
+  width: 75%;
+  margin: auto;
   font-size: 16px;
   text-align: center;
   color: #474b4e;
   font-family: "Roboto", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 18.75px;
-  border-bottom-left-radius: 9px;
-  border-bottom-right-radius: 9px;
+  letter-spacing: 0.05em;
 }
 
 .filter--container {
@@ -132,19 +149,33 @@ html {
 .menu--items--container {
   /* margin: 0 24px; */
   width: 100%;
+  margin-bottom: 100px;
 }
 
 .card--container {
   display: flex;
   align-items: center;
-  height: 81px;
+  height: 19.32vw;
   padding: 16px 0px 16px 0px;
   border: 0.5px #6b6b6b;
   border-style: solid none none none;
+  position: relative;
 }
 .card--image {
-  width: 80px;
-  height: 80px;
+  width: 19.32vw;
+  height: 19.32vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.card--image img{
+  height: 100%;
+
+  position: absolute; /* this 4 lines of css is to center image in div container*/
+
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
 }
 
 .card--body {
@@ -153,13 +184,14 @@ html {
 
 .card--name {
   font-family: "Roboto", san-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
+  margin-bottom: 0.3rem;
 }
 
 .card--arrow {
   position: absolute;
-  right: 20%;
+  right: 1.2vw;
 }
 
 .card--price {
@@ -172,8 +204,6 @@ html {
 .specific--list--container {
   display: flex;
   flex-direction: column;
-
-  height: 560px;
   padding-top: 9px;
 
   font-family: "Roboto", sans-serif;
@@ -186,8 +216,8 @@ html {
 }
 
 .specific--image--container {
-  height: 19.75vh;
-  width: 19.75vh;
+  height: 177px;
+  width: 177px;
   overflow: hidden;
   position: relative;
 }
