@@ -15,6 +15,8 @@ import CartPage from "./cart/CartPage";
 import DineInModal from "./menu/DineInModal";
 import SpecificItem from "./menu/SpecificItem";
 import Modal from "./components/Modal";
+import OrderList from "./menu/OrderList";
+import MenuStateContainer from "./menu/MenuStateContainer";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -102,12 +104,17 @@ function App() {
             />
             <Route
               path="/menucategory"
-              element={<MenuCategory setIsMenuPage={setIsMenuPage} />}
+              element={
+                <MenuStateContainer
+                  isMenuPage={isMenuPage}
+                  setIsMenuPage={setIsMenuPage}
+                />
+              }
             />
-            <Route path="/menu" element={<Menu />} />
-            <Route path="/specificitem" element={<SpecificItem />} />
-            <Route path="/ordersubmission" element={<OrderSubmission />} />
-            <Route path="/modal" element={<DineInModal />} />
+            <Route
+              path="/order"
+              element={<OrderList setIsMenuPage={setIsMenuPage} />}
+            />
           </Routes>
         </div>
         <Footer />
