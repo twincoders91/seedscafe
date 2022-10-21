@@ -17,6 +17,7 @@ import SpecificItem from "./menu/SpecificItem";
 import Modal from "./components/Modal";
 import OrderList from "./menu/OrderList";
 import MenuStateContainer from "./menu/MenuStateContainer";
+import OrderStateContainer from "./menu/OrderStateContainer";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -30,6 +31,10 @@ function App() {
   const [makePayment, setMakePayment] = useState(false);
   const [confirmationPage, setConfirmationPage] = useState(false);
   const [isMenuPage, setIsMenuPage] = useState(false);
+  const [catSelected, setCatSelected] = useState("All Day Breakfast");
+  const [dishSelected, setDishSelected] = useState("");
+  const [menuPage, setMenuPage] = useState("MenuCategory");
+  const [foodOrder, setFoodOrder] = useState([]);
 
   console.log({ checkOut });
   console.log({ makePayment });
@@ -103,17 +108,29 @@ function App() {
               }
             />
             <Route
-              path="/menucategory"
+              path="/foodmenu"
               element={
                 <MenuStateContainer
                   isMenuPage={isMenuPage}
                   setIsMenuPage={setIsMenuPage}
+                  menuPage={menuPage}
+                  setMenuPage={setMenuPage}
+                  catSelected={catSelected}
+                  setCatSelected={setCatSelected}
+                  dishSelected={dishSelected}
+                  setDishSelected={setDishSelected}
+                  setFoodOrder={setFoodOrder}
                 />
               }
             />
             <Route
-              path="/order"
-              element={<OrderList setIsMenuPage={setIsMenuPage} />}
+              path="/foodorder"
+              element={
+                <OrderStateContainer
+                  setIsMenuPage={setIsMenuPage}
+                  foodOrder={foodOrder}
+                />
+              }
             />
           </Routes>
         </div>
