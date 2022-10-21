@@ -8,6 +8,7 @@ const ShippingPage = ({
   setMakePayment,
   totalCartValue,
   setCheckOut,
+  roundUpValue,
 }) => {
   const [nameInput, setNameInput] = useState("");
   const [addressInput, setAddressInput] = useState("");
@@ -15,8 +16,6 @@ const ShippingPage = ({
   const [postalCodeInput, setPostalCodeInput] = useState("");
   const [phoneInput, setPhoneInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
-
-  console.log({ nameInput });
 
   const handleContinueToPayment = () => {
     setMakePayment(true);
@@ -201,7 +200,16 @@ const ShippingPage = ({
           {donation ? (
             <div className="order--summary--row">
               <p className="order--summary--description">Donation</p>
-              <p className="order--summary--description">${donation}</p>
+              <p className="order--summary--description">
+                ${Number(donation).toFixed(2)}
+              </p>
+            </div>
+          ) : roundUpValue ? (
+            <div className="order--summary--row">
+              <p className="order--summary--description">Donation</p>
+              <p className="order--summary--description">
+                ${Number(roundUpValue).toFixed(2)}
+              </p>
             </div>
           ) : (
             <></>

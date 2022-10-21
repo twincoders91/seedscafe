@@ -12,9 +12,13 @@ const PaymentPage = ({
   setMakePayment,
   setCheckOut,
   setConfirmationPage,
+  roundUpValue,
+  setCartArtDetails,
+  setShoppingCartNumber,
 }) => {
   const [check, setCheck] = useState(false);
   const [tncCheck, setTncCheck] = useState(false);
+  const [cardDetails, setCardDetails] = useState(false);
 
   console.log({ check });
   console.log({ tncCheck });
@@ -23,6 +27,9 @@ const PaymentPage = ({
     setConfirmationPage(true);
     setCheck(false);
     setTncCheck(false);
+    setCardDetails(false);
+    setCartArtDetails([]);
+    setShoppingCartNumber("none");
   };
 
   return (
@@ -46,7 +53,6 @@ const PaymentPage = ({
             className="cart--shipping--payment--buttons"
             onClick={() => {
               setMakePayment(false);
-              console.log("clicked");
             }}
           >
             Shipping
@@ -73,7 +79,9 @@ const PaymentPage = ({
                   cartArtDetails
                     .map((item) => item.price)
                     .reduce((prev, curr) => prev + curr, 0)
-                ) + Number(donation)
+                ) +
+                Number(donation) +
+                Number(roundUpValue)
               ).toFixed(2)
             ) : (
               <></>
@@ -104,7 +112,16 @@ const PaymentPage = ({
           {donation ? (
             <div className="payment--donation--container">
               <p className="payment--donation--amount">Donation</p>
-              <p className="payment--donation--amount">${donation}</p>
+              <p className="payment--donation--amount">
+                ${Number(donation).toFixed(2)}
+              </p>
+            </div>
+          ) : roundUpValue ? (
+            <div className="payment--donation--container">
+              <p className="payment--donation--amount">Donation</p>
+              <p className="payment--donation--amount">
+                ${Number(roundUpValue).toFixed(2)}
+              </p>
             </div>
           ) : (
             <></>
@@ -113,65 +130,101 @@ const PaymentPage = ({
         <hr className="payment--page--horizontal--line2"></hr>
         <form className="payment--top--container--row3">
           <div className="payment--boxes">
-            <div className="payment--method--text--button">
-              <input
-                type="radio"
-                name="card--type"
-                className="payment--radio--buttons"
-                onClick={() => {
-                  setCheck(true);
-                }}
-              ></input>
-              <p>Credit Card</p>
+            <div className="payment--method--text--button--container">
+              <div className="payment--method--text--button">
+                <input
+                  type="radio"
+                  name="card--type"
+                  className="payment--radio--buttons"
+                  onClick={() => {
+                    setCheck(true);
+                    setCardDetails(true);
+                  }}
+                ></input>
+                <p>Credit Card</p>
+              </div>
+              <div className="payment--method--images--box">
+                <img src={visaCard} alt="images" />
+                <img
+                  src={masterCard}
+                  alt="images"
+                  className="payment--method--images-mastercard"
+                />
+              </div>
             </div>
-            <div className="payment--method--images--box">
-              <img src={visaCard} alt="images" />
-              <img
-                src={masterCard}
-                alt="images"
-                className="payment--method--images-mastercard"
-              />
-            </div>
+            {cardDetails ? (
+              <div className="card--details--input--main--container">
+                <div className="card--details--input--container">
+                  <input
+                    placeholder="Card Number"
+                    className="card--details--input"
+                    type="number"
+                  ></input>
+                </div>
+                <div className="card--details--input--container">
+                  <input
+                    placeholder="Expiry Number (MM/YY)"
+                    className="card--details--input"
+                    type="number"
+                  ></input>
+                </div>
+                <div className="card--details--input--container">
+                  <input
+                    placeholder="CVV"
+                    className="card--details--input"
+                    type="number"
+                  ></input>
+                </div>
+              </div>
+            ) : (
+              <></>
+            )}
           </div>
 
           <div className="payment--boxes">
-            <div className="payment--method--text--button">
-              <input
-                type="radio"
-                className="payment--radio--buttons"
-                name="card--type"
-                onClick={() => {
-                  setCheck(true);
-                }}
-              ></input>
-              <p>GrabPay</p>
-            </div>
-            <div className="payment--method--images--box">
-              <img
-                src={grabPay}
-                className="payment--method--images-mastercard"
-                alt="images"
-              />
+            <div className="payment--method--text--button--container">
+              <div className="payment--method--text--button">
+                <input
+                  type="radio"
+                  className="payment--radio--buttons"
+                  name="card--type"
+                  onClick={() => {
+                    setCheck(true);
+                    setCardDetails(false);
+                  }}
+                ></input>
+                <p>GrabPay</p>
+              </div>
+              <div className="payment--method--images--box">
+                <img
+                  src={grabPay}
+                  className="payment--method--images-mastercard"
+                  alt="images"
+                />
+              </div>
             </div>
           </div>
           <div className="payment--boxes">
-            <div className="payment--method--text--button">
-              <input
-                type="radio"
-                className="payment--radio--buttons"
-                name="card--type"
-                onClick={() => {
-                  setCheck(true);
-                }}
-              ></input>
-              <p>ShopeePay</p>
-            </div>
-            <div className="payment--method--images--box">
-              <img
-                src={shopee}
-                className="payment--method--images-mastercard"
-                alt="images"
-              />
+            <div className="payment--method--text--button--container">
+              <div className="payment--method--text--button">
+                <input
+                  type="radio"
+                  className="payment--radio--buttons"
+                  name="card--type"
+                  onClick={() => {
+                    setCheck(true);
+                    setCardDetails(false);
+                  }}
+                ></input>
+                <p>ShopeePay</p>
+              </div>
+              <div className="payment--method--images--box">
+                <img
+                  src={shopee}
+                  className="payment--method--images-mastercard"
+                  alt="images"
+                />
+              </div>
             </div>
           </div>
         </form>
