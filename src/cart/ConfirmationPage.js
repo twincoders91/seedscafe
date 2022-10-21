@@ -5,12 +5,7 @@ import Slider from "../home/sliderComponent/Slider";
 import { Link } from "react-router-dom";
 import "./confirmationStyles.css";
 
-const ConfirmationPage = ({
-  setMakePayment,
-  setConfirmationPage,
-  setCartArtDetails,
-  setShoppingCartNumber,
-}) => {
+const ConfirmationPage = ({ setMakePayment, setConfirmationPage }) => {
   return (
     <div className="order--main--container">
       <div className="order--top--container">
@@ -23,8 +18,6 @@ const ConfirmationPage = ({
               onClick={() => {
                 setMakePayment(false);
                 setConfirmationPage(false);
-                setCartArtDetails([]);
-                setShoppingCartNumber("none");
               }}
             ></img>
           </Link>
@@ -51,8 +44,6 @@ const ConfirmationPage = ({
             onClick={() => {
               setMakePayment(false);
               setConfirmationPage(false);
-              setCartArtDetails([]);
-              setShoppingCartNumber("none");
             }}
           >
             Back to Home

@@ -26,12 +26,14 @@ const CartPage = ({
   const [donationButton4Clicked, setDonationButton4Clicked] = useState(false);
   const [totalCartValue, setTotalCartValue] = useState(0);
   const [inputValue, setInputValue] = useState(0);
+  const [roundUpValue, setRoundUpValue] = useState(0);
 
   //===USE EFFECT to update the total cart value when donation and total amount changes===
   useEffect(() => {
-    const totalCartAmount = Number(totalAmount) + Number(donation);
+    const totalCartAmount =
+      Number(totalAmount) + Number(donation) + Number(roundUpValue);
     setTotalCartValue(totalCartAmount);
-  }, [donation, totalAmount]);
+  }, [donation, totalAmount, roundUpValue]);
 
   //======================================FUNCTIONS======================================
   //=========================Function to remove item based on ArtName====================
@@ -48,7 +50,7 @@ const CartPage = ({
 
     setTotalAmount(sumArtTotal.toFixed(2));
   };
-  console.log({ totalAmount });
+
   //=========================Function to add in donation value===========================
   const handleDonation = async (donationNumber) => {
     let donationValue = donationNumber.slice(1);
@@ -58,24 +60,28 @@ const CartPage = ({
       setDonationButton2Clicked(false);
       setDonationButton3Clicked(false);
       setDonationButton4Clicked(false);
+      setRoundUpValue(0);
       setDonation(donationValue);
     } else if (donationValue == 10.0) {
       setDonationButton2Clicked(true);
       setDonationButton1Clicked(false);
       setDonationButton3Clicked(false);
       setDonationButton4Clicked(false);
+      setRoundUpValue(0);
       setDonation(donationValue);
     } else if (donationValue == 30.0) {
       setDonationButton3Clicked(true);
       setDonationButton1Clicked(false);
       setDonationButton2Clicked(false);
       setDonationButton4Clicked(false);
+      setRoundUpValue(0);
       setDonation(donationValue);
     } else if (donationValue == 50.0) {
       setDonationButton4Clicked(true);
       setDonationButton1Clicked(false);
       setDonationButton2Clicked(false);
       setDonationButton3Clicked(false);
+      setRoundUpValue(0);
       setDonation(donationValue);
     }
   };
@@ -105,13 +111,18 @@ const CartPage = ({
   //=====================Rounding up total cart value to nearest $50==================================
 
   const handleRoundUp = () => {
+    setDonation(0);
     setTotalCartValue(Math.ceil(totalCartValue / 50) * 50);
+    let roundUpDonation =
+      Math.ceil(totalCartValue / 50) * 50 - Number(totalAmount);
+    setRoundUpValue(roundUpDonation);
     setDonationButton1Clicked(false);
     setDonationButton2Clicked(false);
     setDonationButton3Clicked(false);
     setDonationButton4Clicked(false);
   };
 
+  console.log(roundUpValue);
   //==================================================================================
 
   return (
@@ -316,6 +327,7 @@ const CartPage = ({
             setMakePayment={setMakePayment}
             totalCartValue={totalCartValue}
             setCheckOut={setCheckOut}
+            roundUpValue={roundUpValue}
           />
         ) : !confirmationPage ? (
           <PaymentPage
@@ -324,14 +336,15 @@ const CartPage = ({
             setMakePayment={setMakePayment}
             setCheckOut={setCheckOut}
             setConfirmationPage={setConfirmationPage}
+            roundUpValue={roundUpValue}
+            setCartArtDetails={setCartArtDetails}
+            setShoppingCartNumber={setShoppingCartNumber}
           />
         ) : (
           <ConfirmationPage
             setMakePayment={setMakePayment}
             setCheckOut={setCheckOut}
             setConfirmationPage={setConfirmationPage}
-            setCartArtDetails={setCartArtDetails}
-            setShoppingCartNumber={setShoppingCartNumber}
           />
         )}
       </div>

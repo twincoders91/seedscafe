@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /* ========================================payment page=========================================== */
 .payment--top--container--row1 {
   display: flex;
@@ -59,18 +65,25 @@
 .payment--boxes {
   margin-top: 23px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   width: 366px;
-  height: 61px;
   border: 1px solid #acacac;
+}
+
+.payment--method--text--button--container {
   color: #474b4e;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   line-height: 16.41px;
   font-weight: 700;
+  display: flex;
+  height: 61px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
-
 .payment--method--text--button {
   margin-left: 24px;
   display: flex;
@@ -84,6 +97,34 @@
   display: flex;
   align-items: center;
   margin-right: 19px;
+}
+
+.card--details--input--main--container {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.card--details--input--container {
+  background-color: #f4f4f4;
+  width: 322px;
+  height: 41px;
+  border: 1px solid #bdbcbc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+.card--details--input {
+  background-color: transparent;
+  margin-left: 17px;
+  width: 80%;
+  outline: none;
+  color: #474b4e;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 16.41px;
+  font-weight: 400;
 }
 
 .payment--method--images-mastercard {
