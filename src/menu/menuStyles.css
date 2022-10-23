@@ -474,6 +474,12 @@ html {
   white-space: normal;
 }
 
+.orderCard--edit{
+  font-size: 0.75rem;
+  font-weight: 400;
+  position: relative;
+}
+
 /* ===========================================Order Submission Page==================================== */
 
 .order--main--container {

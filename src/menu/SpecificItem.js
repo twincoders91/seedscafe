@@ -21,10 +21,10 @@ const SpecificItem = (props) => {
       name: props.dishSelected.name,
       price: parseInt(props.dishSelected.price),
       img: props.dishSelected.img,
+      description: props.dishSelected.description,
       quantity: parseInt(quantity),
       specialRequest: specialRequest,
     };
-    console.log(newOrder);
     props.handleAddFoodOrder(newOrder);
     props.handleMenuPageChange("Menu");
 
@@ -49,7 +49,7 @@ const SpecificItem = (props) => {
         <div className="specific--text--container">
           <div className="specific--name--price">
             <h3>{props.dishSelected.name}</h3>
-            <h3>${props.dishSelected.price * quantity}</h3>
+            <h3>${props.dishSelected.price}</h3>
           </div>
           <p>{props.dishSelected.description}</p>
         </div>
