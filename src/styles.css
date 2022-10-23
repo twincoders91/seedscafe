@@ -454,7 +454,8 @@
   .footer--left--top--section {
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
-    font-size: 1.5rem;
+    line-height: 29.26px;
+    font-size: 24px;
     color: #fffbf0;
     margin-top: 6%;
     margin-left: 6%;
@@ -487,12 +488,13 @@
   }
 
   .footer--logo--text {
-    margin-top: 8%;
+    margin-top: 4px;
     text-align: center;
     font-family: "Roboto", sans-serif;
+    line-height: 7.03px;
     font-weight: 400;
     color: #fffbf0;
-    font-size: 0.4rem;
+    font-size: 6px;
     font-weight: 100;
   }
 
@@ -503,15 +505,16 @@
   }
 
   .footer--middle--section--text {
-    font-size: 0.8rem;
+    font-size: 14px;
     font-family: "Roboto", sans-serif;
-    font-weight: 300;
+    line-height: 16.41px;
+    font-weight: 400;
     color: #fffbf0;
-    margin-bottom: 2%;
+    margin-bottom: 8px;
   }
 
   .footer--bottom--section {
-    margin-top: 8%;
+    margin-top: 22px;
     margin-left: 6%;
     margin-right: 6%;
     padding-bottom: 5%;
@@ -525,11 +528,16 @@
   }
 
   .footer--bottom--section--text {
-    margin-top: 3%;
+    margin-top: 10px;
     color: #fffbf0;
     font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 14.06px;
+    font-size: 12px;
+  }
+
+  .footer--links {
+    text-decoration: none;
   }
 }
 

@@ -188,6 +188,7 @@
 .art-gallery--description--bulletlists {
   margin-top: 10px;
   width: 100%;
+  padding-left: 15px;
 }
 
 .art-gallery--description--bulletlists--text {
@@ -267,6 +268,13 @@
 
 .artistpfp {
   position: absolute;
+  top: 15px;
+  left: 10px;
+}
+.artistpfpMale {
+  position: absolute;
+  width: 51px;
+  height: 44px;
   top: 15px;
   left: 10px;
 }

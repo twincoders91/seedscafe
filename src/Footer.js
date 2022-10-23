@@ -1,8 +1,10 @@
 import React from "react";
-import facebooklogo from "./assets/footer/footerfacebooklogo.png";
-import ellipse from "./assets/footer/ellipse.png";
-import instagramlogo from "./assets/footer/footerinstagram.png";
-import rainbowcentre from "./assets/footer/footerrainbowcentre.png";
+import { Link } from "react-router-dom";
+
+import facebooklogo from "./assets/footer/footerfacebooklogo.svg";
+import ellipse from "./assets/footer/ellipse.svg";
+import instagramlogo from "./assets/footer/footerinstagram.svg";
+import rainbowcentre from "./assets/footer/footerrainbowcentre.svg";
 
 const Footer = () => {
   return (
@@ -36,10 +38,20 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer--middle--section">
-        <p className="footer--middle--section--text">Menu</p>
-        <p className="footer--middle--section--text">Venue Booking</p>
-        <p className="footer--middle--section--text">Art Gallery</p>
-        <p className="footer--middle--section--text">Micro Business</p>
+        <Link to="/menucategory" className="footer--links">
+          {" "}
+          <p className="footer--middle--section--text">Menu</p>
+        </Link>
+        <Link to="/" className="footer--links">
+          <p className="footer--middle--section--text">Venue Booking</p>
+        </Link>
+        <Link to="/art" className="footer--links">
+          <p className="footer--middle--section--text">Art Gallery</p>
+        </Link>
+        <Link to="/" className="footer--links">
+          {" "}
+          <p className="footer--middle--section--text">Micro Business</p>
+        </Link>
       </div>
       <div className="footer--bottom--section">
         <hr className="footer--horizontal--line" />

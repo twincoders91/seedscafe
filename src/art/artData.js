@@ -7,7 +7,7 @@ import stilllifeCategory from "../assets/art/category/stilllife.svg";
 
 const ArtData = [
   {
-    img: animalsCategory,
+    img: "https://i.imgur.com/1d7EPD9.jpg",
     category: "Animals",
     artistName: "Andrea Ling",
     artName: "Under The Sea",
@@ -113,7 +113,7 @@ const ArtData = [
     gender: "F",
   },
   {
-    img: "https://www.linkpicture.com/q/images_41.jfif",
+    img: "https://i.imgur.com/CAKpRWh.jpg",
     category: "Others",
     artistName: "Andrea Ling",
     artName: "Apple",

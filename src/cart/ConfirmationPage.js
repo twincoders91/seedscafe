@@ -5,17 +5,7 @@ import Slider from "../home/sliderComponent/Slider";
 import { Link } from "react-router-dom";
 import "./confirmationStyles.css";
 
-const ConfirmationPage = ({
-  setMakePayment,
-  setCheckOut,
-  setConfirmationPage,
-}) => {
-  // const handleConfirmationBack = () => {
-  //   setCheckOut(false);
-  //   setMakePayment(true);
-  //   setConfirmationPage(false);
-  // };
-
+const ConfirmationPage = ({ setMakePayment, setConfirmationPage }) => {
   return (
     <div className="order--main--container">
       <div className="order--top--container">
@@ -25,7 +15,10 @@ const ConfirmationPage = ({
             <img
               src={backarrow}
               alt="back"
-              // onClick={handleConfirmationBack}
+              onClick={() => {
+                setMakePayment(false);
+                setConfirmationPage(false);
+              }}
             ></img>
           </Link>
         </div>
@@ -46,7 +39,15 @@ const ConfirmationPage = ({
           </p>
         </div>
         <Link to="/">
-          <button className="back--button">Back to Home</button>
+          <button
+            className="back--button"
+            onClick={() => {
+              setMakePayment(false);
+              setConfirmationPage(false);
+            }}
+          >
+            Back to Home
+          </button>
         </Link>
       </div>
       <br />
