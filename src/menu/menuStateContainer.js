@@ -31,22 +31,6 @@ const MenuStateContainer = ({
     setFoodOrder((prevOrders) => [...prevOrders, newOrder]);
   };
 
-  const handleDeleteFoodOrder = (index) => {
-    setFoodOrder((prevOrders) => {
-      const arr = [...prevOrders];
-      const filtered = arr.filter((d, i) => i !== index); //all except the selected index item
-      return filtered;
-    });
-  };
-
-  const handleUpdateFoodOrder = (index, updatedItem) => {
-    setFoodOrder((prevOrders) => {
-      const arr = [...prevOrders];
-      arr[index] = updatedItem;
-      return arr;
-    });
-  };
-
   let page;
 
   if (menuPage === "MenuCategory") {
@@ -77,13 +61,7 @@ const MenuStateContainer = ({
     );
   }
 
-  return (
-    <div className="menu--main--container">
-      {console.log(catSelected)}
-      {console.log(dishSelected)}
-      {page}
-    </div>
-  );
+  return <div className="menu--main--container">{page}</div>;
 };
 // return (
 //   <div>

@@ -129,6 +129,7 @@ function App() {
                 <OrderStateContainer
                   setIsMenuPage={setIsMenuPage}
                   foodOrder={foodOrder}
+                  setFoodOrder={setFoodOrder}
                 />
               }
             />
