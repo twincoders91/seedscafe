@@ -5,6 +5,7 @@ import OrderSubmission from "./OrderSubmission";
 const OrderStateContainer = (props) => {
   props.setIsMenuPage(true);
   const [orderPage, setOrderPage] = useState("OrderList");
+  const [orderNumber, setOrderNumber] = useState();
 
   const handleOrderPageChange = (input) => {
     setOrderPage(input);
@@ -47,7 +48,7 @@ const OrderStateContainer = (props) => {
     };
 
     console.log(orderDBinput);
-    await fetch(uri, {
+    const res = await fetch(uri, {
       // Adding method type
       method: "PUT",
 
@@ -59,6 +60,10 @@ const OrderStateContainer = (props) => {
         "Content-type": "application/json; charset=UTF-8",
       },
     });
+    const data = await res.json();
+    // console.log(data[0]._id);
+    const orderNumFromId = parseInt(data[0]._id.slice(-3), 16);
+    setOrderNumber(orderNumFromId);
   };
 
   //   {
@@ -76,12 +81,14 @@ const OrderStateContainer = (props) => {
       <OrderList
         handleOrderPageChange={handleOrderPageChange}
         foodOrder={props.foodOrder}
+        setFoodOrder={props.setFoodOrder}
+        setMenuPage={props.setMenuPage}
         postToOrderDB={postToOrderDB}
         handleUpdateFoodOrder={handleUpdateFoodOrder}
       />
     );
   } else if (orderPage === "OrderSubmission") {
-    page = <OrderSubmission />;
+    page = <OrderSubmission orderNumber={orderNumber} />;
   }
 
   return <div>{page}</div>;
