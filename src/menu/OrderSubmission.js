@@ -6,7 +6,6 @@ import "./menuStyles.css";
 import { Link } from "react-router-dom";
 
 const OrderSubmission = (props) => {
-  const { category, image } = props;
   return (
     <div className="order--main--container">
       <div className="order--top--container">
@@ -23,7 +22,7 @@ const OrderSubmission = (props) => {
         <div className="order--submission--container">
           <p className="order--submission--title">Order List Submitted</p>
           <p className="table--number--subtitle">
-            Table No: 8 | Order No: 2022231
+            Table No: 8 | Order No: {props.orderNumber}
           </p>
           <p className="thanks--subtitle">
             Thank you for your order! Please <br /> proceed to the counter to
