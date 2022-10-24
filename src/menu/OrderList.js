@@ -19,8 +19,9 @@ const OrderList = (props) => {
 
   const handleSubmitOrderClick = () => {
     let uri = "http://localhost:5001/order/create/";
-    props.handleOrderPageChange("OrderSubmission");
     props.postToOrderDB(uri, props.foodOrder);
+
+    props.handleOrderPageChange("OrderSubmission");
     props.setMenuPage("MenuCategory");
     props.setFoodOrder([]);
   };

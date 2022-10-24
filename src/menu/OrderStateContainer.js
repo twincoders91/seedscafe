@@ -5,6 +5,7 @@ import OrderSubmission from "./OrderSubmission";
 const OrderStateContainer = (props) => {
   props.setIsMenuPage(true);
   const [orderPage, setOrderPage] = useState("OrderList");
+  const [orderID, setOrderID] = useState();
   const [orderNumber, setOrderNumber] = useState();
 
   const handleOrderPageChange = (input) => {
@@ -62,8 +63,9 @@ const OrderStateContainer = (props) => {
     });
     const data = await res.json();
     // console.log(data[0]._id);
-    const orderNumFromId = parseInt(data[0]._id.slice(-3), 16);
-    setOrderNumber(orderNumFromId);
+    const orderNumFromId = data[0]._id;
+    setOrderID(orderNumFromId);
+    setOrderNumber(parseInt(orderNumFromId.slice(-3), 16));
   };
 
   //   {
@@ -88,7 +90,7 @@ const OrderStateContainer = (props) => {
       />
     );
   } else if (orderPage === "OrderSubmission") {
-    page = <OrderSubmission orderNumber={orderNumber} />;
+    page = <OrderSubmission orderID={orderID} orderNumber={orderNumber} />;
   }
 
   return <div>{page}</div>;

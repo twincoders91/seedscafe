@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import backarrow from "../assets/menu/images/backarrow.svg";
 import qrcode from "../assets/menu/images/qrcode.svg";
 import Slider from "../home/sliderComponent/Slider";
+import QRCode from "react-qr-code";
 import "./menuStyles.css";
 import { Link } from "react-router-dom";
 
@@ -17,7 +18,13 @@ const OrderSubmission = (props) => {
       <br />
       <div className="order--middle--container">
         <div className="qrcode--container">
-          <img className="qrcode" src={qrcode} alt="qrcode"></img>
+          <QRCode
+            title="GeeksForGeeks"
+            value={`http://localhost:5001/order/id/${props.orderID}`}
+            bgColor={"#ece7dc"}
+            fgColor={"#4c6029"}
+            size={80}
+          />
         </div>
         <div className="order--submission--container">
           <p className="order--submission--title">Order List Submitted</p>
@@ -40,7 +47,6 @@ const OrderSubmission = (props) => {
         <br />
         <Slider />
       </div>
-
       <br />
     </div>
   );

@@ -505,7 +505,17 @@ html {
   border-radius: 50%;
   display: inline-block;
   border: 1px solid black;
+  position:relative;
 }
+
+.qrcode--container svg{
+  position: absolute; /* this 4 lines of css is to center image in div container*/
+
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+}
+
 
 .qrcode {
   position: relative;
