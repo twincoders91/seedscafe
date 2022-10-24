@@ -1,11 +1,10 @@
 import React from "react";
 import ArtCard from "./ArtCard";
-import ArtData from "./artData";
 import "./artStyles.css";
 
 const Art = (props) => {
   //======================removing category duplicates from the artData set======================
-  const { setArtGalleryHeader, setArtGalleryPopulate } = props;
+  const { setArtGalleryHeader, setArtGalleryPopulate, ArtData } = props;
 
   const artCategoryData = ArtData.reduce((finalArray, current) => {
     let obj = finalArray.find((item) => item.category === current.category);
