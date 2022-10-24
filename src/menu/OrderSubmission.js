@@ -11,7 +11,9 @@ const OrderSubmission = (props) => {
     <div className="order--main--container">
       <div className="order--top--container">
         <div className="order--back--arrow">
-          <img src={backarrow} alt="back"></img>
+          <Link to="/foodmenu">
+            <img src={backarrow} alt="back"></img>
+          </Link>
         </div>
       </div>
       <br />
