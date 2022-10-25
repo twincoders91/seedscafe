@@ -15,8 +15,10 @@ import DineInModal from "./menu/DineInModal";
 import SpecificItem from "./menu/SpecificItem";
 import Modal from "./components/Modal";
 import OrderList from "./menu/OrderList";
-import MenuStateContainer from "./menu/menuStateContainer";
 import OrderStateContainer from "./menu/OrderStateContainer";
+
+import MenuAdmin from "./menu/MenuAdmin";
+import MenuStateContainer from "./menu/MenuStateContainer";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -220,6 +222,10 @@ function App() {
                   setFoodOrder={setFoodOrder}
                 />
               }
+            />
+            <Route
+              path="/menuadmin"
+              element={<MenuAdmin setIsMenuPage={setIsMenuPage} />}
             />
           </Routes>
         </div>
