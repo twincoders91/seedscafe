@@ -118,7 +118,16 @@ function App() {
   return (
     <div>
       <div className="main--app--container">
-        {openModal ? <Modal setOpenModal={setOpenModal} /> : <></>}
+        {openModal ? (
+          <Modal
+            setOpenModal={setOpenModal}
+            setCheckOut={setCheckOut}
+            setMakePayment={setMakePayment}
+            setConfirmationPage={setConfirmationPage}
+          />
+        ) : (
+          <></>
+        )}
         <div className="main--app--inner-container">
           {/* hide the navbar when menu is opened*/}
           <NavBar
@@ -128,6 +137,8 @@ function App() {
             setTotalAmount={setTotalAmount}
             setCheckOut={setCheckOut}
             isMenuPage={isMenuPage}
+            setMakePayment={setMakePayment}
+            setConfirmationPage={setConfirmationPage}
           />
           <Routes>
             <Route path="/" element={<Home setOpenModal={setOpenModal} />} />

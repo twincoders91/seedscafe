@@ -11,9 +11,14 @@ const NavBar = ({
   cartArtDetails,
   setTotalAmount,
   setCheckOut,
+  setMakePayment,
+  setConfirmationPage,
   isMenuPage,
 }) => {
   const handleGoToCart = () => {
+    setCheckOut(false);
+    setMakePayment(false);
+    setConfirmationPage(false);
     const sumArtTotal = cartArtDetails
       .map((item) => item.price)
       .reduce((prev, curr) => prev + curr, 0);
