@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import backarrow from "../assets/menu/images/backarrow.svg";
 import "./menuStyles.css";
 import MenuCategoryCard from "./MenuCategoryCard";
-import FullMenu from "./fullMenu";
+// import FullMenu from "./fullMenu";
 import Menu from "./Menu";
 import SpecificItem from "./SpecificItem";
 
 const MenuCategory = (props) => {
-  const menuCategoryData = FullMenu.reduce((finalArray, current) => {
+  const menuCategoryData = props.FullMenu.reduce((finalArray, current) => {
     let obj = finalArray.find((item) => item.category === current.category);
     if (obj) {
       return finalArray;
