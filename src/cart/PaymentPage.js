@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import topRowArrows from "../assets/cart/toprow/toprowarrows.svg";
 import masterCard from "../assets/cart/payment/mastercard.svg";
 import visaCard from "../assets/cart/payment/visacard.svg";
@@ -15,6 +15,13 @@ const PaymentPage = ({
   roundUpValue,
   setCartArtDetails,
   setShoppingCartNumber,
+  nameInput,
+  addressInput,
+  apartmentInput,
+  postalCodeInput,
+  phoneInput,
+  emailInput,
+  confirmationPage,
 }) => {
   const [check, setCheck] = useState(false);
   const [tncCheck, setTncCheck] = useState(false);
@@ -33,18 +40,40 @@ const PaymentPage = ({
     });
   };
 
-  const handleMakePayment = () => {
+  const createShippingDB = async () => {
+    const res = await fetch("http://127.0.0.1:5006/shipping/createshipping", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "PUT",
+      body: JSON.stringify({
+        cart: cartArtDetails,
+        name: nameInput,
+        address: addressInput,
+        apartment: apartmentInput,
+        postalCode: postalCodeInput,
+        phone: phoneInput,
+        email: emailInput,
+      }),
+    });
+  };
+
+  const handleMakePayment = async () => {
     for (let i = 0; i < cartArtDetails.length; i++) {
-      updateToSold(cartArtDetails[i].id);
+      await updateToSold(cartArtDetails[i].id);
     }
+    await createShippingDB();
     setConfirmationPage(true);
-    // setMakePayment(false);
+    setCartArtDetails([]);
+  };
+
+  useEffect(() => {
     setCheck(false);
     setTncCheck(false);
     setCardDetails(false);
-    setCartArtDetails([]);
     setShoppingCartNumber("none");
-  };
+  }, [confirmationPage]);
 
   return (
     <div className="payment--main--container">

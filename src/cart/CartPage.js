@@ -27,6 +27,12 @@ const CartPage = ({
   const [totalCartValue, setTotalCartValue] = useState(0);
   const [inputValue, setInputValue] = useState(0);
   const [roundUpValue, setRoundUpValue] = useState(0);
+  const [nameInput, setNameInput] = useState("");
+  const [addressInput, setAddressInput] = useState("");
+  const [apartmentInput, setApartmentInput] = useState("");
+  const [postalCodeInput, setPostalCodeInput] = useState("");
+  const [phoneInput, setPhoneInput] = useState("");
+  const [emailInput, setEmailInput] = useState("");
 
   //===USE EFFECT to update the total cart value when donation and total amount changes===
   useEffect(() => {
@@ -122,7 +128,6 @@ const CartPage = ({
     setDonationButton4Clicked(false);
   };
 
-  console.log(roundUpValue);
   //==================================================================================
 
   return (
@@ -328,6 +333,18 @@ const CartPage = ({
             totalCartValue={totalCartValue}
             setCheckOut={setCheckOut}
             roundUpValue={roundUpValue}
+            nameInput={nameInput}
+            addressInput={addressInput}
+            apartmentInput={apartmentInput}
+            postalCodeInput={postalCodeInput}
+            phoneInput={phoneInput}
+            emailInput={emailInput}
+            setNameInput={setNameInput}
+            setAddressInput={setAddressInput}
+            setApartmentInput={setApartmentInput}
+            setPostalCodeInput={setPostalCodeInput}
+            setPhoneInput={setPhoneInput}
+            setEmailInput={setEmailInput}
           />
         ) : !confirmationPage ? (
           <PaymentPage
@@ -339,6 +356,13 @@ const CartPage = ({
             roundUpValue={roundUpValue}
             setCartArtDetails={setCartArtDetails}
             setShoppingCartNumber={setShoppingCartNumber}
+            nameInput={nameInput}
+            addressInput={addressInput}
+            apartmentInput={apartmentInput}
+            postalCodeInput={postalCodeInput}
+            phoneInput={phoneInput}
+            emailInput={emailInput}
+            confirmationPage={confirmationPage}
           />
         ) : (
           <ConfirmationPage
