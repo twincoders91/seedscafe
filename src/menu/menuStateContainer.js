@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import MenuCategory from "./MenuCategory";
 import Menu from "./Menu";
@@ -26,6 +26,20 @@ const MenuStateContainer = ({
     setCatSelected(input);
   };
 
+  const [FullMenu, setFullMenu] = useState([]);
+
+  //========================fetch data from DB==========================
+  const fetchMenuItems = async () => {
+    const res = await fetch("http://127.0.0.1:5006/menu/allmenuitems");
+    const data = await res.json();
+    setFullMenu(data);
+    console.log(data);
+  };
+
+  useEffect(() => {
+    fetchMenuItems();
+  }, []);
+
   //--- Handle foodOrder---
   const handleAddFoodOrder = (newOrder) => {
     setFoodOrder((prevOrders) => [...prevOrders, newOrder]);
@@ -38,6 +52,7 @@ const MenuStateContainer = ({
       <MenuCategory
         handleMenuPageChange={handleMenuPageChange}
         handleCatSelectedChange={handleCatSelectedChange}
+        FullMenu={FullMenu}
       />
     );
   } else if (menuPage === "Menu") {
@@ -48,6 +63,7 @@ const MenuStateContainer = ({
         handleCatSelectedChange={handleCatSelectedChange}
         catSelected={catSelected}
         handleDishSelectedChange={handleDishSelectedChange}
+        FullMenu={FullMenu}
       />
     );
   } else if (menuPage === "SpecificItem") {

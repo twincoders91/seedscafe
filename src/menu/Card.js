@@ -4,10 +4,12 @@ import forwardarrow from "../assets/menu/images/forwardarrow.svg";
 
 const Card = (props) => {
   const { dishes, handleMenuPageChange, handleDishSelectedChange } = props;
+
   return (
     <div className="cards--container">
       <div className="row">
         {dishes.map((dish) => {
+          console.log(dish.img);
           return (
             <div
               className="card--container"

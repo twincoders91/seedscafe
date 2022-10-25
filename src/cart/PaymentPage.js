@@ -20,11 +20,25 @@ const PaymentPage = ({
   const [tncCheck, setTncCheck] = useState(false);
   const [cardDetails, setCardDetails] = useState(false);
 
-  console.log({ check });
-  console.log({ tncCheck });
+  console.log({ cartArtDetails });
+
+  const updateToSold = async (id) => {
+    const res = await fetch("http://127.0.0.1:5006/artwork/update", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "PATCH",
+      body: JSON.stringify({ id, sold: true }),
+    });
+  };
 
   const handleMakePayment = () => {
+    for (let i = 0; i < cartArtDetails.length; i++) {
+      updateToSold(cartArtDetails[i].id);
+    }
     setConfirmationPage(true);
+    // setMakePayment(false);
     setCheck(false);
     setTncCheck(false);
     setCardDetails(false);

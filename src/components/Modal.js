@@ -6,7 +6,12 @@ import facebook from "../assets/modal/facebook.svg";
 import rainbowCentre from "../assets/modal/rainbowcentre.svg";
 import { Link } from "react-router-dom";
 
-const ModalNavBar = ({ setOpenModal }) => {
+const ModalNavBar = ({
+  setOpenModal,
+  setCheckOut,
+  setMakePayment,
+  setConfirmationPage,
+}) => {
   return (
     <div className="overlay">
       <div className="modalNavBar--overview">
@@ -43,6 +48,9 @@ const ModalNavBar = ({ setOpenModal }) => {
             className="modal--text"
             onClick={() => {
               setOpenModal(false);
+              setCheckOut(false);
+              setMakePayment(false);
+              setConfirmationPage(false);
             }}
           >
             Support Artwork

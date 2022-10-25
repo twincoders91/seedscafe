@@ -52,13 +52,13 @@ function App() {
   const getArtData = async () => {
     try {
       const artRes = await fetchArtData();
-      console.log({ artRes });
+
       const artistRes = await fetchArtistData();
-      console.log({ artistRes });
+
+      console.log("successfully fetched");
 
       const fullArtData = await artRes.map((artRes) => {
         for (let j = 0; j < artistRes.length; j++) {
-          console.log(artistRes[j].artistName);
           if (artRes.artistName === artistRes[j].artistName) {
             let img;
             if (artRes.img) {
@@ -79,6 +79,7 @@ function App() {
             let physicalMaterial = artRes.physicalMaterial;
             let artistDescription = artistRes[j].artistDescription;
             let gender = artistRes[j].gender;
+            let id = artRes._id;
             return {
               img,
               category,
@@ -90,29 +91,43 @@ function App() {
               physicalMaterial,
               artistDescription,
               gender,
+              id,
             };
           } else {
-            console.log("not found");
+            // console.log("not found");
           }
         }
       });
       setArtData(fullArtData);
-      console.log(fullArtData);
     } catch (e) {
       console.log("Error in fetching.");
     }
   };
 
-  console.log(ArtData);
+  // console.log(ArtData);
+  // console.log({ cartArtDetails });
   //===================Use Effect to run fetch function upon mount======================
   useEffect(() => {
     getArtData();
-  }, []);
+  }, [cartArtDetails]);
+
+  console.log({ checkOut });
+  console.log({ makePayment });
+  console.log({ confirmationPage });
 
   return (
     <div>
       <div className="main--app--container">
-        {openModal ? <Modal setOpenModal={setOpenModal} /> : <></>}
+        {openModal ? (
+          <Modal
+            setOpenModal={setOpenModal}
+            setCheckOut={setCheckOut}
+            setMakePayment={setMakePayment}
+            setConfirmationPage={setConfirmationPage}
+          />
+        ) : (
+          <></>
+        )}
         <div className="main--app--inner-container">
           {/* hide the navbar when menu is opened*/}
           <NavBar
@@ -122,6 +137,8 @@ function App() {
             setTotalAmount={setTotalAmount}
             setCheckOut={setCheckOut}
             isMenuPage={isMenuPage}
+            setMakePayment={setMakePayment}
+            setConfirmationPage={setConfirmationPage}
           />
           <Routes>
             <Route path="/" element={<Home setOpenModal={setOpenModal} />} />
