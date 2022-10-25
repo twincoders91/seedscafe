@@ -128,7 +128,6 @@ const CartPage = ({
     setDonationButton4Clicked(false);
   };
 
-  console.log(roundUpValue);
   //==================================================================================
 
   return (
@@ -363,6 +362,7 @@ const CartPage = ({
             postalCodeInput={postalCodeInput}
             phoneInput={phoneInput}
             emailInput={emailInput}
+            confirmationPage={confirmationPage}
           />
         ) : (
           <ConfirmationPage
