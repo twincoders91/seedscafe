@@ -9,13 +9,6 @@ import { Link } from "react-router-dom";
 const OrderSubmission = (props) => {
   return (
     <div className="order--main--container">
-      <div className="order--top--container">
-        <div className="order--back--arrow">
-          <Link to="/foodmenu">
-            <img src={backarrow} alt="back"></img>
-          </Link>
-        </div>
-      </div>
       <br />
       <br />
       <div className="order--middle--container">
