@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import facebooklogo from "./assets/footer/footerfacebooklogo.svg";
 import ellipse from "./assets/footer/ellipse.svg";
 import instagramlogo from "./assets/footer/footerinstagram.svg";
