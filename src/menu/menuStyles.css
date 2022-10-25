@@ -633,3 +633,143 @@ html {
   border-radius: 5px;
   background-color: #4c6029;
 }
+
+/* ===========================================Menu Admin==================================== */
+
+.card--admin--container {
+  display: flex;
+  align-items: center;
+  padding: 16px 0px 16px 0px;
+  border: 0.5px #6b6b6b;
+  border-style: solid none none none;
+  position: relative;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: 'Roboto';
+
+}
+.card--admin--image {
+  width: 19.32vw;
+  height: 19.32vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.card--admin--image img{
+  height: 100%;
+
+  position: absolute; /* this 4 lines of css is to center image in div container*/
+
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+}
+
+.card--admin--body {
+  width:  250px;
+  margin-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card--admin--body-edit {
+  width:  350px;
+  margin-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.card--admin--body-edit .card--admin--description textarea,
+.card--admin--body-edit .card--admin--description input{
+  width: 100%;
+  height: 50px;
+}
+
+.card--admin--body-edit .card--admin--description input{
+  height: 20px;
+}
+
+.card--admin--name input,
+.card--admin--price input,
+.card--admin--tags input,
+.card--admin--description textarea,
+.card--admin--description input {
+  background-color:#fffbf0;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: "Roboto";
+}
+
+.card--admin--name {
+  width: 65%;
+  margin-bottom: 0.5rem;
+}
+.card--admin--price {
+  width: 30%;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.card--admin--price input{
+  width: 40%;
+  margin-bottom: 0.5rem;
+  
+}
+
+.card--admin--tags {
+  width: 75%;
+  margin-bottom: 0.5rem;
+}
+
+.card--admin--description {
+  width: 100%;
+  word-wrap: break-word;
+  margin-bottom: 0.5rem;
+}
+
+.card--admin--arrow button{
+  width: 80px ;
+  margin: 0 20px;
+  
+}
+
+.card--admin--price {
+}
+
+.admin--form--container{
+  background-color:#fffbf0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0
+
+}
+
+.admin--row--container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0.3rem;
+}
+
+.admin--form--container label{
+  display: inline-block;
+  width: 60%;
+  
+}
+
+.admin--form--container input,.admin--form--container textarea {
+  display: inline-block;
+  width: 90%;
+  background-color:#FFFFFF;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+}
+
+.admin--row--container button{
+ padding: 0.4rem;
+ position:relative;
+ width: 30%;
+}
