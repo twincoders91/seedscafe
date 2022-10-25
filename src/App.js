@@ -15,8 +15,8 @@ import DineInModal from "./menu/DineInModal";
 import SpecificItem from "./menu/SpecificItem";
 import Modal from "./components/Modal";
 import OrderList from "./menu/OrderList";
-import MenuStateContainer from "./menu/menuStateContainer";
 import OrderStateContainer from "./menu/OrderStateContainer";
+import MenuStateContainer from "./menu/MenuStateContainer";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
