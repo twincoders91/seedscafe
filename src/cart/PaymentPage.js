@@ -15,6 +15,12 @@ const PaymentPage = ({
   roundUpValue,
   setCartArtDetails,
   setShoppingCartNumber,
+  nameInput,
+  addressInput,
+  apartmentInput,
+  postalCodeInput,
+  phoneInput,
+  emailInput,
 }) => {
   const [check, setCheck] = useState(false);
   const [tncCheck, setTncCheck] = useState(false);
@@ -33,10 +39,30 @@ const PaymentPage = ({
     });
   };
 
+  const createShippingDB = async () => {
+    const res = await fetch("http://127.0.0.1:5006/shipping/createshipping", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "PUT",
+      body: JSON.stringify({
+        cart: cartArtDetails,
+        name: nameInput,
+        address: addressInput,
+        apartment: apartmentInput,
+        postalCode: postalCodeInput,
+        phone: phoneInput,
+        email: emailInput,
+      }),
+    });
+  };
+
   const handleMakePayment = () => {
     for (let i = 0; i < cartArtDetails.length; i++) {
       updateToSold(cartArtDetails[i].id);
     }
+    createShippingDB();
     setConfirmationPage(true);
     // setMakePayment(false);
     setCheck(false);

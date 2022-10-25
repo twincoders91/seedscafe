@@ -9,14 +9,19 @@ const ShippingPage = ({
   totalCartValue,
   setCheckOut,
   roundUpValue,
+  nameInput,
+  addressInput,
+  apartmentInput,
+  postalCodeInput,
+  phoneInput,
+  emailInput,
+  setNameInput,
+  setAddressInput,
+  setApartmentInput,
+  setPostalCodeInput,
+  setPhoneInput,
+  setEmailInput,
 }) => {
-  const [nameInput, setNameInput] = useState("");
-  const [addressInput, setAddressInput] = useState("");
-  const [apartmentInput, setApartmentInput] = useState("");
-  const [postalCodeInput, setPostalCodeInput] = useState("");
-  const [phoneInput, setPhoneInput] = useState("");
-  const [emailInput, setEmailInput] = useState("");
-
   const handleContinueToPayment = () => {
     setMakePayment(true);
   };
