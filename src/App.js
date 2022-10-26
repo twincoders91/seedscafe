@@ -32,9 +32,10 @@ function App() {
   const [isMenuPage, setIsMenuPage] = useState(false);
   const [catSelected, setCatSelected] = useState("All Day Breakfast");
   const [dishSelected, setDishSelected] = useState("");
-  const [menuPage, setMenuPage] = useState("MenuCategory");
+  const [menuPage, setMenuPage] = useState("DineInModal");
   const [foodOrder, setFoodOrder] = useState([]);
   const [ArtData, setArtData] = useState([]);
+  const [tableNumber, setTableNumber] = useState();
 
   //========================fetch data from DB==========================
   const fetchArtData = async () => {
@@ -110,6 +111,10 @@ function App() {
   useEffect(() => {
     getArtData();
   }, [cartArtDetails]);
+
+  const handleTableNumber = (value) => {
+    setTableNumber(value);
+  };
 
   console.log({ checkOut });
   console.log({ makePayment });
@@ -207,6 +212,8 @@ function App() {
                   dishSelected={dishSelected}
                   setDishSelected={setDishSelected}
                   setFoodOrder={setFoodOrder}
+                  handleTableNumber={handleTableNumber}
+                  tableNumber={tableNumber}
                 />
               }
             />
@@ -218,6 +225,7 @@ function App() {
                   setMenuPage={setMenuPage}
                   foodOrder={foodOrder}
                   setFoodOrder={setFoodOrder}
+                  tableNumber={tableNumber}
                 />
               }
             />

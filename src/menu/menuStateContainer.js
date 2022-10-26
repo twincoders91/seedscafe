@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+import DineInModal from "./DineInModal";
 import MenuCategory from "./MenuCategory";
 import Menu from "./Menu";
 import SpecificItem from "./SpecificItem";
@@ -13,6 +14,8 @@ const MenuStateContainer = ({
   dishSelected,
   setDishSelected,
   setFoodOrder,
+  handleTableNumber,
+  tableNumber,
 }) => {
   setIsMenuPage(true);
 
@@ -27,6 +30,10 @@ const MenuStateContainer = ({
   };
 
   const [FullMenu, setFullMenu] = useState([]);
+
+  const getTableNumber = (value) => {
+    handleTableNumber(value);
+  };
 
   //========================fetch data from DB==========================
   const fetchMenuItems = async () => {
@@ -47,12 +54,20 @@ const MenuStateContainer = ({
 
   let page;
 
-  if (menuPage === "MenuCategory") {
+  if (menuPage === "DineInModal") {
+    page = (
+      <DineInModal
+        handleMenuPageChange={handleMenuPageChange}
+        getTableNumber={getTableNumber}
+      />
+    );
+  } else if (menuPage === "MenuCategory") {
     page = (
       <MenuCategory
         handleMenuPageChange={handleMenuPageChange}
         handleCatSelectedChange={handleCatSelectedChange}
         FullMenu={FullMenu}
+        tableNumber={tableNumber}
       />
     );
   } else if (menuPage === "Menu") {
@@ -64,6 +79,7 @@ const MenuStateContainer = ({
         catSelected={catSelected}
         handleDishSelectedChange={handleDishSelectedChange}
         FullMenu={FullMenu}
+        tableNumber={tableNumber}
       />
     );
   } else if (menuPage === "SpecificItem") {
@@ -73,6 +89,7 @@ const MenuStateContainer = ({
         menuPage={menuPage}
         dishSelected={dishSelected}
         handleAddFoodOrder={handleAddFoodOrder}
+        tableNumber={tableNumber}
       />
     );
   }

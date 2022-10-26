@@ -41,6 +41,7 @@ const SpecificItem = (props) => {
       <TableHeader
         menuPage={props.menuPage}
         handleMenuPageChange={props.handleMenuPageChange}
+        tableNumber={props.tableNumber}
       />
       <div className="specific--list--container">
         <div className="specific--image--container">
