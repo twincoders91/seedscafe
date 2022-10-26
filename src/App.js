@@ -16,8 +16,10 @@ import DineInModal from "./menu/DineInModal";
 import SpecificItem from "./menu/SpecificItem";
 import Modal from "./components/Modal";
 import OrderList from "./menu/OrderList";
-import MenuStateContainer from "./menu/menuStateContainer";
 import OrderStateContainer from "./menu/OrderStateContainer";
+
+import MenuAdmin from "./menu/MenuAdmin";
+import MenuStateContainer from "./menu/menuStateContainer";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -33,9 +35,10 @@ function App() {
   const [isMenuPage, setIsMenuPage] = useState(false);
   const [catSelected, setCatSelected] = useState("All Day Breakfast");
   const [dishSelected, setDishSelected] = useState("");
-  const [menuPage, setMenuPage] = useState("MenuCategory");
+  const [menuPage, setMenuPage] = useState("DineInModal");
   const [foodOrder, setFoodOrder] = useState([]);
   const [ArtData, setArtData] = useState([]);
+  const [tableNumber, setTableNumber] = useState();
 
   //========================fetch data from DB==========================
   const fetchArtData = async () => {
@@ -128,6 +131,14 @@ function App() {
   useEffect(() => {
     getArtData();
   }, [cartArtDetails]);
+
+  const handleTableNumber = (value) => {
+    setTableNumber(value);
+  };
+
+  console.log({ checkOut });
+  console.log({ makePayment });
+  console.log({ confirmationPage });
 
   return (
     <div>
@@ -226,6 +237,8 @@ function App() {
                   dishSelected={dishSelected}
                   setDishSelected={setDishSelected}
                   setFoodOrder={setFoodOrder}
+                  handleTableNumber={handleTableNumber}
+                  tableNumber={tableNumber}
                 />
               }
             />
@@ -237,8 +250,13 @@ function App() {
                   setMenuPage={setMenuPage}
                   foodOrder={foodOrder}
                   setFoodOrder={setFoodOrder}
+                  tableNumber={tableNumber}
                 />
               }
+            />
+            <Route
+              path="/menuadmin"
+              element={<MenuAdmin setIsMenuPage={setIsMenuPage} />}
             />
           </Routes>
         </div>

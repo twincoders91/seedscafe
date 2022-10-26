@@ -4,6 +4,10 @@ html {
   font-size: 16px;
 }
 
+a:link, a:visited, a:hover, a:active{
+  text-decoration: none;
+}
+
 /* ===========================================Menu Page==================================== */
 
 .menu--main--container,
@@ -67,8 +71,8 @@ html {
   justify-content: center;
   
   display: grid;
-  grid-gap: 3.864vw;
-  grid-template-columns: 42.27vw 42.27vw;
+  grid-gap: 16px;
+  grid-template-columns: 175px 175px;
   margin-bottom: 100px;
 }
 
@@ -79,8 +83,8 @@ html {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  height: 44.927vw;
-  width: 42.27vw;
+  height: 186px;
+  width: 175px;
   border-radius: 9px;
   border: 1px solid;
   border-color: #acacac;
@@ -95,7 +99,7 @@ html {
 }
 
 .menuCard--top img{
-  height: 110%;
+  height: 130%;
   position: absolute; /* this 4 lines of css is to center image in div container*/
 
   left: 50%;
@@ -155,15 +159,15 @@ html {
 .card--container {
   display: flex;
   align-items: center;
-  height: 19.32vw;
+  height: 80px;
   padding: 16px 0px 16px 0px;
   border: 0.5px #6b6b6b;
   border-style: solid none none none;
   position: relative;
 }
 .card--image {
-  width: 19.32vw;
-  height: 19.32vw;
+  width: 80px;
+  height: 80px;
   position: relative;
   overflow: hidden;
 }
@@ -191,7 +195,7 @@ html {
 
 .card--arrow {
   position: absolute;
-  right: 1.2vw;
+  right: 5px;
 }
 
 .card--price {
@@ -208,7 +212,6 @@ html {
 
   font-family: "Roboto", sans-serif;
   color: #474b4e;
-  padding-top: 1vh;
 
   font-family: "Roboto", sans-serif;
   color: #474b4e;
@@ -232,13 +235,13 @@ html {
 }
 
 .specific--text--container {
-  min-height: 8.26vh;
+  min-height: 74px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-bottom: 0.5px solid #6b6b6b;
-  padding: 3.35vh 0 2.23vh 0;
+  padding: 30px 0 20px 0;
 }
 
 .specific--name--price {
@@ -251,8 +254,7 @@ html {
   font-style: normal;
   font-weight: 500;
   line-height: 1.465rem;
-  height: 1.465rem;
-  padding-bottom: 1.5vh;
+  margin-bottom: 13.4px;
 }
 
 .specific--text--container p {
@@ -265,9 +267,9 @@ html {
 .specific--special--request {
   display: flex;
   flex-direction: column;
-  height: 14.5vh;
+  height: 130px;
   width: 100%;
-  padding: 2.25vh 0;
+  padding: 20px 0;
   border-bottom: 0.5px solid #6b6b6b;
 }
 
@@ -278,7 +280,7 @@ html {
   font-weight: 700;
 }
 .specific--special--request textarea {
-  height: 11.16vh;
+  height: 100px;
   width: 93.2%;
   padding: 3.4%;
   font-family: "Roboto";
@@ -289,7 +291,7 @@ html {
 }
 
 .specific--number--container {
-  height: 8.37vh;
+  height: 75px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -309,7 +311,7 @@ html {
 }
 
 .specific--quantity--toggle {
-  width: 37.7vw;
+  width: 156px;
   display: flex;
   justify-content: space-between;
 }
@@ -317,19 +319,19 @@ html {
 .specific--button--container {
   display: flex;
   flex-direction: column;
-  padding: 4.45vh 0;
+  padding: 39.8px 0;
 }
 
 .specific--addToOrderList {
   width: 100%;
-  height: 4.9vh;
+  height: 43.9px;
   text-align: center;
   border: 1px solid black;
   border-radius: 10px;
 
   font-size: 1.25rem;
   font-weight: 500;
-  line-height: 4.9vh;
+  line-height: 43.9px;
   border-color: #4C6029;
   background-color: #4C6029;
   color: #fffbf0;
@@ -403,21 +405,21 @@ html {
 
 .order--submitOrder {
   width: 100%;
-  height: 4.9vh;
+  height: 43.9px;
   text-align: center;
   border: 1px solid black;
   border-radius: 10px;
 
   font-size: 1.25rem;
   font-weight: 500;
-  line-height: 4.9vh;
+  line-height: 43.9px;
   border-color: #4C6029;
   background-color: #4C6029;
   color: #fffbf0;
 }
 
 .single--orderCard--container {
-  height: 19.3vw;
+  height: 80px;
   background-color: #FFFFFF;
   display: flex;
   margin-bottom: 25px;
@@ -425,7 +427,7 @@ html {
 
 .orderCard--image{
   height: 100%;
-  width: 19.3vw;
+  width: 80px;
   overflow: hidden;
   position: relative;
   margin-right: 1rem;
@@ -440,7 +442,7 @@ html {
 }
 
 .orderCard--text{
-  width: 50vw;
+  width: 207px;
   display: flex;
   flex-direction: column;
   text-overflow:clip;
@@ -632,4 +634,144 @@ html {
   line-height: 120%;
   border-radius: 5px;
   background-color: #4c6029;
+}
+
+/* ===========================================Menu Admin==================================== */
+
+.card--admin--container {
+  display: flex;
+  align-items: center;
+  padding: 16px 0px 16px 0px;
+  border: 0.5px #6b6b6b;
+  border-style: solid none none none;
+  position: relative;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: 'Roboto';
+
+}
+.card--admin--image {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card--admin--image img{
+  height: 100%;
+
+  position: absolute; /* this 4 lines of css is to center image in div container*/
+
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+}
+
+.card--admin--body {
+  width:  250px;
+  margin-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card--admin--body-edit {
+  width:  350px;
+  margin-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.card--admin--body-edit .card--admin--description textarea,
+.card--admin--body-edit .card--admin--description input{
+  width: 100%;
+  height: 50px;
+}
+
+.card--admin--body-edit .card--admin--description input{
+  height: 20px;
+}
+
+.card--admin--name input,
+.card--admin--price input,
+.card--admin--tags input,
+.card--admin--description textarea,
+.card--admin--description input {
+  background-color:#fffbf0;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: "Roboto";
+}
+
+.card--admin--name {
+  width: 65%;
+  margin-bottom: 0.5rem;
+}
+.card--admin--price {
+  width: 30%;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.card--admin--price input{
+  width: 40%;
+  margin-bottom: 0.5rem;
+  
+}
+
+.card--admin--tags {
+  width: 75%;
+  margin-bottom: 0.5rem;
+}
+
+.card--admin--description {
+  width: 100%;
+  word-wrap: break-word;
+  margin-bottom: 0.5rem;
+}
+
+.card--admin--arrow button{
+  width: 80px ;
+  margin: 0 20px;
+  
+}
+
+.card--admin--price {
+}
+
+.admin--form--container{
+  background-color:#fffbf0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0
+
+}
+
+.admin--row--container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0.3rem;
+}
+
+.admin--form--container label{
+  display: inline-block;
+  width: 60%;
+  
+}
+
+.admin--form--container input,.admin--form--container textarea {
+  display: inline-block;
+  width: 90%;
+  background-color:#FFFFFF;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+}
+
+.admin--row--container button{
+ padding: 0.4rem;
+ position:relative;
+ width: 30%;
 }

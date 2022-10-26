@@ -40,13 +40,21 @@ const OrderListUpdate = (props) => {
     props.setIsOrderUpdate(false);
   };
 
+  const tableNumber = () => {
+    if (props.tableNumber == "Takeaway") {
+      return "Takeaway";
+    } else {
+      return `Table No. ${props.tableNumber}`;
+    }
+  };
+
   return (
     <div className="specific--main--container">
       <div className="table--top--container">
         <div className="menu--back--arrow" onClick={handleBackClick}>
           <img src={backarrow} alt="order"></img>
         </div>
-        <div className="table--title">Table No. 8</div>
+        <div className="table--title">{tableNumber()}</div>
         <div className="menu--ordericon" onClick={handleBackClick}>
           <img src={order} alt="order"></img>
         </div>

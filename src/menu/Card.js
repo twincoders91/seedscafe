@@ -24,7 +24,7 @@ const Card = (props) => {
               </div>
               <div className="card--body">
                 <div className="card--name">{dish.name}</div>
-                <div className="card--price">${dish.price}0</div>
+                <div className="card--price">${dish.price}</div>
               </div>
               <div className="card--arrow">
                 <img src={forwardarrow} alt="next" />
