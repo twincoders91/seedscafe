@@ -8,6 +8,24 @@ const OrderStateContainer = (props) => {
   const [orderID, setOrderID] = useState();
   const [orderNumber, setOrderNumber] = useState();
 
+  const fetchOrderNumber = async () => {
+    const res = await fetch("http://localhost:5006/order/count", {
+      // Adding method type
+      method: "GET",
+
+      // Adding body or contents to send
+
+      // Adding headers to the request
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
+
+    const data = await res.json();
+    console.log(data);
+    setOrderNumber(data);
+  };
+
   const handleOrderPageChange = (input) => {
     setOrderPage(input);
   };
@@ -39,6 +57,8 @@ const OrderStateContainer = (props) => {
       };
     });
 
+    fetchOrderNumber();
+    console.log(`ordernumber : ${orderNumber}`);
     let orderDBinput = {
       mode: props.tableNumber === "Takeaway" ? "Take Away" : "Dine In",
       number: props.tableNumber.toString(),
@@ -63,7 +83,7 @@ const OrderStateContainer = (props) => {
 
     const orderNumFromId = data[0]._id;
     setOrderID(orderNumFromId);
-    setOrderNumber(parseInt(orderNumFromId.slice(-3), 16));
+    // setOrderNumber(parseInt(orderNumFromId.slice(-3), 16));
   };
 
   //   {
