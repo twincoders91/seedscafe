@@ -735,15 +735,6 @@ a:active {
 .card--admin--price {
 }
 
-<<<<<<< Updated upstream
-.admin--form--container{
-  background-color:#fffbf0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin: 2rem 0
-
-=======
 .admin--form--container {
   background-color: #fffbf0;
   width: 100%;
@@ -753,7 +744,6 @@ a:active {
   font-size: 14px;
   font-weight: 300;
   margin: 2rem 0;
->>>>>>> Stashed changes
 }
 
 .admin--row--container {
