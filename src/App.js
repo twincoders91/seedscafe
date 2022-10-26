@@ -18,7 +18,7 @@ import OrderList from "./menu/OrderList";
 import OrderStateContainer from "./menu/OrderStateContainer";
 
 import MenuAdmin from "./menu/MenuAdmin";
-import MenuStateContainer from "./menu/MenuStateContainer";
+import MenuStateContainer from "./menu/menuStateContainer";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
