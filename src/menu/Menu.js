@@ -31,6 +31,7 @@ const Menu = (props) => {
     <div className="menu--main--container">
       <TableHeader
         menuPage={props.menuPage}
+        tableNumber={props.tableNumber}
         handleMenuPageChange={props.handleMenuPageChange}
       />
 
