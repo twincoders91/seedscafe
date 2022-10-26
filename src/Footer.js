@@ -37,7 +37,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer--middle--section">
-        <Link to="/menucategory" className="footer--links">
+        <Link to="/foodmenu" className="footer--links">
           {" "}
           <p className="footer--middle--section--text">Menu</p>
         </Link>
