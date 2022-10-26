@@ -22,7 +22,7 @@ const OrderSubmission = (props) => {
         <div className="qrcode--container">
           <QRCode
             title="GeeksForGeeks"
-            value={`http://localhost:5001/order/id/${props.orderID}`}
+            value={`http://localhost:5006/order/id/${props.orderID}`}
             bgColor={"#ece7dc"}
             fgColor={"#4c6029"}
             size={80}
