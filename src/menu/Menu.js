@@ -29,7 +29,6 @@ const Menu = (props) => {
   //==================================================================================
   return (
     <div className="menu--main--container">
-      <>{console.log(dishes)}</>
       <TableHeader
         menuPage={props.menuPage}
         tableNumber={props.tableNumber}

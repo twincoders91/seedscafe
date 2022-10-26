@@ -50,7 +50,6 @@ const OrderList = (props) => {
   if (isOrderUpdate === false) {
     return (
       <div className="specific--main--container">
-        {console.log(props.foodOrder)}
         <div className="table--top--container">
           <div className="menu--back--arrow">
             <Link to="/foodmenu">
@@ -91,7 +90,6 @@ const OrderList = (props) => {
             <button className="order--submitOrder">Submit Order List</button>
           </div>
         </div>
-        {console.log(props.foodOrder)}
       </div>
     );
   } else if (isOrderUpdate === true) {

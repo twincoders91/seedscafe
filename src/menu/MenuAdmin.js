@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import FilterButtons from "./FilterButtons";
-import FullMenu from "./fullMenu";
 import AdminMenuCard from "./AdminMenuCard";
 
 const MenuAdmin = (props) => {
   props.setIsMenuPage(true);
-  const [FullMenu, setFullMenu] = useState([]);
+
   const [dishes, setDishes] = useState([]);
-  const [catSelected, setCatSelected] = useState("Mains");
   const [name, setName] = useState();
   const [price, setPrice] = useState();
   const [category, setCategory] = useState();
@@ -34,34 +32,6 @@ const MenuAdmin = (props) => {
     setImgUrl(event.target.value);
   };
 
-  const handleCreate = async () => {
-    await fetch("http://localhost:5006/menu/newmenuitem", {
-      method: "PUT",
-      body: JSON.stringify({
-        name,
-        price: parseInt(price),
-        category,
-        tags,
-        description,
-        img: imgUrl,
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    });
-
-    setName("");
-    setPrice("");
-    setCategory("");
-    setTags("");
-    setDescription("");
-    setImgUrl("");
-  };
-
-  const handleCatSelectedChange = (input) => {
-    setCatSelected(input);
-  };
-
   const handleUpdateEntry = (index, updatedItem) => {
     setDishes((prevEntries) => {
       const arr = [...prevEntries];
@@ -78,36 +48,61 @@ const MenuAdmin = (props) => {
     });
   };
 
-  const fetchMenuItems = async () => {
-    const res = await fetch("http://localhost:5006/menu/allmenuitems");
-    const data = await res.json();
-    setFullMenu(data);
+  const handleNewEntry = (enteredData) => {
+    setDishes((prevEntry) => [...prevEntry, enteredData]);
   };
 
-  useEffect(() => {
-    fetchMenuItems();
-  }, []);
+  const handleCreate = async () => {
+    const res = await fetch("http://localhost:5006/menu/newmenuitem", {
+      method: "PUT",
+      body: JSON.stringify({
+        name,
+        price: parseInt(price),
+        category,
+        tags,
+        description,
+        img: imgUrl,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
+
+    const createdData = await res.json();
+    console.log(createdData);
+
+    handleNewEntry(createdData);
+    setName("");
+    setPrice("");
+    setCategory("");
+    setTags("");
+    setDescription("");
+    setImgUrl("");
+  };
+
+  const handleCatSelectedChange = (input) => {
+    props.setCatSelected(input);
+  };
 
   const fetchCategoryItems = async () => {
     const res = await fetch(
-      "http://localhost:5006/menu/findbycategory/" + catSelected
+      "http://localhost:5006/menu/findbycategory/" + props.catSelected
     );
     const data = await res.json();
     setDishes(data);
   };
 
   useEffect(() => {
-    console.log("fetching cat items");
     fetchCategoryItems();
-  }, [catSelected]);
+  }, [props.catSelected]);
 
   //===============creates a new array with the different Menu Categories============
 
-  const menuItems = [...new Set(FullMenu.map((dish) => dish.category))];
+  const menuItems = [...new Set(props.FullMenu.map((dish) => dish.category))];
   //==========filtering dishes based on Category Clicked, to show on cards===========
 
   const filterDish = (curentCategory) => {
-    const newDish = FullMenu.filter((newDish) => {
+    const newDish = props.FullMenu.filter((newDish) => {
       return newDish.category === curentCategory;
     });
   };
@@ -167,7 +162,7 @@ const MenuAdmin = (props) => {
           setDishes={setDishes}
           menuItems={menuItems}
           handleCatSelectedChange={handleCatSelectedChange}
-          catSelected={catSelected}
+          catSelected={props.catSelected}
         />
       </div>
       <div className="menu--items--container">
@@ -176,10 +171,9 @@ const MenuAdmin = (props) => {
             <AdminMenuCard
               data={data}
               index={index}
-              fetchMenuItems={fetchMenuItems}
               handleUpdateEntry={handleUpdateEntry}
               handleDeleteEntry={handleDeleteEntry}
-              FullMenu={FullMenu}
+              FullMenu={props.FullMenu}
             />
           );
         })}
