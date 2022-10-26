@@ -79,7 +79,7 @@ const MenuAdmin = (props) => {
   };
 
   const fetchMenuItems = async () => {
-    const res = await fetch("http://127.0.0.1:5006/menu/allmenuitems");
+    const res = await fetch("http://localhost:5006/menu/allmenuitems");
     const data = await res.json();
     setFullMenu(data);
   };
@@ -90,7 +90,7 @@ const MenuAdmin = (props) => {
 
   const fetchCategoryItems = async () => {
     const res = await fetch(
-      "http://127.0.0.1:5006/menu/findbycategory/" + catSelected
+      "http://localhost:5006/menu/findbycategory/" + catSelected
     );
     const data = await res.json();
     setDishes(data);
