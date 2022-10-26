@@ -41,8 +41,8 @@ const OrderStateContainer = (props) => {
     });
 
     let orderDBinput = {
-      mode: "take away",
-      number: 103,
+      mode: props.tableNumber === "Takeaway" ? "Take Away" : "Dine In",
+      number: props.tableNumber.toString(),
       dishes: newArr,
       paid: false,
       fulfilled: false,
