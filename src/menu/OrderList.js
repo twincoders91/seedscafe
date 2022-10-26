@@ -81,7 +81,7 @@ const OrderList = (props) => {
           </div>
           <div className="order--text--format order--total">
             <label>Total</label>
-            <label>${totalPrice}</label>
+            <label>${totalPrice.toFixed(2)}</label>
           </div>
           <div
             className="order--button--container"

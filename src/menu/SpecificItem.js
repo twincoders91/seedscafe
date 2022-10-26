@@ -19,7 +19,7 @@ const SpecificItem = (props) => {
   const handleOrderClick = () => {
     const newOrder = {
       name: props.dishSelected.name,
-      price: parseInt(props.dishSelected.price),
+      price: props.dishSelected.price,
       img: props.dishSelected.img,
       description: props.dishSelected.description,
       quantity: parseInt(quantity),
@@ -50,7 +50,7 @@ const SpecificItem = (props) => {
         <div className="specific--text--container">
           <div className="specific--name--price">
             <h3>{props.dishSelected.name}</h3>
-            <h3>${props.dishSelected.price}</h3>
+            <h3>${props.dishSelected.price.toFixed(2)}</h3>
           </div>
           <p>{props.dishSelected.description}</p>
         </div>

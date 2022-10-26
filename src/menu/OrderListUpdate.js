@@ -28,7 +28,7 @@ const OrderListUpdate = (props) => {
   const handleUpdateClick = () => {
     let updatedData = {
       name: props.dataEdit.name,
-      price: parseInt(props.dataEdit.price),
+      price: props.dataEdit.price,
       img: props.dataEdit.img,
       description: props.dataEdit.description,
       quantity: parseInt(quantity),
@@ -43,7 +43,7 @@ const OrderListUpdate = (props) => {
     if (props.tableNumber == "Takeaway") {
       return "Takeaway";
     } else {
-      return `Table No. ${props.tableNumber}`;
+      return `${props.tableNumber}`;
     }
   };
 

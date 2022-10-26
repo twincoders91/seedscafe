@@ -10,12 +10,12 @@ const dataSlider = [
   },
   {
     id: 2,
-    description: "Slider 2",
+    description: "Explore the Menu",
     img: img2,
   },
   {
     id: 3,
-    description: "Slider 3",
+    description: "Explore Artwork",
     img: img3,
   },
 ];

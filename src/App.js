@@ -7,6 +7,7 @@ import ArtGallery from "./art/ArtGallery";
 import SpecificArtworkPage from "./art/SpecificArtworkPage";
 import AdminArtwork from "./art/AdminArtwork";
 
+import CashierAdmin from "./menu/CashierAdmin";
 import OrderSubmission from "./menu/OrderSubmission";
 import MenuCategory from "./menu/MenuCategory";
 import Menu from "./menu/Menu";
@@ -282,6 +283,7 @@ function App() {
                 />
               }
             />
+            <Route path="/cashieradmin" element={<CashierAdmin />} />
           </Routes>
         </div>
         <Footer />
