@@ -50,7 +50,6 @@ const OrderList = (props) => {
   if (isOrderUpdate === false) {
     return (
       <div className="specific--main--container">
-        {console.log(props.foodOrder)}
         <div className="table--top--container">
           <div className="menu--back--arrow">
             <Link to="/foodmenu">
@@ -82,7 +81,7 @@ const OrderList = (props) => {
           </div>
           <div className="order--text--format order--total">
             <label>Total</label>
-            <label>${totalPrice}</label>
+            <label>${totalPrice.toFixed(2)}</label>
           </div>
           <div
             className="order--button--container"

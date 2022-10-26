@@ -34,7 +34,7 @@ const OrderStateContainer = (props) => {
     let newArr = foodOrder.map((d, i) => {
       return {
         name: d.name,
-        price: d.price,
+        price: d.price.toFixed(2),
         quantity: d.quantity,
         specialRequest: d.specialRequest,
       };
