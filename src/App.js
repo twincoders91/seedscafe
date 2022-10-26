@@ -38,6 +38,7 @@ function App() {
   const [foodOrder, setFoodOrder] = useState([]);
   const [ArtData, setArtData] = useState([]);
   const [tableNumber, setTableNumber] = useState();
+  const [FullMenu, setFullMenu] = useState([]);
 
   //========================fetch data from DB==========================
   const fetchArtData = async () => {
@@ -118,9 +119,9 @@ function App() {
     setTableNumber(value);
   };
 
-  console.log({ checkOut });
-  console.log({ makePayment });
-  console.log({ confirmationPage });
+  // console.log({ checkOut });
+  // console.log({ makePayment });
+  // console.log({ confirmationPage });
 
   return (
     <div>
@@ -216,6 +217,8 @@ function App() {
                   setFoodOrder={setFoodOrder}
                   handleTableNumber={handleTableNumber}
                   tableNumber={tableNumber}
+                  FullMenu={FullMenu}
+                  setFullMenu={setFullMenu}
                 />
               }
             />

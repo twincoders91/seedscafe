@@ -16,6 +16,8 @@ const MenuStateContainer = ({
   setFoodOrder,
   handleTableNumber,
   tableNumber,
+  FullMenu,
+  setFullMenu,
 }) => {
   setIsMenuPage(true);
 
@@ -28,8 +30,6 @@ const MenuStateContainer = ({
   const handleCatSelectedChange = (input) => {
     setCatSelected(input);
   };
-
-  const [FullMenu, setFullMenu] = useState([]);
 
   const getTableNumber = (value) => {
     handleTableNumber(value);
