@@ -2,7 +2,8 @@ import { PriceChangeSharp } from "@mui/icons-material";
 import React, { useState } from "react";
 
 const AdminMenuCard = (props) => {
-  const { data, index, fetchMenuItems, handleUpdateEntry } = props;
+  const { data, index, fetchMenuItems, handleUpdateEntry, handleDeleteEntry } =
+    props;
   const [menuAdminUpdate, setMenuAdminUpdate] = useState(false);
   const [_id, set_Id] = useState();
   const [name, setName] = useState();
@@ -115,7 +116,7 @@ const AdminMenuCard = (props) => {
   //       tags:
   //     }})}
 
-  const handleDelete = async () => {
+  const handleDeleteClick = async () => {
     console.log(data._id);
     const id = data._id;
     await fetch("http://127.0.0.1:5006/menu/deletemenuitem", {
@@ -125,7 +126,8 @@ const AdminMenuCard = (props) => {
         "Content-type": "application/json; charset=UTF-8",
       },
     });
-    fetchMenuItems();
+
+    handleDeleteEntry(index);
   };
 
   if (menuAdminUpdate === false) {
@@ -166,7 +168,7 @@ const AdminMenuCard = (props) => {
 
               <div className="card--admin--arrow">
                 <button onClick={handleUpdateClick}>Update</button>
-                <button onClick={handleDelete}>Delete</button>
+                <button onClick={handleDeleteClick}>Delete</button>
               </div>
             </div>
           </div>
@@ -225,7 +227,7 @@ const AdminMenuCard = (props) => {
 
               <div className="card--admin--arrow">
                 <button onClick={handleSubmitClick}>Submit</button>
-                <button onClick={handleDelete}>Delete</button>
+                <button onClick={handleDeleteClick}>Delete</button>
               </div>
             </div>
           </div>

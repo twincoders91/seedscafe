@@ -6,6 +6,7 @@ import AdminMenuCard from "./AdminMenuCard";
 const MenuAdmin = (props) => {
   props.setIsMenuPage(true);
   const [FullMenu, setFullMenu] = useState([]);
+  const [dishes, setDishes] = useState([]);
   const [catSelected, setCatSelected] = useState("Mains");
   const [name, setName] = useState();
   const [price, setPrice] = useState();
@@ -62,10 +63,18 @@ const MenuAdmin = (props) => {
   };
 
   const handleUpdateEntry = (index, updatedItem) => {
-    setFullMenu((prevEntries) => {
+    setDishes((prevEntries) => {
       const arr = [...prevEntries];
       arr[index] = updatedItem;
       return arr;
+    });
+  };
+
+  const handleDeleteEntry = (index) => {
+    setDishes((prevEntry) => {
+      const arr = [...prevEntry];
+      const filtered = arr.filter((d, i) => i !== index);
+      return filtered;
     });
   };
 
@@ -78,8 +87,6 @@ const MenuAdmin = (props) => {
   useEffect(() => {
     fetchMenuItems();
   }, []);
-
-  const [dishes, setDishes] = useState([]);
 
   const fetchCategoryItems = async () => {
     const res = await fetch(
@@ -171,6 +178,7 @@ const MenuAdmin = (props) => {
               index={index}
               fetchMenuItems={fetchMenuItems}
               handleUpdateEntry={handleUpdateEntry}
+              handleDeleteEntry={handleDeleteEntry}
               FullMenu={FullMenu}
             />
           );
