@@ -32,34 +32,6 @@ const MenuAdmin = (props) => {
     setImgUrl(event.target.value);
   };
 
-  const handleCreate = async () => {
-    await fetch("http://localhost:5006/menu/newmenuitem", {
-      method: "PUT",
-      body: JSON.stringify({
-        name,
-        price: parseInt(price),
-        category,
-        tags,
-        description,
-        img: imgUrl,
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    });
-
-    setName("");
-    setPrice("");
-    setCategory("");
-    setTags("");
-    setDescription("");
-    setImgUrl("");
-  };
-
-  const handleCatSelectedChange = (input) => {
-    props.setCatSelected(input);
-  };
-
   const handleUpdateEntry = (index, updatedItem) => {
     setDishes((prevEntries) => {
       const arr = [...prevEntries];
@@ -76,6 +48,42 @@ const MenuAdmin = (props) => {
     });
   };
 
+  const handleNewEntry = (enteredData) => {
+    setDishes((prevEntry) => [...prevEntry, enteredData]);
+  };
+
+  const handleCreate = async () => {
+    const res = await fetch("http://localhost:5006/menu/newmenuitem", {
+      method: "PUT",
+      body: JSON.stringify({
+        name,
+        price: parseInt(price),
+        category,
+        tags,
+        description,
+        img: imgUrl,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
+
+    const createdData = await res.json();
+    console.log(createdData);
+
+    handleNewEntry(createdData);
+    setName("");
+    setPrice("");
+    setCategory("");
+    setTags("");
+    setDescription("");
+    setImgUrl("");
+  };
+
+  const handleCatSelectedChange = (input) => {
+    props.setCatSelected(input);
+  };
+
   const fetchCategoryItems = async () => {
     const res = await fetch(
       "http://localhost:5006/menu/findbycategory/" + props.catSelected
@@ -85,7 +93,6 @@ const MenuAdmin = (props) => {
   };
 
   useEffect(() => {
-    console.log("fetching cat items");
     fetchCategoryItems();
   }, [props.catSelected]);
 

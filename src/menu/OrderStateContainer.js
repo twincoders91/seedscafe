@@ -15,7 +15,6 @@ const OrderStateContainer = (props) => {
 
   const handleUpdateFoodOrder = (index, updatedItem) => {
     if (updatedItem.quantity > 0) {
-      console.log(updatedItem.quantity);
       props.setFoodOrder((prevOrders) => {
         const arr = [...prevOrders];
         arr[index] = updatedItem;
@@ -48,7 +47,6 @@ const OrderStateContainer = (props) => {
       fulfilled: false,
     };
 
-    console.log(orderDBinput);
     const res = await fetch(uri, {
       // Adding method type
       method: "PUT",
@@ -62,7 +60,7 @@ const OrderStateContainer = (props) => {
       },
     });
     const data = await res.json();
-    // console.log(data[0]._id);
+
     const orderNumFromId = data[0]._id;
     setOrderID(orderNumFromId);
     setOrderNumber(parseInt(orderNumFromId.slice(-3), 16));

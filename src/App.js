@@ -49,6 +49,7 @@ function App() {
   };
 
   useEffect(() => {
+    console.log(`fetching when mount FullMenu`);
     fetchMenuItems();
   }, []);
 

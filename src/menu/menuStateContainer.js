@@ -36,12 +36,11 @@ const MenuStateContainer = ({
   };
 
   //========================fetch data from DB==========================
-  const fetchMenuItems = async () => {
-    const res = await fetch("http://127.0.0.1:5006/menu/allmenuitems");
-    const data = await res.json();
-    setFullMenu(data);
-    console.log(data);
-  };
+  // const fetchMenuItems = async () => {
+  //   const res = await fetch("http://127.0.0.1:5006/menu/allmenuitems");
+  //   const data = await res.json();
+  //   setFullMenu(data);
+  // };
 
   //--- Handle foodOrder---
   const handleAddFoodOrder = (newOrder) => {
