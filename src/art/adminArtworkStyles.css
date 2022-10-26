@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* ========================================cart page=========================================== */
+.adminartwork--header {
+  margin-top: 40px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 16.41px;
+  color: #7b7e7f;
+}
+
+.adminartworkcontainer {
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.adminArtwork--input--container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #7b7e7f;
+  height: 25px;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.41px;
+  outline: none;
+  background-color: #ece7dc;
+}
+
+.adminArtwork--input {
+  margin-left: 15px;
+  border-radius: 5px;
+  background-color: #ece7dc;
+  outline: none;
+}
+
+.adminArtwork--input--selection {
+  margin-left: 10px;
+  border-radius: 5px;
+  width: 100%;
+  outline: none;
+  background-color: #ece7dc;
+  color: #7b7e7f;
+}
+
+.adminartwork--form {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-gap: 10px;
+}
+
+.adminartworkcontainer--bottom {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.submitchanges--admin--button {
+  background-color: #ece7dc;
+  width: 75px;
+  height: 40px;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.41px;
+  color: #474b4e;
+}
