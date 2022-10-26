@@ -16,6 +16,8 @@ const MenuStateContainer = ({
   setFoodOrder,
   handleTableNumber,
   tableNumber,
+  FullMenu,
+  setFullMenu,
 }) => {
   setIsMenuPage(true);
 
@@ -29,23 +31,16 @@ const MenuStateContainer = ({
     setCatSelected(input);
   };
 
-  const [FullMenu, setFullMenu] = useState([]);
-
   const getTableNumber = (value) => {
     handleTableNumber(value);
   };
 
   //========================fetch data from DB==========================
-  const fetchMenuItems = async () => {
-    const res = await fetch("http://127.0.0.1:5006/menu/allmenuitems");
-    const data = await res.json();
-    setFullMenu(data);
-    console.log(data);
-  };
-
-  useEffect(() => {
-    fetchMenuItems();
-  }, []);
+  // const fetchMenuItems = async () => {
+  //   const res = await fetch("http://127.0.0.1:5006/menu/allmenuitems");
+  //   const data = await res.json();
+  //   setFullMenu(data);
+  // };
 
   //--- Handle foodOrder---
   const handleAddFoodOrder = (newOrder) => {

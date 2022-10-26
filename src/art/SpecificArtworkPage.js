@@ -39,7 +39,7 @@ const SpecificArtworkPage = ({
     setCartArtDetails(itemsInCart);
     setShoppingCartNumber(itemsInCart.length);
   };
-  console.log(cartArtDetails);
+  console.log(y);
   //========================================================================================
 
   return (
@@ -155,7 +155,7 @@ const SpecificArtworkPage = ({
                       {otherArtWorks.artistName}
                     </div>
                     <div className="other--artworks--textbox--price">
-                      {otherArtWorks.price}
+                      ${Number(otherArtWorks.price).toFixed(2)}
                     </div>
                   </div>
                 </div>

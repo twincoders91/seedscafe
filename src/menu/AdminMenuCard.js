@@ -1,9 +1,7 @@
-import { PriceChangeSharp } from "@mui/icons-material";
 import React, { useState } from "react";
 
 const AdminMenuCard = (props) => {
-  const { data, index, fetchMenuItems, handleUpdateEntry, handleDeleteEntry } =
-    props;
+  const { data, index, handleUpdateEntry, handleDeleteEntry } = props;
   const [menuAdminUpdate, setMenuAdminUpdate] = useState(false);
   const [_id, set_Id] = useState();
   const [name, setName] = useState();
@@ -48,7 +46,7 @@ const AdminMenuCard = (props) => {
         "Content-type": "application/json; charset=UTF-8",
       },
     });
-    // console.log(res);
+
     const fetchData = await res.json();
     set_Id(fetchData._id);
     setName(fetchData.name);
@@ -62,7 +60,7 @@ const AdminMenuCard = (props) => {
 
   const handleUpdateClick = () => {
     setMenuAdminUpdate(true);
-    console.log(data._id);
+
     fetchById("http://localhost:5006/menu/findbyid/" + data._id);
   };
 
@@ -88,18 +86,10 @@ const AdminMenuCard = (props) => {
       },
     });
 
-    const updatedData = await res.json();
+    const updatedData = await res.json(); //patch router was set to send updated documents
+    console.log(updatedData);
+    handleUpdateEntry(index, updatedData.value); //change
 
-    console.log(props.FullMenu);
-    handleUpdateEntry(index, {
-      _id,
-      name,
-      price,
-      description,
-      category,
-      tags,
-      img: imgUrl,
-    });
     setMenuAdminUpdate(false);
   };
 
@@ -117,7 +107,6 @@ const AdminMenuCard = (props) => {
   //     }})}
 
   const handleDeleteClick = async () => {
-    console.log(data._id);
     const id = data._id;
     await fetch("http://127.0.0.1:5006/menu/deletemenuitem", {
       method: "DELETE",

@@ -90,7 +90,6 @@ const OrderList = (props) => {
             <button className="order--submitOrder">Submit Order List</button>
           </div>
         </div>
-        {console.log(props.foodOrder)}
       </div>
     );
   } else if (isOrderUpdate === true) {

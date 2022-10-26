@@ -8,6 +8,24 @@ const OrderStateContainer = (props) => {
   const [orderID, setOrderID] = useState();
   const [orderNumber, setOrderNumber] = useState();
 
+  const fetchOrderNumber = async () => {
+    const res = await fetch("http://localhost:5006/order/count", {
+      // Adding method type
+      method: "GET",
+
+      // Adding body or contents to send
+
+      // Adding headers to the request
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
+
+    const data = await res.json();
+    console.log(data);
+    setOrderNumber(data);
+  };
+
   const handleOrderPageChange = (input) => {
     setOrderPage(input);
   };
@@ -15,7 +33,6 @@ const OrderStateContainer = (props) => {
 
   const handleUpdateFoodOrder = (index, updatedItem) => {
     if (updatedItem.quantity > 0) {
-      console.log(updatedItem.quantity);
       props.setFoodOrder((prevOrders) => {
         const arr = [...prevOrders];
         arr[index] = updatedItem;
@@ -40,15 +57,16 @@ const OrderStateContainer = (props) => {
       };
     });
 
+    fetchOrderNumber();
+    console.log(`ordernumber : ${orderNumber}`);
     let orderDBinput = {
-      mode: "take away",
-      number: 103,
+      mode: props.tableNumber === "Takeaway" ? "Take Away" : "Dine In",
+      number: props.tableNumber.toString(),
       dishes: newArr,
       paid: false,
       fulfilled: false,
     };
 
-    console.log(orderDBinput);
     const res = await fetch(uri, {
       // Adding method type
       method: "PUT",
@@ -62,10 +80,10 @@ const OrderStateContainer = (props) => {
       },
     });
     const data = await res.json();
-    // console.log(data[0]._id);
+
     const orderNumFromId = data[0]._id;
     setOrderID(orderNumFromId);
-    setOrderNumber(parseInt(orderNumFromId.slice(-3), 16));
+    // setOrderNumber(parseInt(orderNumFromId.slice(-3), 16));
   };
 
   //   {

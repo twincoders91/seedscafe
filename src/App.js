@@ -21,6 +21,7 @@ import OrderStateContainer from "./menu/OrderStateContainer";
 
 import MenuAdmin from "./menu/MenuAdmin";
 import MenuStateContainer from "./menu/menuStateContainer";
+import { CastleTwoTone } from "@mui/icons-material";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -40,6 +41,19 @@ function App() {
   const [foodOrder, setFoodOrder] = useState([]);
   const [ArtData, setArtData] = useState([]);
   const [tableNumber, setTableNumber] = useState();
+  const [FullMenu, setFullMenu] = useState([]);
+
+  //========================menu - fetch data from DB==========================
+  const fetchMenuItems = async () => {
+    const res = await fetch("http://localhost:5006/menu/allmenuitems");
+    const data = await res.json();
+    setFullMenu(data);
+  };
+
+  useEffect(() => {
+    console.log(`fetching when mount FullMenu`);
+    fetchMenuItems();
+  }, []);
 
   //========================fetch data from DB==========================
   const fetchArtData = async () => {
@@ -137,9 +151,9 @@ function App() {
     setTableNumber(value);
   };
 
-  console.log({ checkOut });
-  console.log({ makePayment });
-  console.log({ confirmationPage });
+  // console.log({ checkOut });
+  // console.log({ makePayment });
+  // console.log({ confirmationPage });
 
   return (
     <div>
@@ -240,6 +254,8 @@ function App() {
                   setFoodOrder={setFoodOrder}
                   handleTableNumber={handleTableNumber}
                   tableNumber={tableNumber}
+                  FullMenu={FullMenu}
+                  setFullMenu={setFullMenu}
                 />
               }
             />
@@ -257,7 +273,15 @@ function App() {
             />
             <Route
               path="/menuadmin"
-              element={<MenuAdmin setIsMenuPage={setIsMenuPage} />}
+              element={
+                <MenuAdmin
+                  setIsMenuPage={setIsMenuPage}
+                  FullMenu={FullMenu}
+                  setFullMenu={setFullMenu}
+                  catSelected={catSelected}
+                  setCatSelected={setCatSelected}
+                />
+              }
             />
             <Route path="/cashieradmin" element={<CashierAdmin />} />
           </Routes>

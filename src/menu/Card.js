@@ -9,7 +9,6 @@ const Card = (props) => {
     <div className="cards--container">
       <div className="row">
         {dishes.map((dish) => {
-          console.log(dish.img);
           return (
             <div
               className="card--container"

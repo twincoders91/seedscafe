@@ -35,7 +35,6 @@ const OrderListUpdate = (props) => {
       specialRequest: specialRequest,
     };
 
-    // console.log(updatedData);
     props.handleUpdateFoodOrder(props.indexEdit, updatedData);
     props.setIsOrderUpdate(false);
   };
