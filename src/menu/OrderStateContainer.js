@@ -87,10 +87,17 @@ const OrderStateContainer = (props) => {
         setMenuPage={props.setMenuPage}
         postToOrderDB={postToOrderDB}
         handleUpdateFoodOrder={handleUpdateFoodOrder}
+        tableNumber={props.tableNumber}
       />
     );
   } else if (orderPage === "OrderSubmission") {
-    page = <OrderSubmission orderID={orderID} orderNumber={orderNumber} />;
+    page = (
+      <OrderSubmission
+        orderID={orderID}
+        orderNumber={orderNumber}
+        tableNumber={props.tableNumber}
+      />
+    );
   }
 
   return <div>{page}</div>;

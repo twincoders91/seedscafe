@@ -18,7 +18,7 @@ const OrderList = (props) => {
   const [indexEdit, setIndexEdit] = useState();
 
   const handleSubmitOrderClick = () => {
-    let uri = "http://localhost:5001/order/create/";
+    let uri = "http://localhost:5006/order/create/";
     props.postToOrderDB(uri, props.foodOrder);
 
     props.handleOrderPageChange("OrderSubmission");
@@ -39,6 +39,14 @@ const OrderList = (props) => {
     setIndexEdit(index);
   };
 
+  const tableNumber = () => {
+    if (props.tableNumber == "Takeaway") {
+      return "Takeaway";
+    } else {
+      return `Table No. ${props.tableNumber}`;
+    }
+  };
+
   if (isOrderUpdate === false) {
     return (
       <div className="specific--main--container">
@@ -49,7 +57,7 @@ const OrderList = (props) => {
               <img src={backarrow} alt="order"></img>
             </Link>
           </div>
-          <div className="table--title">Table No. 8</div>
+          <div className="table--title">{tableNumber()}</div>
           <div className="menu--ordericon">
             <Link to="/foodorder">
               <img src={order} alt="order"></img>
@@ -93,6 +101,7 @@ const OrderList = (props) => {
         indexEdit={indexEdit}
         setIsOrderUpdate={setIsOrderUpdate}
         handleUpdateFoodOrder={props.handleUpdateFoodOrder}
+        tableNumber={tableNumber()}
       />
     );
   }
