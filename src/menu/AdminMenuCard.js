@@ -1,9 +1,7 @@
-import { PriceChangeSharp } from "@mui/icons-material";
 import React, { useState } from "react";
 
 const AdminMenuCard = (props) => {
-  const { data, index, fetchMenuItems, handleUpdateEntry, handleDeleteEntry } =
-    props;
+  const { data, index, handleUpdateEntry, handleDeleteEntry } = props;
   const [menuAdminUpdate, setMenuAdminUpdate] = useState(false);
   const [_id, set_Id] = useState();
   const [name, setName] = useState();

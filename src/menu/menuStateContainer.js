@@ -43,10 +43,6 @@ const MenuStateContainer = ({
     console.log(data);
   };
 
-  useEffect(() => {
-    fetchMenuItems();
-  }, []);
-
   //--- Handle foodOrder---
   const handleAddFoodOrder = (newOrder) => {
     setFoodOrder((prevOrders) => [...prevOrders, newOrder]);

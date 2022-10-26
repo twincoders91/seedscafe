@@ -19,6 +19,7 @@ import OrderStateContainer from "./menu/OrderStateContainer";
 
 import MenuAdmin from "./menu/MenuAdmin";
 import MenuStateContainer from "./menu/menuStateContainer";
+import { CastleTwoTone } from "@mui/icons-material";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -39,6 +40,17 @@ function App() {
   const [ArtData, setArtData] = useState([]);
   const [tableNumber, setTableNumber] = useState();
   const [FullMenu, setFullMenu] = useState([]);
+
+  //========================menu - fetch data from DB==========================
+  const fetchMenuItems = async () => {
+    const res = await fetch("http://localhost:5006/menu/allmenuitems");
+    const data = await res.json();
+    setFullMenu(data);
+  };
+
+  useEffect(() => {
+    fetchMenuItems();
+  }, []);
 
   //========================fetch data from DB==========================
   const fetchArtData = async () => {
@@ -236,7 +248,15 @@ function App() {
             />
             <Route
               path="/menuadmin"
-              element={<MenuAdmin setIsMenuPage={setIsMenuPage} />}
+              element={
+                <MenuAdmin
+                  setIsMenuPage={setIsMenuPage}
+                  FullMenu={FullMenu}
+                  setFullMenu={setFullMenu}
+                  catSelected={catSelected}
+                  setCatSelected={setCatSelected}
+                />
+              }
             />
           </Routes>
         </div>
