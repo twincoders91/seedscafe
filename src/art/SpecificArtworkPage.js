@@ -6,6 +6,7 @@ import pfpCircle from "../assets/art/specificartwork/pfpcircle.svg";
 
 const SpecificArtworkPage = ({
   artGalleryHeader,
+  setArtGalleryHeader,
   specificArtworkDetails,
   ArtData,
   setSpecificArtworkDetails,
@@ -17,6 +18,8 @@ const SpecificArtworkPage = ({
   //after clicking the "otherArtWork" box, we will set the SpecificArtworkDetails to that "otherArtWork"
   const handleOtherArtworkClick = (otherArtWork) => {
     setSpecificArtworkDetails(otherArtWork);
+    setArtGalleryHeader(otherArtWork);
+    console.log(otherArtWork.category);
   };
 
   // x = removing current artwork from the array. leaving the remaining in the array
@@ -36,7 +39,7 @@ const SpecificArtworkPage = ({
     setCartArtDetails(itemsInCart);
     setShoppingCartNumber(itemsInCart.length);
   };
-  console.log(cartArtDetails);
+  console.log(y);
   //========================================================================================
 
   return (
@@ -152,7 +155,7 @@ const SpecificArtworkPage = ({
                       {otherArtWorks.artistName}
                     </div>
                     <div className="other--artworks--textbox--price">
-                      {otherArtWorks.price}
+                      ${Number(otherArtWorks.price).toFixed(2)}
                     </div>
                   </div>
                 </div>

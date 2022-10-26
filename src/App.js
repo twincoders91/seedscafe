@@ -5,6 +5,7 @@ import Art from "./art/Art";
 import { Route, Routes } from "react-router-dom";
 import ArtGallery from "./art/ArtGallery";
 import SpecificArtworkPage from "./art/SpecificArtworkPage";
+import AdminArtwork from "./art/AdminArtwork";
 
 import OrderSubmission from "./menu/OrderSubmission";
 import MenuCategory from "./menu/MenuCategory";
@@ -75,47 +76,64 @@ function App() {
       console.log("successfully fetched");
 
       const fullArtData = await artRes.map((artRes) => {
-        for (let j = 0; j < artistRes.length; j++) {
-          if (artRes.artistName === artistRes[j].artistName) {
-            let img;
-            if (artRes.img) {
-              try {
-                img = artRes.img;
-              } catch (e) {
-                img = "https://via.placeholder.com/500";
-              }
-            } else {
-              img = "https://via.placeholder.com/500";
-            }
-            let category = artRes.category;
-            let artistName = artRes.artistName;
-            let artName = artRes.artName;
-            let description = artRes.description;
-            let price = artRes.price;
-            let physicalSize = artRes.physicalSize;
-            let physicalMaterial = artRes.physicalMaterial;
-            let artistDescription = artistRes[j].artistDescription;
-            let gender = artistRes[j].gender;
-            let id = artRes._id;
-            return {
-              img,
-              category,
-              artistName,
-              artName,
-              description,
-              price,
-              physicalSize,
-              physicalMaterial,
-              artistDescription,
-              gender,
-              id,
-            };
-          } else {
-            // console.log("not found");
+        // for (let j = 0; j < artistRes.length; j++)
+        // console.log(j);
+        // if (artRes.artistName === artistRes[j].artistName) {
+        let img;
+        if (artRes.img) {
+          try {
+            img = artRes.img;
+          } catch (e) {
+            img = "https://via.placeholder.com/500";
           }
+        } else {
+          img = "https://via.placeholder.com/500";
         }
+        let category = artRes.category;
+        let artistName = artRes.artistName;
+        let artName = artRes.artName;
+        let description = artRes.description;
+        let price = artRes.price;
+        let physicalSize = artRes.physicalSize;
+        let physicalMaterial = artRes.physicalMaterial;
+        let artistDescription;
+        if (artRes.artistName) {
+          for (let j = 0; j < artistRes.length; j++) {
+            if (artRes.artistName === artistRes[j].artistName) {
+              artistDescription = artistRes[j].artistDescription;
+            }
+          }
+        } else {
+          artistDescription = "Not Found";
+        }
+
+        let gender;
+        if (artRes.artistName) {
+          for (let j = 0; j < artistRes.length; j++) {
+            if (artRes.artistName === artistRes[j].artistName) {
+              gender = artistRes[j].gender;
+            }
+          }
+        } else {
+          gender = "Not Found";
+        }
+        let id = artRes._id;
+        return {
+          img,
+          category,
+          artistName,
+          artName,
+          description,
+          price,
+          physicalSize,
+          physicalMaterial,
+          artistDescription,
+          gender,
+          id,
+        };
       });
       setArtData(fullArtData);
+      console.log(fullArtData);
     } catch (e) {
       console.log("Error in fetching.");
     }
@@ -188,6 +206,7 @@ function App() {
               element={
                 <SpecificArtworkPage
                   artGalleryHeader={artGalleryHeader}
+                  setArtGalleryHeader={setArtGalleryHeader}
                   specificArtworkDetails={specificArtworkDetails}
                   ArtData={ArtData}
                   setSpecificArtworkDetails={setSpecificArtworkDetails}
@@ -215,6 +234,10 @@ function App() {
                 />
               }
             />
+            {/* <Route
+              path="/adminartwork"
+              element={<AdminArtwork ArtData={ArtData} />}
+            /> */}
             <Route
               path="/foodmenu"
               element={
