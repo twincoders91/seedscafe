@@ -184,6 +184,7 @@ a:link, a:visited, a:hover, a:active{
 
 .card--body {
   margin: 20px;
+  width: 250px;
 }
 
 .card--name {
