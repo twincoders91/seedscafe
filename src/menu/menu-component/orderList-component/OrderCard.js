@@ -12,7 +12,7 @@ const OrderCard = (props) => {
       <div className="orderCard--text">
         <div className="orderCard--title">
           <label className="orderCard--name">{props.data.name}</label>
-          <label>${props.data.price * props.data.quantity}</label>
+          <label>${(props.data.price * props.data.quantity).toFixed(2)}</label>
         </div>
         <div className="orderCard--qty">
           <p>Qty: {props.data.quantity}</p>
