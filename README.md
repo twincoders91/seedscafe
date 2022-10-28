@@ -1,7 +1,7 @@
 # Project Title
 React App for Seeds Cafe’s Menu and Sale of Artwork
 
-#Project Description:
+# Project Description:
 Seeds Cafe is an inclusive social space found within Rainbow Centre at 501 Margaret Drive Singapore 149306. It is a vocational training ground for students from the Rainbow Centre so that they can transit to open employment, and a platform to advocate for a more inclusive community.
 
 The main aim of the app is to create a digital platform for diners to order food and explore artwork done by Rainbow Centre’s students.
