@@ -126,11 +126,11 @@ Payment Page
 # How to use the Project - Seedscafe Backend
 
 Contains the backend for
--Menu Items : http://127.0.0.1:5006/menu
--Oder List for Menu :  http://127.0.0.1:5006/order
--Artist Data : http://127.0.0.1:5006/artist
--Artwork Data : http://127.0.0.1:5006/artwork
--Shipping Data for artworks: http://127.0.0.1:5006/shipping
+- Menu Items : http://127.0.0.1:5006/menu
+- Oder List for Menu :  http://127.0.0.1:5006/order
+- Artist Data : http://127.0.0.1:5006/artist
+- Artwork Data : http://127.0.0.1:5006/artwork
+- Shipping Data for artworks: http://127.0.0.1:5006/shipping
 
 Code Structure: 
 
