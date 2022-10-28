@@ -84,15 +84,12 @@ App.js
 Code and Page Structure for Menu:
 
 Menu router diagram
-
-<MenuStateContainer/> diagram
-
-<OrderStateContainer/> diagram
+![](https://github.com/twincoders91/seedscafe/blob/main/src/assets/frontend_routes.png)
 
 Code and Page Structure for Artwork:
 
 Artwork router diagram
-
+![](https://github.com/twincoders91/seedscafe/blob/main/src/assets/frontend_art_routes.png)
 
 Artwork Categories Homepage
 - Displays one artwork from each category -> Filters out any duplicate artworks with the same category and maps all the different categories as artcards.
