@@ -2,23 +2,25 @@ import React, { useEffect, useState } from "react";
 import "./menuStyles.css";
 
 const CashierAdmin = () => {
+  // fetch all orders
   const [orders, setOrders] = useState([]);
   const fetchOrders = async () => {
     const res = await fetch("http://localhost:5006/order/");
     const data = await res.json();
     setOrders(data);
-    console.log(data);
   };
 
   useEffect(() => {
     fetchOrders();
   }, []);
 
-  const handlePaid = async (id) => {
-    await fetch(`http://localhost:5006/order/update/ + ${id}`, {
+  // change status to paid
+  const handlePaid = async () => {
+    await fetch("http://localhost:5006/order/update/" + orders[0]._id, {
       method: "PATCH",
       body: JSON.stringify({
         paid: true,
+        fulfilled: false,
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -26,28 +28,14 @@ const CashierAdmin = () => {
     });
   };
 
-  const handleFulfilled = async (id) => {
-    await fetch(`http://localhost:5006/order/update/ + ${id}`, {
-      method: "PATCH",
-      body: JSON.stringify({
-        fulfilled: true,
-      }),
+  // change status to fulfilled
+  const handleFulfilled = async () => {
+    await fetch("http://localhost:5006/order/delete/" + orders[0]._id, {
+      method: "DELETE",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
     });
-  };
-
-  const [isPaidDisabled, setIsPaidDisabled] = useState(false);
-
-  const handlePaidClick = () => {
-    setIsPaidDisabled(true);
-  };
-
-  const [isFulfilledDisabled, setIsFulfilledDisabled] = useState(false);
-
-  const handleFulfilledClick = () => {
-    setIsFulfilledDisabled(true);
   };
 
   return (
@@ -62,6 +50,7 @@ const CashierAdmin = () => {
                   ? `Table Number:
                         ${order.number}`
                   : ""}
+                {order.id}
               </h3>
               <div>
                 {order.dishes.map((dish, index) => {
@@ -80,21 +69,13 @@ const CashierAdmin = () => {
               </div>
               <button
                 className="cashier--order--button"
-                disabled={isPaidDisabled}
-                onClick={() => {
-                  handlePaid();
-                  handlePaidClick();
-                }}
+                onClick={() => handlePaid(orders[0].id)}
               >
                 Paid
               </button>
               <button
                 className="cashier--order--button"
-                disabled={isFulfilledDisabled}
-                onClick={() => {
-                  handleFulfilled();
-                  handleFulfilledClick();
-                }}
+                onClick={() => handleFulfilled(orders[0].id)}
               >
                 Fulfilled
               </button>
