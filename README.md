@@ -43,36 +43,36 @@ Run ‘npm install’ to install frontend dependencies (React, Material UI)
 Run ‘npm start’ to start local host for frontend
 
 # How to use the Project - Seedscafe Frontend
-
-<App.js/>
-<NavBar/>
-<Modal/>
-<Routes>
-<Home/> 					 /
-<Art/>  					/art
-<ArtCard/>
-<ArtGallery/>  					/artgallery
-<SpecificArtworkPage/> 			/artdetails
-<CartPage/> 					/cart
-<ShippingPage/>
-<PaymentPage/>
-<ConfirmationPage/>
-<MenuStateContainer/>  			/foodmenu
-<DineInModal/>
-<MenuCategory/>
-<MenuCategoryCard/>
-<Menu/>
-<FilterButtons/>
-<Card/>
-<SpecificItem/>
-<OrderStateContainer/>  			/foodorder
-<OrderList/>
-<OrderListUpdate/>
-<OrderSubmission/>
-<MenuAdmin/>  				/menuadmin
-<AdminMenuCard/>
-      -     <CashierAdmin/>				/cashieradmin
-<Footer/>
+ 
+App.js
+  - NavBar
+    - Modal
+  - Route
+    - Home 					 /
+    - Art  					/art
+       - ArtCard
+    - ArtGallery  					/artgallery
+    - SpecificArtworkPage 			/artdetails
+    - CartPage 					/cart
+       - ShippingPage
+       - PaymentPage
+       - ConfirmationPage
+    - MenuStateContainer  			/foodmenu
+       - DineInModal
+       - MenuCategory
+       - MenuCategoryCard
+       - Menu
+         - FilterButtons
+         - Card
+    - SpecificItem
+    - OrderStateContainer  			/foodorder
+       - OrderList
+       - OrderListUpdate
+       - OrderSubmission
+    - MenuAdmin  				/menuadmin
+       - AdminMenuCard
+    - CashierAdmin				/cashieradmin
+  - Footer
 
 
 
